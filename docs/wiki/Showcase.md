@@ -29,32 +29,3 @@ Open each in its own tab to watch it move:
 
 <img src="https://raw.githubusercontent.com/CripWal/comicmeta/main/docs/showcase/settings.svg" alt="Settings panel" width="680">
 
-## How these were made
-
-1. **Record** an interactive session with [`termsvg`](https://github.com/MrMarble/termsvg)
-   (asciicast v2 format), driven through a tmux pane so the TUI receives a real TTY:
-
-   ```sh
-   termsvg rec menu.cast -c "sh -c 'cd <library> && comicmeta'"
-   # then drive the UI with tmux send-keys
-   ```
-
-2. **Render** the cast with a [termframe fork](https://github.com/CripWal/termframe)
-   (branch `feat/cast-animation`) that replays recordings and reuses termframe's
-   macOS-window + everblush styling:
-
-   ```sh
-   termframe --cast menu.cast -o menu.svg \
-     --window-style macos --theme everblush --title "comicmeta" \
-     --max-idle 2500
-   ```
-
-   Options: `--frame-interval MS` (snapshot granularity), `--max-idle MS`
-   (how long each screen holds before advancing).
-
-3. **Embed** on GitHub with a normal Markdown image tag — animated SVGs play
-   when loaded as `<img>`, so `![menu](docs/showcase/menu.svg)` just works in
-   the README and (via raw GitHub URLs) the wiki.
-
-The static screens (`docs/showcase/dashboard.svg`, `health.svg`, …) come from
-stock termframe: `termframe --window-style macos --theme everblush --title "comicmeta" -- comicmeta health`.
