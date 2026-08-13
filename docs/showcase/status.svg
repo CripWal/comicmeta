@@ -1,0 +1,83 @@
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta status</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">STATUS</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Context</tspan><tspan>   </tspan><tspan fill="#dadada">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Library</tspan><tspan>   </tspan><tspan fill="#dadada">/private/srv/comics </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Archives</tspan><tspan>  </tspan><tspan fill="#dadada">9 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Pipeline</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#8ccf7e">✓</tspan><tspan> </tspan><tspan fill="#dadada">discover </tspan><tspan>        </tspan><tspan fill="#dadada" opacity="0.5">comicvine-candidates.json</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#8ccf7e">✓</tspan><tspan> </tspan><tspan fill="#dadada">review-volumes </tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">comicvine-review-state.json</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#8ccf7e">✓</tspan><tspan> </tspan><tspan fill="#dadada">fetch-issues </tspan><tspan>    </tspan><tspan fill="#dadada" opacity="0.5">comicvine-issue-candidates.json</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#8ccf7e">✓</tspan><tspan> </tspan><tspan fill="#dadada">review-issues </tspan><tspan>   </tspan><tspan fill="#dadada" opacity="0.5">comicvine-issue-review-state.json</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada" opacity="0.5">·</tspan><tspan> </tspan><tspan fill="#dadada">map </tspan><tspan>             </tspan><tspan fill="#dadada" opacity="0.5">comic-metadata-reviewed-mapping.json</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Counts</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">candidates </tspan><tspan>  </tspan><tspan fill="#dadada">9 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">volumes </tspan><tspan>     </tspan><tspan fill="#dadada">2 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">issues </tspan><tspan>      </tspan><tspan fill="#dadada">6 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#6cbfbf">Next:</tspan><tspan> </tspan><tspan fill="#dadada">comicmeta </tspan><tspan fill="#dadada">write </tspan><tspan fill="#dadada">--dry-run </tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>

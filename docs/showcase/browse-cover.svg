@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1055.2" height="725.6" viewBox="0 0 1055.2 725.6">
+<style>
+@keyframes f0 { 0%,12.230448258648345% { opacity: 1 } 12.231448258648344%,100% { opacity: 0 } }
+@keyframes f1 { 0%,12.230448258648345% { opacity: 0 } 12.231448258648344%,17.164382312462706% { opacity: 1 } 17.165382312462707%,100% { opacity: 0 } }
+@keyframes f2 { 0%,17.164382312462706% { opacity: 0 } 17.165382312462707%,22.124357436709385% { opacity: 1 } 22.125357436709386%,100% { opacity: 0 } }
+@keyframes f3 { 0%,22.124357436709385% { opacity: 0 } 22.125357436709386%,27.07916641961161% { opacity: 1 } 27.08016641961161%,100% { opacity: 0 } }
+@keyframes f4 { 0%,27.07916641961161% { opacity: 0 } 27.08016641961161%,36.89205132404876% { opacity: 1 } 36.893051324048756%,100% { opacity: 0 } }
+@keyframes f5 { 0%,36.89205132404876% { opacity: 0 } 36.893051324048756%,41.82601473093894% { opacity: 1 } 41.827014730938934%,100% { opacity: 0 } }
+@keyframes f6 { 0%,41.82601473093894% { opacity: 0 } 41.827014730938934%,46.779693620422066% { opacity: 1 } 46.78069362042206%,100% { opacity: 0 } }
+@keyframes f7 { 0%,46.779693620422066% { opacity: 0 } 46.78069362042206%,51.75614560456279% { opacity: 1 } 51.75714560456279%,100% { opacity: 0 } }
+@keyframes f8 { 0%,51.75614560456279% { opacity: 0 } 51.75714560456279%,56.68162108036148% { opacity: 1 } 56.68262108036148%,100% { opacity: 0 } }
+@keyframes f9 { 0%,56.68162108036148% { opacity: 0 } 56.68262108036148%,61.69227918219199% { opacity: 1 } 61.693279182191986%,100% { opacity: 0 } }
+@keyframes f10 { 0%,61.69227918219199% { opacity: 0 } 61.693279182191986%,63.377644736592345% { opacity: 1 } 63.37864473659234%,100% { opacity: 0 } }
+@keyframes f11 { 0%,63.377644736592345% { opacity: 0 } 63.37864473659234%,75.60809299524068% { opacity: 1 } 75.60909299524069%,100% { opacity: 0 } }
+@keyframes f12 { 0%,75.60809299524068% { opacity: 0 } 75.60909299524069%,76.62746172016459% { opacity: 1 } 76.6284617201646%,100% { opacity: 0 } }
+@keyframes f13 { 0%,76.62746172016459% { opacity: 0 } 76.6284617201646%,85.16714717651786% { opacity: 1 } 85.16814717651786%,100% { opacity: 0 } }
+@keyframes f14 { 0%,85.16714717651786% { opacity: 0 } 85.16814717651786%,90.13710234654359% { opacity: 1 } 90.13810234654359%,100% { opacity: 0 } }
+@keyframes f15 { 0%,90.13710234654359% { opacity: 0 } 90.13810234654359%,95.10782069654066% { opacity: 1 } 95.10882069654066%,100% { opacity: 0 } }
+@keyframes f16 { 0%,95.10782069654066% { opacity: 0 } 95.10782069654066%,100% { opacity: 1 } }
+</style>
+<g style="opacity:0;animation:f0 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Scan </tspan><tspan fill="#dadada">this </tspan><tspan fill="#dadada">directory, </tspan><tspan fill="#dadada">discover </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">candidates, </tspan><tspan fill="#dadada">review </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">volumes </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">issues, </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">emit </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">mapping. </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Navigate </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">as </tspan><tspan fill="#dadada" opacity="0.5">an </tspan><tspan fill="#dadada" opacity="0.5">expandable </tspan><tspan fill="#dadada" opacity="0.5">file </tspan><tspan fill="#dadada" opacity="0.5">tree; </tspan><tspan fill="#dadada" opacity="0.5">Enter </tspan><tspan fill="#dadada" opacity="0.5">inspects</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">file's </tspan><tspan fill="#dadada" opacity="0.5">existing </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">metadata. </tspan><tspan fill="#dadada" opacity="0.5">(read-only </tspan><tspan fill="#dadada" opacity="0.5">unless </tspan><tspan fill="#dadada" opacity="0.5">edited)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                 </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">run </tspan><tspan fill="#dadada" font-weight="bold">review </tspan><tspan fill="#dadada" font-weight="bold">· </tspan><tspan fill="#dadada" font-weight="bold">[f] </tspan><tspan fill="#dadada" font-weight="bold">fresh </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f1 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">this </tspan><tspan fill="#dadada" opacity="0.5">directory, </tspan><tspan fill="#dadada" opacity="0.5">discover </tspan><tspan fill="#dadada" opacity="0.5">ComicVine </tspan><tspan fill="#dadada" opacity="0.5">candidates, </tspan><tspan fill="#dadada" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">volumes </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">issues, </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">emit </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">mapping. </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Back </tspan><tspan fill="#dadada">up </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">insert </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">into </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">CBZ </tspan><tspan fill="#dadada">files. </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">(mutating) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Navigate </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">as </tspan><tspan fill="#dadada" opacity="0.5">an </tspan><tspan fill="#dadada" opacity="0.5">expandable </tspan><tspan fill="#dadada" opacity="0.5">file </tspan><tspan fill="#dadada" opacity="0.5">tree; </tspan><tspan fill="#dadada" opacity="0.5">Enter </tspan><tspan fill="#dadada" opacity="0.5">inspects</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">file's </tspan><tspan fill="#dadada" opacity="0.5">existing </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">metadata. </tspan><tspan fill="#dadada" opacity="0.5">(read-only </tspan><tspan fill="#dadada" opacity="0.5">unless </tspan><tspan fill="#dadada" opacity="0.5">edited)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                 </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">write </tspan><tspan fill="#dadada" font-weight="bold">metadata </tspan><tspan fill="#dadada" font-weight="bold">(with </tspan><tspan fill="#dadada" font-weight="bold">backups)</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f2 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">this </tspan><tspan fill="#dadada" opacity="0.5">directory, </tspan><tspan fill="#dadada" opacity="0.5">discover </tspan><tspan fill="#dadada" opacity="0.5">ComicVine </tspan><tspan fill="#dadada" opacity="0.5">candidates, </tspan><tspan fill="#dadada" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">volumes </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">issues, </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">emit </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">mapping. </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Convert </tspan><tspan fill="#dadada">.cbr </tspan><tspan fill="#dadada">archives </tspan><tspan fill="#dadada">to </tspan><tspan fill="#dadada">.cbz </tspan><tspan fill="#dadada">so </tspan><tspan fill="#dadada">metadata </tspan><tspan fill="#dadada">can </tspan><tspan fill="#dadada">be </tspan><tspan fill="#dadada">written. </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Shows </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">picker; </tspan><tspan fill="#dadada">originals </tspan><tspan fill="#dadada">are </tspan><tspan fill="#dadada">kept </tspan><tspan fill="#dadada">in </tspan><tspan fill="#dadada">comicmeta-backups. </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Navigate </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">as </tspan><tspan fill="#dadada" opacity="0.5">an </tspan><tspan fill="#dadada" opacity="0.5">expandable </tspan><tspan fill="#dadada" opacity="0.5">file </tspan><tspan fill="#dadada" opacity="0.5">tree; </tspan><tspan fill="#dadada" opacity="0.5">Enter </tspan><tspan fill="#dadada" opacity="0.5">inspects</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">file's </tspan><tspan fill="#dadada" opacity="0.5">existing </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">metadata. </tspan><tspan fill="#dadada" opacity="0.5">(read-only </tspan><tspan fill="#dadada" opacity="0.5">unless </tspan><tspan fill="#dadada" opacity="0.5">edited)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">convert </tspan><tspan fill="#dadada" font-weight="bold">.cbr </tspan><tspan fill="#dadada" font-weight="bold">→ </tspan><tspan fill="#dadada" font-weight="bold">.cbz</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f3 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">this </tspan><tspan fill="#dadada" opacity="0.5">directory, </tspan><tspan fill="#dadada" opacity="0.5">discover </tspan><tspan fill="#dadada" opacity="0.5">ComicVine </tspan><tspan fill="#dadada" opacity="0.5">candidates, </tspan><tspan fill="#dadada" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">volumes </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">issues, </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">emit </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">mapping. </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Navigate </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">an </tspan><tspan fill="#dadada">expandable </tspan><tspan fill="#dadada">file </tspan><tspan fill="#dadada">tree; </tspan><tspan fill="#dadada">Enter </tspan><tspan fill="#dadada">inspects </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">file's </tspan><tspan fill="#dadada">existing </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">metadata. </tspan><tspan fill="#dadada">(read-only </tspan><tspan fill="#dadada">unless </tspan><tspan fill="#dadada">edited) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">browse </tspan><tspan fill="#dadada" font-weight="bold">library </tspan><tspan fill="#dadada" font-weight="bold">tree</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f4 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan>  </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f5 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan>  </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f6 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan>  </tspan><tspan fill="#6cbfbf">▾ </tspan><tspan fill="#6cbfbf" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus </tspan><tspan fill="#dadada" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f7 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">Amazing </tspan><tspan fill="#6cbfbf" font-weight="bold">Spider-Man </tspan><tspan fill="#6cbfbf" font-weight="bold">Omnibus </tspan><tspan fill="#6cbfbf" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f8 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#6cbfbf">▸ </tspan><tspan>    </tspan><tspan fill="#6cbfbf">▾ </tspan><tspan fill="#6cbfbf" font-weight="bold">Amazing </tspan><tspan fill="#6cbfbf" font-weight="bold">Spider-Man </tspan><tspan fill="#6cbfbf" font-weight="bold">Omnibus </tspan><tspan fill="#6cbfbf" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>              </tspan><tspan fill="#dadada">✓ </tspan><tspan fill="#c47fd5">Amazing </tspan><tspan fill="#c47fd5">Spider-Man </tspan><tspan fill="#c47fd5">Omnibus </tspan><tspan fill="#c47fd5">(2007) </tspan><tspan fill="#c47fd5">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f9 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus </tspan><tspan fill="#dadada" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada" font-weight="bold">▸ </tspan><tspan>        </tspan><tspan fill="#dadada" font-weight="bold">✓ </tspan><tspan fill="#c47fd5" font-weight="bold">Amazing </tspan><tspan fill="#c47fd5" font-weight="bold">Spider-Man </tspan><tspan fill="#c47fd5" font-weight="bold">Omnibus </tspan><tspan fill="#c47fd5" font-weight="bold">(2007) </tspan><tspan fill="#c47fd5" font-weight="bold">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f10 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">COMIC</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Marvel/Amazing </tspan><tspan fill="#dadada" opacity="0.5">Spider-Man </tspan><tspan fill="#dadada" opacity="0.5">Omnibus </tspan><tspan fill="#dadada" opacity="0.5">(2007)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">1/1</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Issue </tspan><tspan fill="#dadada">#1 </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">Volume </tspan><tspan fill="#dadada">One </tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f11 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M0,0 H19.2 V22.8 H0 Z M0.6,7.2 V8.4 H1.2 V10.8 H6 V9.6 H5.4 V8.4 H12 V7.2 Z" fill="#8c1e29" stroke="#8c1e29"/>
+<path d="M0.6,7.2 H1.2 V8.4 H0.6 Z" fill="#8d1d28" stroke="#8d1d28"/>
+<path d="M1.2,7.2 H1.8 V8.4 H1.2 Z" fill="#98353e" stroke="#98353e"/>
+<path d="M1.8,7.2 H2.4 V8.4 H1.8 Z" fill="#97383f" stroke="#97383f"/>
+<path d="M2.4,7.2 H3 V8.4 H2.4 Z" fill="#983940" stroke="#983940"/>
+<path d="M3,7.2 H3.6 V8.4 H3 Z" fill="#96343c" stroke="#96343c"/>
+<path d="M3.6,7.2 H4.2 V8.4 H3.6 Z" fill="#97363e" stroke="#97363e"/>
+<path d="M4.2,7.2 H4.8 V8.4 H4.2 Z" fill="#9f4349" stroke="#9f4349"/>
+<path d="M4.8,7.2 H5.4 V8.4 H4.8 Z" fill="#9c3b43" stroke="#9c3b43"/>
+<path d="M5.4,7.2 H6 V8.4 H5.4 Z" fill="#98333c" stroke="#98333c"/>
+<path d="M6,7.2 H6.6 V8.4 H6 Z" fill="#96333b" stroke="#96333b"/>
+<path d="M6.6,7.2 H7.2 V8.4 H6.6 Z" fill="#9c3c43" stroke="#9c3c43"/>
+<path d="M7.2,7.2 H7.8 V8.4 H7.2 Z" fill="#993940" stroke="#993940"/>
+<path d="M7.8,7.2 H8.4 V8.4 H7.8 Z" fill="#97353d" stroke="#97353d"/>
+<path d="M8.4,7.2 H9 V8.4 H8.4 Z" fill="#9b3e44" stroke="#9b3e44"/>
+<path d="M9,7.2 H9.6 V8.4 H9 Z" fill="#97333c" stroke="#97333c"/>
+<path d="M9.6,7.2 H10.2 V8.4 H9.6 Z" fill="#9d3f45" stroke="#9d3f45"/>
+<path d="M10.2,7.2 H10.8 V8.4 H10.2 Z" fill="#9a3b42" stroke="#9a3b42"/>
+<path d="M10.8,7.2 H11.4 V8.4 H10.8 Z" fill="#953139" stroke="#953139"/>
+<path d="M11.4,7.2 H12 V8.4 H11.4 Z" fill="#8b1e28" stroke="#8b1e28"/>
+<path d="M1.2,8.4 H1.8 V10.8 H1.2 Z" fill="#8b1e29" stroke="#8b1e29"/>
+<path d="M1.8,8.4 H4.8 V9.6 H1.8 Z" fill="#8c1e29" stroke="#8c1e29"/>
+<path d="M4.8,8.4 H5.4 V9.6 H4.8 Z" fill="#8c202a" stroke="#8c202a"/>
+<path d="M1.8,9.6 H2.4 V10.8 H1.8 Z" fill="#9b3f48" stroke="#9b3f48"/>
+<path d="M2.4,9.6 H3 V10.8 H2.4 Z" fill="#9a4147" stroke="#9a4147"/>
+<path d="M3,9.6 H3.6 V10.8 H3 Z" fill="#9a4046" stroke="#9a4046"/>
+<path d="M3.6,9.6 H4.2 V10.8 H3.6 Z" fill="#97373f" stroke="#97373f"/>
+<path d="M4.2,9.6 H4.8 V10.8 H4.2 Z" fill="#983c43" stroke="#983c43"/>
+<path d="M4.8,9.6 H5.4 V10.8 H4.8 Z" fill="#8d232c" stroke="#8d232c"/>
+<path d="M5.4,9.6 H6 V10.8 H5.4 Z" fill="#8b1e29" stroke="#8b1e29"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#8b1e29">▖ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8c1e29">▌</tspan><tspan fill="#8b1e29">▌</tspan><tspan fill="#9c3e47">▌</tspan><tspan fill="#9a3b42">▌</tspan><tspan fill="#9b3940">▘</tspan><tspan fill="#a0424a">▗</tspan><tspan fill="#98353e">▌</tspan><tspan fill="#9b3d43">▖</tspan><tspan fill="#9c4348">▌</tspan><tspan fill="#983a41">▝</tspan><tspan fill="#a3484e">▝</tspan><tspan fill="#953139">▗</tspan><tspan fill="#9c3f46">▝</tspan><tspan fill="#97333c">▖</tspan><tspan fill="#943139">▄</tspan><tspan fill="#983b41">▖</tspan><tspan fill="#9a363f">▌</tspan><tspan fill="#a14249">▝</tspan><tspan fill="#912a33">▌</tspan><tspan fill="#8b1f26">▌ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8b1e29">▗</tspan><tspan fill="#922c34">▗</tspan><tspan fill="#942e37">▄</tspan><tspan fill="#902a33">▄</tspan><tspan fill="#912b35">▄</tspan><tspan fill="#922b35">▄</tspan><tspan fill="#922d37">▄</tspan><tspan fill="#912c36">▖</tspan><tspan> </tspan><tspan fill="#8b1e29">▖ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8c1e28">▝</tspan><tspan fill="#97363f">▝</tspan><tspan fill="#8c1e29">▄</tspan><tspan fill="#8b1f29">▄</tspan><tspan fill="#8d1f29">▄</tspan><tspan fill="#8c1f29">▄</tspan><tspan fill="#8c1f29">▄</tspan><tspan fill="#9c4449">▘</tspan><tspan fill="#8d1d29">▝</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">BASIC </tspan><tspan fill="#dadada" font-weight="bold">METADATA</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Volume </tspan><tspan>           </tspan><tspan fill="#dadada">2007 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Issue </tspan><tspan>            </tspan><tspan fill="#dadada">1 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Date </tspan><tspan>             </tspan><tspan fill="#dadada">2007-05-09 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Format </tspan><tspan>           </tspan><tspan fill="#dadada">Omnibus </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Publisher </tspan><tspan>        </tspan><tspan fill="#dadada">Marvel </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">SeriesGroup </tspan><tspan>      </tspan><tspan fill="#dadada">— </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">StoryArc </tspan><tspan>         </tspan><tspan fill="#dadada">— </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">FILE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Path </tspan><tspan>             </tspan><tspan fill="#c47fd5">Marvel/Amazing </tspan><tspan fill="#c47fd5">Spider-Man </tspan><tspan fill="#c47fd5">Omnibus </tspan><tspan fill="#c47fd5">(2007)/Amazing </tspan><tspan fill="#c47fd5">Spider-Man </tspan><tspan fill="#c47fd5">Omnibus </tspan><tspan fill="#c47fd5">(2007) </tspan><tspan fill="#c47fd5">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Pages </tspan><tspan>            </tspan><tspan fill="#dadada">1141 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Size </tspan><tspan>             </tspan><tspan fill="#dadada">4.5 </tspan><tspan fill="#dadada">MiB </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">ComicInfo </tspan><tspan>        </tspan><tspan fill="#8ccf7e">present</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">SUMMARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Collects </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">definitive </tspan><tspan fill="#dadada">run </tspan><tspan fill="#dadada">of </tspan><tspan fill="#dadada">Amazing </tspan><tspan fill="#dadada">Spider-Man </tspan><tspan fill="#dadada">Omnibus. </tspan><tspan fill="#dadada">Features </tspan><tspan fill="#dadada">Volume </tspan><tspan fill="#dadada">One </tspan><tspan fill="#dadada">with </tspan><tspan fill="#dadada">gripping </tspan><tspan fill="#dadada">art </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">story. </tspan><tspan fill="#dadada">A </tspan><tspan fill="#dadada">key </tspan><tspan fill="#dadada">volume </tspan><tspan fill="#dadada">in </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">Marvel </tspan><tspan fill="#dadada">catalog. </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/amazing-spider-man-omnibus/1/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">issue </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←/b] </tspan><tspan fill="#dadada" opacity="0.5">back </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[e] </tspan><tspan fill="#dadada" opacity="0.5">edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag/unflag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">named </tspan><tspan fill="#dadada" opacity="0.5">cover </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[g] </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">gallery </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f12 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">COMIC</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Marvel/Amazing </tspan><tspan fill="#dadada" opacity="0.5">Spider-Man </tspan><tspan fill="#dadada" opacity="0.5">Omnibus </tspan><tspan fill="#dadada" opacity="0.5">(2007)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">1/1</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Issue </tspan><tspan fill="#dadada">#1 </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">Volume </tspan><tspan fill="#dadada">One </tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f13 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M0,0 H19.2 V22.8 H0 Z M0.6,7.2 V8.4 H1.2 V10.8 H6 V9.6 H5.4 V8.4 H12 V7.2 Z" fill="#8c1e29" stroke="#8c1e29"/>
+<path d="M0.6,7.2 H1.2 V8.4 H0.6 Z" fill="#8d1d28" stroke="#8d1d28"/>
+<path d="M1.2,7.2 H1.8 V8.4 H1.2 Z" fill="#98353e" stroke="#98353e"/>
+<path d="M1.8,7.2 H2.4 V8.4 H1.8 Z" fill="#97383f" stroke="#97383f"/>
+<path d="M2.4,7.2 H3 V8.4 H2.4 Z" fill="#983940" stroke="#983940"/>
+<path d="M3,7.2 H3.6 V8.4 H3 Z" fill="#96343c" stroke="#96343c"/>
+<path d="M3.6,7.2 H4.2 V8.4 H3.6 Z" fill="#97363e" stroke="#97363e"/>
+<path d="M4.2,7.2 H4.8 V8.4 H4.2 Z" fill="#9f4349" stroke="#9f4349"/>
+<path d="M4.8,7.2 H5.4 V8.4 H4.8 Z" fill="#9c3b43" stroke="#9c3b43"/>
+<path d="M5.4,7.2 H6 V8.4 H5.4 Z" fill="#98333c" stroke="#98333c"/>
+<path d="M6,7.2 H6.6 V8.4 H6 Z" fill="#96333b" stroke="#96333b"/>
+<path d="M6.6,7.2 H7.2 V8.4 H6.6 Z" fill="#9c3c43" stroke="#9c3c43"/>
+<path d="M7.2,7.2 H7.8 V8.4 H7.2 Z" fill="#993940" stroke="#993940"/>
+<path d="M7.8,7.2 H8.4 V8.4 H7.8 Z" fill="#97353d" stroke="#97353d"/>
+<path d="M8.4,7.2 H9 V8.4 H8.4 Z" fill="#9b3e44" stroke="#9b3e44"/>
+<path d="M9,7.2 H9.6 V8.4 H9 Z" fill="#97333c" stroke="#97333c"/>
+<path d="M9.6,7.2 H10.2 V8.4 H9.6 Z" fill="#9d3f45" stroke="#9d3f45"/>
+<path d="M10.2,7.2 H10.8 V8.4 H10.2 Z" fill="#9a3b42" stroke="#9a3b42"/>
+<path d="M10.8,7.2 H11.4 V8.4 H10.8 Z" fill="#953139" stroke="#953139"/>
+<path d="M11.4,7.2 H12 V8.4 H11.4 Z" fill="#8b1e28" stroke="#8b1e28"/>
+<path d="M1.2,8.4 H1.8 V10.8 H1.2 Z" fill="#8b1e29" stroke="#8b1e29"/>
+<path d="M1.8,8.4 H4.8 V9.6 H1.8 Z" fill="#8c1e29" stroke="#8c1e29"/>
+<path d="M4.8,8.4 H5.4 V9.6 H4.8 Z" fill="#8c202a" stroke="#8c202a"/>
+<path d="M1.8,9.6 H2.4 V10.8 H1.8 Z" fill="#9b3f48" stroke="#9b3f48"/>
+<path d="M2.4,9.6 H3 V10.8 H2.4 Z" fill="#9a4147" stroke="#9a4147"/>
+<path d="M3,9.6 H3.6 V10.8 H3 Z" fill="#9a4046" stroke="#9a4046"/>
+<path d="M3.6,9.6 H4.2 V10.8 H3.6 Z" fill="#97373f" stroke="#97373f"/>
+<path d="M4.2,9.6 H4.8 V10.8 H4.2 Z" fill="#983c43" stroke="#983c43"/>
+<path d="M4.8,9.6 H5.4 V10.8 H4.8 Z" fill="#8d232c" stroke="#8d232c"/>
+<path d="M5.4,9.6 H6 V10.8 H5.4 Z" fill="#8b1e29" stroke="#8b1e29"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#8b1e29">▖ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8c1e29">▌</tspan><tspan fill="#8b1e29">▌</tspan><tspan fill="#9c3e47">▌</tspan><tspan fill="#9a3b42">▌</tspan><tspan fill="#9b3940">▘</tspan><tspan fill="#a0424a">▗</tspan><tspan fill="#98353e">▌</tspan><tspan fill="#9b3d43">▖</tspan><tspan fill="#9c4348">▌</tspan><tspan fill="#983a41">▝</tspan><tspan fill="#a3484e">▝</tspan><tspan fill="#953139">▗</tspan><tspan fill="#9c3f46">▝</tspan><tspan fill="#97333c">▖</tspan><tspan fill="#943139">▄</tspan><tspan fill="#983b41">▖</tspan><tspan fill="#9a363f">▌</tspan><tspan fill="#a14249">▝</tspan><tspan fill="#912a33">▌</tspan><tspan fill="#8b1f26">▌ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8b1e29">▗</tspan><tspan fill="#922c34">▗</tspan><tspan fill="#942e37">▄</tspan><tspan fill="#902a33">▄</tspan><tspan fill="#912b35">▄</tspan><tspan fill="#922b35">▄</tspan><tspan fill="#922d37">▄</tspan><tspan fill="#912c36">▖</tspan><tspan> </tspan><tspan fill="#8b1e29">▖ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#8c1e28">▝</tspan><tspan fill="#97363f">▝</tspan><tspan fill="#8c1e29">▄</tspan><tspan fill="#8b1f29">▄</tspan><tspan fill="#8d1f29">▄</tspan><tspan fill="#8c1f29">▄</tspan><tspan fill="#8c1f29">▄</tspan><tspan fill="#9c4449">▘</tspan><tspan fill="#8d1d29">▝</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">BASIC </tspan><tspan fill="#dadada" font-weight="bold">METADATA</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Volume </tspan><tspan>           </tspan><tspan fill="#dadada">2007 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Issue </tspan><tspan>            </tspan><tspan fill="#dadada">1 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Date </tspan><tspan>             </tspan><tspan fill="#dadada">2007-05-09 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Format </tspan><tspan>           </tspan><tspan fill="#dadada">Omnibus </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Publisher </tspan><tspan>        </tspan><tspan fill="#dadada">Marvel </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">SeriesGroup </tspan><tspan>      </tspan><tspan fill="#dadada">— </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">StoryArc </tspan><tspan>         </tspan><tspan fill="#dadada">— </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">FILE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Path </tspan><tspan>             </tspan><tspan fill="#c47fd5">Marvel/Amazing </tspan><tspan fill="#c47fd5">Spider-Man </tspan><tspan fill="#c47fd5">Omnibus </tspan><tspan fill="#c47fd5">(2007)/Amazing </tspan><tspan fill="#c47fd5">Spider-Man </tspan><tspan fill="#c47fd5">Omnibus </tspan><tspan fill="#c47fd5">(2007) </tspan><tspan fill="#c47fd5">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Pages </tspan><tspan>            </tspan><tspan fill="#dadada">1141 </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Size </tspan><tspan>             </tspan><tspan fill="#dadada">4.5 </tspan><tspan fill="#dadada">MiB </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">ComicInfo </tspan><tspan>        </tspan><tspan fill="#8ccf7e">present</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">SUMMARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Collects </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">definitive </tspan><tspan fill="#dadada">run </tspan><tspan fill="#dadada">of </tspan><tspan fill="#dadada">Amazing </tspan><tspan fill="#dadada">Spider-Man </tspan><tspan fill="#dadada">Omnibus. </tspan><tspan fill="#dadada">Features </tspan><tspan fill="#dadada">Volume </tspan><tspan fill="#dadada">One </tspan><tspan fill="#dadada">with </tspan><tspan fill="#dadada">gripping </tspan><tspan fill="#dadada">art </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">story. </tspan><tspan fill="#dadada">A </tspan><tspan fill="#dadada">key </tspan><tspan fill="#dadada">volume </tspan><tspan fill="#dadada">in </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">Marvel </tspan><tspan fill="#dadada">catalog. </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/amazing-spider-man-omnibus/1/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">issue </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←/b] </tspan><tspan fill="#dadada" opacity="0.5">back </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[e] </tspan><tspan fill="#dadada" opacity="0.5">edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag/unflag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">named </tspan><tspan fill="#dadada" opacity="0.5">cover </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[g] </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">gallery </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f14 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus </tspan><tspan fill="#dadada" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada" font-weight="bold">▸ </tspan><tspan>        </tspan><tspan fill="#dadada" font-weight="bold">✓ </tspan><tspan fill="#c47fd5" font-weight="bold">Amazing </tspan><tspan fill="#c47fd5" font-weight="bold">Spider-Man </tspan><tspan fill="#c47fd5" font-weight="bold">Omnibus </tspan><tspan fill="#c47fd5" font-weight="bold">(2007) </tspan><tspan fill="#c47fd5" font-weight="bold">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f15 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">LIBRARY</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">/private/srv/comics</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">DC/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Marvel/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▾ </tspan><tspan fill="#dadada" font-weight="bold">Amazing </tspan><tspan fill="#dadada" font-weight="bold">Spider-Man </tspan><tspan fill="#dadada" font-weight="bold">Omnibus </tspan><tspan fill="#dadada" font-weight="bold">(2007)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada" font-weight="bold">▸ </tspan><tspan>        </tspan><tspan fill="#dadada" font-weight="bold">✓ </tspan><tspan fill="#c47fd5" font-weight="bold">Amazing </tspan><tspan fill="#c47fd5" font-weight="bold">Spider-Man </tspan><tspan fill="#c47fd5" font-weight="bold">Omnibus </tspan><tspan fill="#c47fd5" font-weight="bold">(2007) </tspan><tspan fill="#c47fd5" font-weight="bold">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983)/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[→/Enter] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[←] </tspan><tspan fill="#dadada" opacity="0.5">collapse/up </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">or </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">dashboard </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Ctrl+D] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f16 20.440788s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">this </tspan><tspan fill="#dadada" opacity="0.5">directory, </tspan><tspan fill="#dadada" opacity="0.5">discover </tspan><tspan fill="#dadada" opacity="0.5">ComicVine </tspan><tspan fill="#dadada" opacity="0.5">candidates, </tspan><tspan fill="#dadada" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">volumes </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">issues, </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">emit </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">mapping. </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Navigate </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">an </tspan><tspan fill="#dadada">expandable </tspan><tspan fill="#dadada">file </tspan><tspan fill="#dadada">tree; </tspan><tspan fill="#dadada">Enter </tspan><tspan fill="#dadada">inspects </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">file's </tspan><tspan fill="#dadada">existing </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">metadata. </tspan><tspan fill="#dadada">(read-only </tspan><tspan fill="#dadada">unless </tspan><tspan fill="#dadada">edited) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">browse </tspan><tspan fill="#dadada" font-weight="bold">library </tspan><tspan fill="#dadada" font-weight="bold">tree</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+</svg>

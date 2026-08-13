@@ -1,0 +1,38 @@
+# docker-compose for comicmeta on a NAS (TrueNAS SCALE custom app, unRAID,
+# or any host running Docker). Runs headless batch commands against the
+# library mounted at /comics; one command per invocation, no daemon.
+#
+# Usage:
+#   docker compose run --rm comicmeta inspect --quick --source /comics
+#   COMICVINE_API_KEY=... docker compose run --rm comicmeta discover --source /comics
+#   docker compose run --rm comicmeta write --yes --source /comics \
+#       --mapping /data/config/libraries/<hash>/comic-metadata-reviewed-mapping.json \
+#       --backup-dir /data/backups --report /data/config/libraries/<hash>/write-report.json
+#
+# Bind-mounts:
+#   ./comics  -> /comics     (your library; read-write for `write`/`convert`/`organize`)
+#   ./data    -> /data       (state: review JSON, candidates, caches, backups, reports)
+#
+# Interactive review/browse/dashboard stay on your workstation; sync the
+# /data/config tree (small JSON files) to the workstation so `comicmeta review`
+# can run there against synced state.
+
+services:
+  comicmeta:
+    build:
+      context: .
+      args:
+        VERSION: local   # set to a published version (e.g. 1.0.1) to pull from PyPI
+    image: comicmeta:1.0.1
+    container_name: comicmeta
+    restart: "no"         # batch tool, not a service
+    volumes:
+      - ./comics:/comics
+      - ./data:/data
+    environment:
+      - COMICMETA_SOURCE=/comics
+      - XDG_CONFIG_HOME=/data/config
+      - XDG_CACHE_HOME=/data/cache
+      # Pass COMICVINE_API_KEY through when running discover/review/fetch-issues:
+      - COMICVINE_API_KEY=${COMICVINE_API_KEY:-}
+    working_dir: /comics

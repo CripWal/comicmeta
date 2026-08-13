@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1055.2" height="725.6" viewBox="0 0 1055.2 725.6">
+<style>
+@keyframes f0 { 0%,29.096918927254794% { opacity: 1 } 29.097918927254796%,100% { opacity: 0 } }
+@keyframes f1 { 0%,29.096918927254794% { opacity: 0 } 29.097918927254796%,41.04636012092679% { opacity: 1 } 41.04736012092679%,100% { opacity: 0 } }
+@keyframes f2 { 0%,41.04636012092679% { opacity: 0 } 41.04736012092679%,52.86755373473504% { opacity: 1 } 52.86855373473504%,100% { opacity: 0 } }
+@keyframes f3 { 0%,52.86755373473504% { opacity: 0 } 52.86855373473504%,76.37700295915666% { opacity: 1 } 76.37800295915666%,100% { opacity: 0 } }
+@keyframes f4 { 0%,76.37700295915666% { opacity: 0 } 76.37800295915666%,88.36123242909808% { opacity: 1 } 88.36223242909809%,100% { opacity: 0 } }
+@keyframes f5 { 0%,88.36123242909808% { opacity: 0 } 88.36123242909808%,100% { opacity: 1 } }
+</style>
+<g style="opacity:0;animation:f0 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">01 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">02 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">03 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">04 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Batman: </tspan><tspan fill="#dadada" font-weight="bold">The </tspan><tspan fill="#dadada" font-weight="bold">Dark </tspan><tspan fill="#dadada" font-weight="bold">Knight </tspan><tspan fill="#dadada" font-weight="bold">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(1986) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">38859 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">DC </tspan><tspan fill="#dadada">Comics </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">1 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#e5c76b">65% </tspan><tspan fill="#e5c76b">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-38859/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">73816 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Urban </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">15% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-73816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">Noir: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2015) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">82397 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">11% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-noir-the-dark-knight-returns/4050-82397/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Millennium </tspan><tspan fill="#dadada" opacity="0.5">Edition: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2000) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">32751 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">3% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/millennium-edition-batman-the-dark-knight-returns/4050-32751/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2014) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">76338 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-76338/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">88626 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-88626/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">30th </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">87936 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-30th-anniversary-ed/4050-87936/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">Tenth </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(1996) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">56749 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-tenth-anniversary-e/4050-56749/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Golden </tspan><tspan fill="#dadada" opacity="0.5">Child</tspan><tspan> </tspan><tspan fill="#dadada">(2019) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">123374 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dark-knight-returns-the-golden-child/4050-123374/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Batman: </tspan><tspan fill="#dadada">The </tspan><tspan fill="#dadada">Dark </tspan><tspan fill="#dadada">Knight </tspan><tspan fill="#dadada">Returns </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">recommended </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f1 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">01 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">02 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">03 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">04 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(1986) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">38859 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">65% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-38859/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Batman </tspan><tspan fill="#dadada" font-weight="bold">- </tspan><tspan fill="#dadada" font-weight="bold">The </tspan><tspan fill="#dadada" font-weight="bold">Dark </tspan><tspan fill="#dadada" font-weight="bold">Knight </tspan><tspan fill="#dadada" font-weight="bold">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">73816 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">Urban </tspan><tspan fill="#dadada">Comics </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">1 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#e5c76b">15% </tspan><tspan fill="#e5c76b">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-73816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">Noir: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2015) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">82397 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">11% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-noir-the-dark-knight-returns/4050-82397/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Millennium </tspan><tspan fill="#dadada" opacity="0.5">Edition: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2000) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">32751 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">3% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/millennium-edition-batman-the-dark-knight-returns/4050-32751/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2014) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">76338 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-76338/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">88626 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-88626/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">30th </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">87936 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-30th-anniversary-ed/4050-87936/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">Tenth </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(1996) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">56749 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-tenth-anniversary-e/4050-56749/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Golden </tspan><tspan fill="#dadada" opacity="0.5">Child</tspan><tspan> </tspan><tspan fill="#dadada">(2019) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">123374 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dark-knight-returns-the-golden-child/4050-123374/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Batman: </tspan><tspan fill="#dadada">The </tspan><tspan fill="#dadada">Dark </tspan><tspan fill="#dadada">Knight </tspan><tspan fill="#dadada">Returns </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">recommended </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f2 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">01 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">02 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">03 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">04 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(1986) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">38859 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">65% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-38859/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">73816 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Urban </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">15% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-73816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Batman </tspan><tspan fill="#dadada" font-weight="bold">Noir: </tspan><tspan fill="#dadada" font-weight="bold">The </tspan><tspan fill="#dadada" font-weight="bold">Dark </tspan><tspan fill="#dadada" font-weight="bold">Knight </tspan><tspan fill="#dadada" font-weight="bold">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2015) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">82397 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">DC </tspan><tspan fill="#dadada">Comics </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">1 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#e5c76b">11% </tspan><tspan fill="#e5c76b">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-noir-the-dark-knight-returns/4050-82397/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Millennium </tspan><tspan fill="#dadada" opacity="0.5">Edition: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2000) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">32751 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">3% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/millennium-edition-batman-the-dark-knight-returns/4050-32751/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2014) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">76338 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-76338/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">88626 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-88626/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">30th </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">87936 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-30th-anniversary-ed/4050-87936/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">Tenth </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(1996) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">56749 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-tenth-anniversary-e/4050-56749/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Golden </tspan><tspan fill="#dadada" opacity="0.5">Child</tspan><tspan> </tspan><tspan fill="#dadada">(2019) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">123374 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dark-knight-returns-the-golden-child/4050-123374/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Batman: </tspan><tspan fill="#dadada">The </tspan><tspan fill="#dadada">Dark </tspan><tspan fill="#dadada">Knight </tspan><tspan fill="#dadada">Returns </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">recommended </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f3 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">01 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">02 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">03 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/DC/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">(01 </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">GetComics.INFO/Batman </tspan><tspan fill="#c47fd5">- </tspan><tspan fill="#c47fd5">The </tspan><tspan fill="#c47fd5">Dark </tspan><tspan fill="#c47fd5">Knight</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan><tspan fill="#c47fd5">Returns </tspan><tspan fill="#c47fd5">04 </tspan><tspan fill="#c47fd5">(of </tspan><tspan fill="#c47fd5">04) </tspan><tspan fill="#c47fd5">(1986) </tspan><tspan fill="#c47fd5">(digital) </tspan><tspan fill="#c47fd5">(Minutemen-InnerDemons).cbr</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(1986) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">38859 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">65% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-38859/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">73816 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Urban </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">15% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns/4050-73816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman </tspan><tspan fill="#dadada" opacity="0.5">Noir: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2015) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">82397 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">11% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-noir-the-dark-knight-returns/4050-82397/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Millennium </tspan><tspan fill="#dadada" font-weight="bold">Edition: </tspan><tspan fill="#dadada" font-weight="bold">Batman: </tspan><tspan fill="#dadada" font-weight="bold">The </tspan><tspan fill="#dadada" font-weight="bold">Dark </tspan><tspan fill="#dadada" font-weight="bold">Knight </tspan><tspan fill="#dadada" font-weight="bold">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2000) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">32751 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">DC </tspan><tspan fill="#dadada">Comics </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">1 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#e5c76b">3% </tspan><tspan fill="#e5c76b">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/millennium-edition-batman-the-dark-knight-returns/4050-32751/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2014) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">76338 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-76338/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">Essentials: </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">88626 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">2% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dc-comics-essentials-batman-the-dark-knight-return/4050-88626/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">- </tspan><tspan fill="#dadada" opacity="0.5">30th </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(2016) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">87936 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-30th-anniversary-ed/4050-87936/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Batman: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns </tspan><tspan fill="#dadada" opacity="0.5">Tenth </tspan><tspan fill="#dadada" opacity="0.5">Anniversary </tspan><tspan fill="#dadada" opacity="0.5">Edition</tspan><tspan> </tspan><tspan fill="#dadada">(1996) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">56749 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/batman-the-dark-knight-returns-tenth-anniversary-e/4050-56749/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Dark </tspan><tspan fill="#dadada" opacity="0.5">Knight </tspan><tspan fill="#dadada" opacity="0.5">Returns: </tspan><tspan fill="#dadada" opacity="0.5">The </tspan><tspan fill="#dadada" opacity="0.5">Golden </tspan><tspan fill="#dadada" opacity="0.5">Child</tspan><tspan> </tspan><tspan fill="#dadada">(2019) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">123374 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">DC </tspan><tspan fill="#dadada" opacity="0.5">Comics </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/dark-knight-returns-the-golden-child/4050-123374/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Batman: </tspan><tspan fill="#dadada">The </tspan><tspan fill="#dadada">Dark </tspan><tspan fill="#dadada">Knight </tspan><tspan fill="#dadada">Returns </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">recommended </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f4 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan fill="#6cbfbf">▸ </tspan><tspan fill="#6cbfbf">COMICVINE </tspan><tspan fill="#6cbfbf">METADATA </tspan><tspan fill="#6cbfbf">REVIEW</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye </tspan><tspan fill="#dadada" font-weight="bold">(1983) </tspan><tspan fill="#dadada" font-weight="bold">[2/3]</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">███████············· </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">1/3 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">2 </tspan><tspan fill="#dadada" opacity="0.5">files</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">FILE </tspan><tspan fill="#dadada" font-weight="bold">PATHS</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/Marvel/Hawkeye </tspan><tspan fill="#c47fd5">(1983)/Hawkeye </tspan><tspan fill="#c47fd5">(1983) </tspan><tspan fill="#c47fd5">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/Marvel/Hawkeye </tspan><tspan fill="#c47fd5">(1983)/Hawkeye </tspan><tspan fill="#c47fd5">(1983) </tspan><tspan fill="#c47fd5">#002.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(1983) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">3225 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">Marvel </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">4 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#8ccf7e">95% </tspan><tspan fill="#8ccf7e">high </tspan><tspan fill="#8ccf7e">confidence</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-3225/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(1994) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">5301 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">4 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-5301/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2003) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">23481 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">8 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-23481/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">50941 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">22 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-50941/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2013) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">68971 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">3 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-68971/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2017) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">96661 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">16 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-96661/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2018) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">110332 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Panini </tspan><tspan fill="#dadada" opacity="0.5">France </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">15% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-110332/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Generations: </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye </tspan><tspan fill="#dadada" opacity="0.5">&amp; </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2017) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">103816 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/generations-hawkeye-hawkeye/4050-103816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye </tspan><tspan fill="#dadada" opacity="0.5">Annual</tspan><tspan> </tspan><tspan fill="#dadada">(2013) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">65627 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye-annual/4050-65627/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Hawkeye </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">high </tspan><tspan fill="#dadada">confidence </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f5 8.591975s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">███████············· </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">1/3 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">2 </tspan><tspan fill="#dadada" opacity="0.5">files</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">FILE </tspan><tspan fill="#dadada" font-weight="bold">PATHS</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/Marvel/Hawkeye </tspan><tspan fill="#c47fd5">(1983)/Hawkeye </tspan><tspan fill="#c47fd5">(1983) </tspan><tspan fill="#c47fd5">#001.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan><tspan fill="#dadada">Active </tspan><tspan>     </tspan><tspan fill="#c47fd5">/srv/comics/Marvel/Hawkeye </tspan><tspan fill="#c47fd5">(1983)/Hawkeye </tspan><tspan fill="#c47fd5">(1983) </tspan><tspan fill="#c47fd5">#002.cbz</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" font-weight="bold">CANDIDATES</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">✦</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">1 </tspan><tspan> </tspan><tspan fill="#dadada" font-weight="bold">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(1983) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada">ID </tspan><tspan fill="#dadada">3225 </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">Marvel </tspan><tspan fill="#dadada">· </tspan><tspan fill="#dadada">4 </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">· </tspan><tspan fill="#8ccf7e">95% </tspan><tspan fill="#8ccf7e">high </tspan><tspan fill="#8ccf7e">confidence</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-3225/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">2 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(1994) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">5301 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">4 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-5301/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">3 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2003) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">23481 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">8 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-23481/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">4 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2012) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">50941 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">22 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-50941/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">5 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2013) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">68971 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">3 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-68971/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">6 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2017) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">96661 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">16 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">45% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-96661/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">7 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2018) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">110332 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Panini </tspan><tspan fill="#dadada" opacity="0.5">France </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">15% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye/4050-110332/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">8 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Generations: </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye </tspan><tspan fill="#dadada" opacity="0.5">&amp; </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye</tspan><tspan> </tspan><tspan fill="#dadada">(2017) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">103816 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/generations-hawkeye-hawkeye/4050-103816/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan><tspan fill="#dadada">9 </tspan><tspan> </tspan><tspan fill="#dadada" opacity="0.5">Hawkeye </tspan><tspan fill="#dadada" opacity="0.5">Annual</tspan><tspan> </tspan><tspan fill="#dadada">(2013) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">ID </tspan><tspan fill="#dadada" opacity="0.5">65627 </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">Marvel </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">1 </tspan><tspan fill="#dadada" opacity="0.5">issues </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#e5c76b" opacity="0.5">0% </tspan><tspan fill="#e5c76b" opacity="0.5">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan><tspan fill="#dadada" opacity="0.5">https://comicvine.gamespot.com/hawkeye-annual/4050-65627/</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">Recommended: </tspan><tspan fill="#dadada">Hawkeye </tspan><tspan fill="#dadada">— </tspan><tspan fill="#dadada">high </tspan><tspan fill="#dadada">confidence </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">choose </tspan><tspan fill="#dadada" opacity="0.5">candidate </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">select </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[o] </tspan><tspan fill="#dadada" opacity="0.5">open </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">skip</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="547.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[←/→] </tspan><tspan fill="#dadada" opacity="0.5">prev/next </tspan><tspan fill="#dadada" opacity="0.5">series </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[n] </tspan><tspan fill="#dadada" opacity="0.5">next </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[p] </tspan><tspan fill="#dadada" opacity="0.5">pin </tspan><tspan fill="#dadada" opacity="0.5">volume </tspan><tspan fill="#dadada" opacity="0.5">ID/URL </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[!] </tspan><tspan fill="#dadada" opacity="0.5">flag </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">research</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="561.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">accept </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[f] </tspan><tspan fill="#dadada" opacity="0.5">show </tspan><tspan fill="#dadada" opacity="0.5">all </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Saved </tspan><tspan fill="#dadada">state: </tspan><tspan fill="#dadada">/srv/comicmeta/rv2-state.json </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="590.4">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Review </tspan><tspan fill="#dadada">summary: </tspan><tspan fill="#dadada">/srv/comicmeta/rv2-summary.md </tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+</svg>

@@ -1,0 +1,152 @@
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta help</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">review </tspan><tspan>         </tspan><tspan fill="#dadada">scan, </tspan><tspan fill="#dadada">discover, </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">volumes </tspan><tspan fill="#dadada">+ </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">discover </tspan><tspan>       </tspan><tspan fill="#dadada">query </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">write </tspan><tspan fill="#dadada">candidate </tspan><tspan fill="#dadada">report </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">review-volumes </tspan><tspan> </tspan><tspan fill="#dadada">interactively </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">volume </tspan><tspan fill="#dadada">candidates </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">fetch-issues </tspan><tspan>   </tspan><tspan fill="#dadada">fetch </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">issues </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">volume </tspan><tspan fill="#dadada">selections </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">review-issues </tspan><tspan>  </tspan><tspan fill="#dadada">interactively </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">issue-level </tspan><tspan fill="#dadada">ComicInfo </tspan><tspan fill="#dadada">candidates </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">map </tspan><tspan>            </tspan><tspan fill="#dadada">generate </tspan><tspan fill="#dadada">CBZ-only </tspan><tspan fill="#dadada">writer </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">from </tspan><tspan fill="#dadada">issue </tspan><tspan fill="#dadada">review </tspan><tspan fill="#dadada">state </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Staging </tspan><tspan fill="#dadada">+ </tspan><tspan fill="#dadada">execution: </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">stage </tspan><tspan>          </tspan><tspan fill="#dadada">copy </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">CBZ </tspan><tspan fill="#dadada">files </tspan><tspan fill="#dadada">into </tspan><tspan fill="#dadada">an </tspan><tspan fill="#dadada">empty </tspan><tspan fill="#dadada">staging </tspan><tspan fill="#dadada">root </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">validate </tspan><tspan>       </tspan><tspan fill="#dadada">validate </tspan><tspan fill="#dadada">staged </tspan><tspan fill="#dadada">ComicInfo </tspan><tspan fill="#dadada">writes </tspan><tspan fill="#dadada">against </tspan><tspan fill="#dadada">production </tspan><tspan fill="#dadada">state </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">write </tspan><tspan>          </tspan><tspan fill="#dadada">write </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">into </tspan><tspan fill="#dadada">CBZ </tspan><tspan fill="#dadada">archives </tspan><tspan fill="#dadada">(requires </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">mapping) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">status </tspan><tspan>         </tspan><tspan fill="#dadada">show </tspan><tspan fill="#dadada">context, </tspan><tspan fill="#dadada">library, </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">pipeline </tspan><tspan fill="#dadada">state </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">settings </tspan><tspan>       </tspan><tspan fill="#dadada">view </tspan><tspan fill="#dadada">or </tspan><tspan fill="#dadada">edit </tspan><tspan fill="#dadada">comicmeta.toml </tspan><tspan fill="#dadada">configuration </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">covers </tspan><tspan>         </tspan><tspan fill="#dadada">preview </tspan><tspan fill="#dadada">comic </tspan><tspan fill="#dadada">covers </tspan><tspan fill="#dadada">in </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">terminal </tspan><tspan fill="#dadada">(or </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">grid) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">health </tspan><tspan>         </tspan><tspan fill="#dadada">scan </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">corrupt </tspan><tspan fill="#dadada">archives </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">metadata </tspan><tspan fill="#dadada">problems </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">self-test </tspan><tspan>      </tspan><tspan fill="#dadada">check </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">environment </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">configuration </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">setup </tspan><tspan>          </tspan><tspan fill="#dadada">configure </tspan><tspan fill="#dadada">optional </tspan><tspan fill="#dadada">cover </tspan><tspan fill="#dadada">previews </tspan><tspan fill="#dadada">(installs </tspan><tspan fill="#dadada">timg </tspan><tspan fill="#dadada">or </tspan><tspan fill="#dadada">chafa </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">needed) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">update-check </tspan><tspan>   </tspan><tspan fill="#dadada">check </tspan><tspan fill="#dadada">whether </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">newer </tspan><tspan fill="#dadada">comicmeta </tspan><tspan fill="#dadada">version </tspan><tspan fill="#dadada">is </tspan><tspan fill="#dadada">available </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">logo </tspan><tspan>           </tspan><tspan fill="#dadada">print </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">comicmeta </tspan><tspan fill="#dadada">wordmark </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">inspect </tspan><tspan>        </tspan><tspan fill="#dadada">read </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">edit </tspan><tspan fill="#dadada">existing </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">metadata </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">organize </tspan><tspan>       </tspan><tspan fill="#dadada">audit </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">normalize </tspan><tspan fill="#dadada">strict-Comic </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">organization </tspan><tspan fill="#dadada">(dry-run </tspan><tspan fill="#dadada">default) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">browse </tspan><tspan>         </tspan><tspan fill="#dadada">navigate </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">an </tspan><tspan fill="#dadada">interactive </tspan><tspan fill="#dadada">file </tspan><tspan fill="#dadada">tree </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="316.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">context </tspan><tspan>        </tspan><tspan fill="#dadada">manage </tspan><tspan fill="#dadada">NAS </tspan><tspan fill="#dadada">contexts </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">help </tspan><tspan>           </tspan><tspan fill="#dadada">show </tspan><tspan fill="#dadada">help </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">command </tspan><tspan fill="#dadada">(alias </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">COMMAND </tspan><tspan fill="#dadada">--help) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">completion </tspan><tspan>     </tspan><tspan fill="#dadada">generate </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">shell </tspan><tspan fill="#dadada">completion </tspan><tspan fill="#dadada">script </tspan><tspan fill="#dadada">(zsh </tspan><tspan fill="#dadada">or </tspan><tspan fill="#dadada">bash) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="374.4">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Inspection: </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">browse </tspan><tspan>         </tspan><tspan fill="#dadada">navigate </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">library </tspan><tspan fill="#dadada">as </tspan><tspan fill="#dadada">an </tspan><tspan fill="#dadada">interactive </tspan><tspan fill="#dadada">file </tspan><tspan fill="#dadada">tree </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">inspect </tspan><tspan>        </tspan><tspan fill="#dadada">read </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">edit </tspan><tspan fill="#dadada">existing </tspan><tspan fill="#dadada">ComicInfo.xml </tspan><tspan fill="#dadada">metadata </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">flags </tspan><tspan>          </tspan><tspan fill="#dadada">list </tspan><tspan fill="#dadada">series/issues </tspan><tspan fill="#dadada">flagged </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">research, </tspan><tspan fill="#dadada">or </tspan><tspan fill="#dadada">clear </tspan><tspan fill="#dadada">flags </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="432">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dadada">backups </tspan><tspan>        </tspan><tspan fill="#dadada">list </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">manage </tspan><tspan fill="#dadada">stored </tspan><tspan fill="#dadada">backups </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan fill="#67b0e8" font-weight="bold">options:</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#8ccf7e" font-weight="bold">-h</tspan><tspan fill="#dadada">, </tspan><tspan fill="#6cbfbf" font-weight="bold">--help</tspan><tspan>            </tspan><tspan fill="#dadada">show </tspan><tspan fill="#dadada">this </tspan><tspan fill="#dadada">help </tspan><tspan fill="#dadada">message </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">exit </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="489.6">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#6cbfbf" font-weight="bold">--version</tspan><tspan>             </tspan><tspan fill="#dadada">show </tspan><tspan fill="#dadada">program's </tspan><tspan fill="#dadada">version </tspan><tspan fill="#dadada">number </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">exit </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#6cbfbf" font-weight="bold">--context</tspan><tspan fill="#dadada">, </tspan><tspan fill="#8ccf7e" font-weight="bold">-c</tspan><tspan> </tspan><tspan fill="#e5c76b" font-weight="bold">CONTEXT</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                        </tspan><tspan fill="#dadada">run </tspan><tspan fill="#dadada">against </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">named </tspan><tspan fill="#dadada">context </tspan><tspan fill="#dadada">(default: </tspan><tspan fill="#dadada">active </tspan><tspan fill="#dadada">context) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#6cbfbf" font-weight="bold">--debug</tspan><tspan>               </tspan><tspan fill="#dadada">show </tspan><tspan fill="#dadada">full </tspan><tspan fill="#dadada">traceback </tspan><tspan fill="#dadada">on </tspan><tspan fill="#dadada">unexpected </tspan><tspan fill="#dadada">errors </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="547.2">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#6cbfbf" font-weight="bold">--no-input</tspan><tspan>            </tspan><tspan fill="#dadada">never </tspan><tspan fill="#dadada">prompt; </tspan><tspan fill="#dadada">fail </tspan><tspan fill="#dadada">if </tspan><tspan fill="#dadada">a </tspan><tspan fill="#dadada">prompt </tspan><tspan fill="#dadada">would </tspan><tspan fill="#dadada">be </tspan><tspan fill="#dadada">required </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="576">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Run </tspan><tspan fill="#dadada">in </tspan><tspan fill="#dadada">order: </tspan><tspan fill="#dadada">discover </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">review-volumes </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">fetch-issues </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">review-issues </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">map </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">stage </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">validate </tspan><tspan fill="#dadada">→ </tspan><tspan fill="#dadada">write </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="604.8">
+<text xml:space="preserve" y="0.96em"><tspan fill="#dadada">Report </tspan><tspan fill="#dadada">issues: </tspan><tspan fill="#dadada">https://github.com/CripWal/comicmeta/issues </tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>

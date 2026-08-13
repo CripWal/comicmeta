@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1055.2" height="725.6" viewBox="0 0 1055.2 725.6">
+<style>
+@keyframes f0 { 0%,29.23080538702697% { opacity: 1 } 29.23180538702697%,100% { opacity: 0 } }
+@keyframes f1 { 0%,29.23080538702697% { opacity: 0 } 29.23180538702697%,52.7965053052158% { opacity: 1 } 52.7975053052158%,100% { opacity: 0 } }
+@keyframes f2 { 0%,52.7965053052158% { opacity: 0 } 52.7975053052158%,64.65734889924387% { opacity: 1 } 64.65834889924388%,100% { opacity: 0 } }
+@keyframes f3 { 0%,64.65734889924387% { opacity: 0 } 64.65834889924388%,76.49349830888099% { opacity: 1 } 76.49449830888099%,100% { opacity: 0 } }
+@keyframes f4 { 0%,76.49349830888099% { opacity: 0 } 76.49449830888099%,88.30767784518922% { opacity: 1 } 88.30867784518922%,100% { opacity: 0 } }
+@keyframes f5 { 0%,88.30767784518922% { opacity: 0 } 88.30767784518922%,100% { opacity: 1 } }
+</style>
+<g style="opacity:0;animation:f0 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Scan </tspan><tspan fill="#dadada">this </tspan><tspan fill="#dadada">directory, </tspan><tspan fill="#dadada">discover </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">candidates, </tspan><tspan fill="#dadada">review </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">volumes </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">issues, </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">emit </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">mapping. </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Navigate </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">as </tspan><tspan fill="#dadada" opacity="0.5">an </tspan><tspan fill="#dadada" opacity="0.5">expandable </tspan><tspan fill="#dadada" opacity="0.5">file </tspan><tspan fill="#dadada" opacity="0.5">tree; </tspan><tspan fill="#dadada" opacity="0.5">Enter </tspan><tspan fill="#dadada" opacity="0.5">inspects</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">file's </tspan><tspan fill="#dadada" opacity="0.5">existing </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">metadata. </tspan><tspan fill="#dadada" opacity="0.5">(read-only </tspan><tspan fill="#dadada" opacity="0.5">unless </tspan><tspan fill="#dadada" opacity="0.5">edited)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                 </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">run </tspan><tspan fill="#dadada" font-weight="bold">review </tspan><tspan fill="#dadada" font-weight="bold">· </tspan><tspan fill="#dadada" font-weight="bold">[f] </tspan><tspan fill="#dadada" font-weight="bold">fresh </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f1 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M19.2,7.2 H19.8 V8.4 H19.2 Z" fill="#dadada" stroke="#dadada"/>
+<path d="M19.8,7.2 H21 V8.4 H19.8 Z" fill="#6cbfbf" stroke="#6cbfbf"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">┌──────────────────────────────────────────────────────────────────────┐ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">settings </tspan><tspan>                                                  </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada">❯ </tspan><tspan fill="#dadada">▍ </tspan><tspan>                                                                 </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">APPEARANCE</tspan><tspan>                                                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#141b1e">❯ </tspan><tspan fill="#6cbfbf" font-weight="bold">Enable </tspan><tspan fill="#6cbfbf" font-weight="bold">colors</tspan><tspan>                       </tspan><tspan fill="#6cbfbf">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Interactive </tspan><tspan fill="#dadada">dashboard </tspan><tspan>              </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Check </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">updates </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Color </tspan><tspan fill="#dadada">theme </tspan><tspan>                        </tspan><tspan fill="#dadada" opacity="0.5">classic</tspan><tspan>                        </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Cover </tspan><tspan fill="#dadada">previews </tspan><tspan>                     </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">CONNECTIONS</tspan><tspan>                                                           </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan></text>
+<text textLength="0.6em" x="21em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">＋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                      </tspan><tspan fill="#dadada">Add </tspan><tspan fill="#dadada">connection… </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">add</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">ADVANCED</tspan><tspan>                                                              </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Show </tspan><tspan fill="#dadada">advanced </tspan><tspan fill="#dadada">settings… </tspan><tspan>            </tspan><tspan fill="#dadada" opacity="0.5">API </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">review </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">write</tspan><tspan>   </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada" opacity="0.5">file: </tspan><tspan fill="#dadada" opacity="0.5">/srv/comicmeta/config/comicmeta/comicmeta.toml</tspan><tspan>            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Enable </tspan><tspan fill="#dadada" opacity="0.5">ANSI </tspan><tspan fill="#dadada" opacity="0.5">colors </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">terminal </tspan><tspan fill="#dadada" opacity="0.5">output.</tspan><tspan>                              </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">└─────────────────────────────────────────────────���────────────────────┘ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada" opacity="0.5">type </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">search </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">⌫ </tspan><tspan fill="#dadada" opacity="0.5">clear </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">advanced </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">open/edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f2 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M19.2,8.4 H19.8 V9.6 H19.2 Z" fill="#dadada" stroke="#dadada"/>
+<path d="M19.8,8.4 H21 V9.6 H19.8 Z" fill="#6cbfbf" stroke="#6cbfbf"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">┌──────────────────────────────────────────────────────────────────────┐ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">settings </tspan><tspan>                                                  </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada">❯ </tspan><tspan fill="#dadada">▍ </tspan><tspan>                                                                 </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">APPEARANCE</tspan><tspan>                                                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Enable </tspan><tspan fill="#dadada">colors </tspan><tspan>                      </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#141b1e">❯ </tspan><tspan fill="#6cbfbf" font-weight="bold">Interactive </tspan><tspan fill="#6cbfbf" font-weight="bold">dashboard</tspan><tspan>               </tspan><tspan fill="#6cbfbf">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Check </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">updates </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Color </tspan><tspan fill="#dadada">theme </tspan><tspan>                        </tspan><tspan fill="#dadada" opacity="0.5">classic</tspan><tspan>                        </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Cover </tspan><tspan fill="#dadada">previews </tspan><tspan>                     </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">CONNECTIONS</tspan><tspan>                                                           </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan></text>
+<text textLength="0.6em" x="21em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">＋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                      </tspan><tspan fill="#dadada">Add </tspan><tspan fill="#dadada">connection… </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">add</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">ADVANCED</tspan><tspan>                                                              </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Show </tspan><tspan fill="#dadada">advanced </tspan><tspan fill="#dadada">settings… </tspan><tspan>            </tspan><tspan fill="#dadada" opacity="0.5">API </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">review </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">write</tspan><tspan>   </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada" opacity="0.5">file: </tspan><tspan fill="#dadada" opacity="0.5">/srv/comicmeta/config/comicmeta/comicmeta.toml</tspan><tspan>            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Show </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">interactive </tspan><tspan fill="#dadada" opacity="0.5">dashboard </tspan><tspan fill="#dadada" opacity="0.5">when </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">with </tspan><tspan fill="#dadada" opacity="0.5">no </tspan><tspan fill="#dadada" opacity="0.5">command.</tspan><tspan>            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">└─────────────────────────────────────────────────���────────────────────┘ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada" opacity="0.5">type </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">search </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">⌫ </tspan><tspan fill="#dadada" opacity="0.5">clear </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">advanced </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">open/edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f3 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M19.2,9.6 H19.8 V10.8 H19.2 Z" fill="#dadada" stroke="#dadada"/>
+<path d="M19.8,9.6 H21 V10.8 H19.8 Z" fill="#6cbfbf" stroke="#6cbfbf"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">┌──────────────────────────────────────────────────────────────────────┐ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">settings </tspan><tspan>                                                  </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada">❯ </tspan><tspan fill="#dadada">▍ </tspan><tspan>                                                                 </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">APPEARANCE</tspan><tspan>                                                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Enable </tspan><tspan fill="#dadada">colors </tspan><tspan>                      </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Interactive </tspan><tspan fill="#dadada">dashboard </tspan><tspan>              </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#141b1e">❯ </tspan><tspan fill="#6cbfbf" font-weight="bold">Check </tspan><tspan fill="#6cbfbf" font-weight="bold">for </tspan><tspan fill="#6cbfbf" font-weight="bold">updates</tspan><tspan>                   </tspan><tspan fill="#6cbfbf">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Color </tspan><tspan fill="#dadada">theme </tspan><tspan>                        </tspan><tspan fill="#dadada" opacity="0.5">classic</tspan><tspan>                        </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Cover </tspan><tspan fill="#dadada">previews </tspan><tspan>                     </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">CONNECTIONS</tspan><tspan>                                                           </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan></text>
+<text textLength="0.6em" x="21em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">＋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                      </tspan><tspan fill="#dadada">Add </tspan><tspan fill="#dadada">connection… </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">add</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">ADVANCED</tspan><tspan>                                                              </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Show </tspan><tspan fill="#dadada">advanced </tspan><tspan fill="#dadada">settings… </tspan><tspan>            </tspan><tspan fill="#dadada" opacity="0.5">API </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">review </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">write</tspan><tspan>   </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada" opacity="0.5">file: </tspan><tspan fill="#dadada" opacity="0.5">/srv/comicmeta/config/comicmeta/comicmeta.toml</tspan><tspan>            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Check </tspan><tspan fill="#dadada" opacity="0.5">PyPI </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">newer </tspan><tspan fill="#dadada" opacity="0.5">version </tspan><tspan fill="#dadada" opacity="0.5">on </tspan><tspan fill="#dadada" opacity="0.5">startup.</tspan><tspan>                          </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">└─────────────────────────────────────────────────���────────────────────┘ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada" opacity="0.5">type </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">search </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">⌫ </tspan><tspan fill="#dadada" opacity="0.5">clear </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">advanced </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">open/edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f4 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025">
+<path d="M19.2,10.8 H19.8 V12 H19.2 Z" fill="#dadada" stroke="#dadada"/>
+<path d="M19.8,10.8 H21 V12 H19.8 Z" fill="#6cbfbf" stroke="#6cbfbf"/>
+</g>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">┌──────────────────────────────────────────────────────────────────────┐ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">settings </tspan><tspan>                                                  </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada">❯ </tspan><tspan fill="#dadada">▍ </tspan><tspan>                                                                 </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">APPEARANCE</tspan><tspan>                                                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Enable </tspan><tspan fill="#dadada">colors </tspan><tspan>                      </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="100.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Interactive </tspan><tspan fill="#dadada">dashboard </tspan><tspan>              </tspan><tspan fill="#dadada" opacity="0.5">yes</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Check </tspan><tspan fill="#dadada">for </tspan><tspan fill="#dadada">updates </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="129.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan> </tspan><tspan fill="#141b1e">❯ </tspan><tspan fill="#6cbfbf" font-weight="bold">Color </tspan><tspan fill="#6cbfbf" font-weight="bold">theme</tspan><tspan>                         </tspan><tspan fill="#6cbfbf">classic</tspan><tspan>                        </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Cover </tspan><tspan fill="#dadada">previews </tspan><tspan>                     </tspan><tspan fill="#dadada" opacity="0.5">no</tspan><tspan>                             </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">CONNECTIONS</tspan><tspan>                                                           </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan></text>
+<text textLength="0.6em" x="21em" xml:space="preserve" y="0.96em"><tspan fill="#dadada">＋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                      </tspan><tspan fill="#dadada">Add </tspan><tspan fill="#dadada">connection… </tspan><tspan>                  </tspan><tspan fill="#dadada" opacity="0.5">add</tspan><tspan>                            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="201.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan fill="#dadada" font-weight="bold">ADVANCED</tspan><tspan>                                                              </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>  </tspan><tspan fill="#dadada">Show </tspan><tspan fill="#dadada">advanced </tspan><tspan fill="#dadada">settings… </tspan><tspan>            </tspan><tspan fill="#dadada" opacity="0.5">API </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">paths </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">review </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">write</tspan><tspan>   </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan>                                                                     </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="259.2">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│ </tspan><tspan fill="#dadada" opacity="0.5">file: </tspan><tspan fill="#dadada" opacity="0.5">/srv/comicmeta/config/comicmeta/comicmeta.toml</tspan><tspan>            </tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">├──────────────────────────────────────────────────────────────────────┤ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">│</tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">Palette </tspan><tspan fill="#dadada" opacity="0.5">name: </tspan><tspan fill="#dadada" opacity="0.5">classic, </tspan><tspan fill="#dadada" opacity="0.5">marvel, </tspan><tspan fill="#dadada" opacity="0.5">dc, </tspan><tspan fill="#dadada" opacity="0.5">noir, </tspan><tspan fill="#dadada" opacity="0.5">technicolor, </tspan><tspan fill="#dadada" opacity="0.5">beige, </tspan><tspan fill="#dadada" opacity="0.5">or </tspan><tspan fill="#dadada" opacity="0.5">bookshelf.</tspan><tspan fill="#dadada">│ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                               </tspan><tspan fill="#dadada">└───────────────────────────────────────────────���──────────────────────┘ </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada" opacity="0.5">type </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">search </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">⌫ </tspan><tspan fill="#dadada" opacity="0.5">clear </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan>  </tspan><tspan fill="#dadada" opacity="0.5">[a] </tspan><tspan fill="#dadada" opacity="0.5">advanced </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">open/edit </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">back</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+<g style="opacity:0;animation:f5 8.552621s steps(1,end) infinite">
+<svg height="725.6" width="1055.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="733.6" id="shadow" width="1063.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="661.6" rx="10" ry="10" width="991.2" x="4" y="12"/>
+<rect fill="#141b1e" height="661.6" rx="10" ry="10" width="991.2"/>
+<clipPath id="header">
+<rect height="28" width="991.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#eef0f1" height="56" rx="10" ry="10" width="991.2"/>
+<line stroke="#80808080" stroke-width="0.5" x1="0" x2="991.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#474747" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="495.6" y="14">comicmeta</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#d85a51" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#d19d36" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#39ac42" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="633.6" width="991.2" y="28">
+<svg fill="#dadada" x="9.6" y="7.2">
+<g>
+<svg height="619.2" viewBox="0 0 81 51.6" width="972">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="0">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#66c6de">▞▀▖</tspan><tspan>       </tspan><tspan fill="#66c6de">▗</tspan><tspan>    </tspan><tspan fill="#66c6de">▙▗▌</tspan><tspan>   </tspan><tspan fill="#66c6de">▐</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="14.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#44b9d7">▌</tspan><tspan>  </tspan><tspan fill="#44b9d7">▞▀▖▛▚▀▖▄</tspan><tspan> </tspan><tspan fill="#44b9d7">▞▀▖▌▘▌▞▀▖▜▀</tspan><tspan> </tspan><tspan fill="#44b9d7">▝▀▖</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="28.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌▐</tspan><tspan> </tspan><tspan fill="#22adcf">▌</tspan><tspan> </tspan><tspan fill="#22adcf">▖▌</tspan><tspan> </tspan><tspan fill="#22adcf">▌▛▀</tspan><tspan> </tspan><tspan fill="#22adcf">▐</tspan><tspan> </tspan><tspan fill="#22adcf">▖▞▀▌</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                      </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▀▘▝▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▘▝▀▘</tspan><tspan> </tspan><tspan fill="#00a0c8">▀</tspan><tspan> </tspan><tspan fill="#00a0c8">▝▀▘</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="72">
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan><tspan fill="#6cbfbf">comicmeta </tspan><tspan fill="#6cbfbf">— </tspan><tspan fill="#6cbfbf">review-then-write </tspan><tspan fill="#6cbfbf">ComicVine </tspan><tspan fill="#6cbfbf">metadata</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                               </tspan><tspan fill="#dadada" opacity="0.5">(every </tspan><tspan fill="#dadada" opacity="0.5">step </tspan><tspan fill="#dadada" opacity="0.5">before </tspan><tspan fill="#dadada" opacity="0.5">`write` </tspan><tspan fill="#dadada" opacity="0.5">is </tspan><tspan fill="#dadada" opacity="0.5">read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="115.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan><tspan fill="#8ccf7e" opacity="0.5">● </tspan><tspan fill="#8ccf7e" opacity="0.5">local</tspan><tspan>  </tspan><tspan fill="#dadada">no </tspan><tspan fill="#dadada">mapping </tspan><tspan fill="#dadada">yet </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="144">
+<text xml:space="preserve" y="0.96em"><tspan>                                                               </tspan><tspan fill="#dadada" font-weight="bold">PIPELINE</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="158.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                 </tspan><tspan fill="#dadada">▸ </tspan><tspan fill="#6cbfbf" font-weight="bold">review</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="172.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">Scan </tspan><tspan fill="#dadada">this </tspan><tspan fill="#dadada">directory, </tspan><tspan fill="#dadada">discover </tspan><tspan fill="#dadada">ComicVine </tspan><tspan fill="#dadada">candidates, </tspan><tspan fill="#dadada">review </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="187.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada">volumes </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">issues, </tspan><tspan fill="#dadada">and </tspan><tspan fill="#dadada">emit </tspan><tspan fill="#dadada">the </tspan><tspan fill="#dadada">reviewed </tspan><tspan fill="#dadada">mapping. </tspan><tspan fill="#dadada">(read-only) </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="216">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">write</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="230.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Back </tspan><tspan fill="#dadada" opacity="0.5">up </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">insert </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">into </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">reviewed </tspan><tspan fill="#dadada" opacity="0.5">CBZ </tspan><tspan fill="#dadada" opacity="0.5">files.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="244.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(mutating)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="273.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">convert</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="288">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Convert </tspan><tspan fill="#dadada" opacity="0.5">.cbr </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">to </tspan><tspan fill="#dadada" opacity="0.5">.cbz </tspan><tspan fill="#dadada" opacity="0.5">so </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">can </tspan><tspan fill="#dadada" opacity="0.5">be </tspan><tspan fill="#dadada" opacity="0.5">written.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="302.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Shows </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">picker; </tspan><tspan fill="#dadada" opacity="0.5">originals </tspan><tspan fill="#dadada" opacity="0.5">are </tspan><tspan fill="#dadada" opacity="0.5">kept </tspan><tspan fill="#dadada" opacity="0.5">in </tspan><tspan fill="#dadada" opacity="0.5">comicmeta-backups.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="331.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">browse</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="345.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Navigate </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">as </tspan><tspan fill="#dadada" opacity="0.5">an </tspan><tspan fill="#dadada" opacity="0.5">expandable </tspan><tspan fill="#dadada" opacity="0.5">file </tspan><tspan fill="#dadada" opacity="0.5">tree; </tspan><tspan fill="#dadada" opacity="0.5">Enter </tspan><tspan fill="#dadada" opacity="0.5">inspects</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="360">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">a </tspan><tspan fill="#dadada" opacity="0.5">file's </tspan><tspan fill="#dadada" opacity="0.5">existing </tspan><tspan fill="#dadada" opacity="0.5">ComicInfo.xml </tspan><tspan fill="#dadada" opacity="0.5">metadata. </tspan><tspan fill="#dadada" opacity="0.5">(read-only </tspan><tspan fill="#dadada" opacity="0.5">unless </tspan><tspan fill="#dadada" opacity="0.5">edited)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="388.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">organize</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="403.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Audit </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">propose </tspan><tspan fill="#dadada" opacity="0.5">strict-Comic </tspan><tspan fill="#dadada" opacity="0.5">organization </tspan><tspan fill="#dadada" opacity="0.5">(AGENTS.md </tspan><tspan fill="#dadada" opacity="0.5">rules).</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="417.6">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(dry-run </tspan><tspan fill="#dadada" opacity="0.5">by </tspan><tspan fill="#dadada" opacity="0.5">default)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="446.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                   </tspan><tspan fill="#dadada" font-weight="bold">health</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="460.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">Scan </tspan><tspan fill="#dadada" opacity="0.5">the </tspan><tspan fill="#dadada" opacity="0.5">library </tspan><tspan fill="#dadada" opacity="0.5">for </tspan><tspan fill="#dadada" opacity="0.5">corrupt </tspan><tspan fill="#dadada" opacity="0.5">archives </tspan><tspan fill="#dadada" opacity="0.5">and </tspan><tspan fill="#dadada" opacity="0.5">metadata </tspan><tspan fill="#dadada" opacity="0.5">problems.</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="475.2">
+<text xml:space="preserve" y="0.96em"><tspan>                                     </tspan><tspan fill="#dadada" opacity="0.5">(read-only)</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="504">
+<text xml:space="preserve" y="0.96em"><tspan>                       </tspan><tspan fill="#dadada" opacity="0.5">[↑/↓] </tspan><tspan fill="#dadada" opacity="0.5">move </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[1-6] </tspan><tspan fill="#dadada" opacity="0.5">jump </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[Enter] </tspan><tspan fill="#dadada" opacity="0.5">run </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[c] </tspan><tspan fill="#dadada" opacity="0.5">context </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[s] </tspan><tspan fill="#dadada" opacity="0.5">settings </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[h] </tspan><tspan fill="#dadada" opacity="0.5">help </tspan><tspan fill="#dadada" opacity="0.5">· </tspan><tspan fill="#dadada" opacity="0.5">[q] </tspan><tspan fill="#dadada" opacity="0.5">quit</tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="518.4">
+<text xml:space="preserve" y="0.96em"><tspan>                                                             </tspan><tspan fill="#dadada" opacity="0.5">target: </tspan><tspan fill="#dadada" opacity="0.5">local </tspan></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="972" y="532.8">
+<text xml:space="preserve" y="0.96em"><tspan>                                                 </tspan><tspan fill="#dadada" font-weight="bold">[Enter] </tspan><tspan fill="#dadada" font-weight="bold">run </tspan><tspan fill="#dadada" font-weight="bold">review </tspan><tspan fill="#dadada" font-weight="bold">· </tspan><tspan fill="#dadada" font-weight="bold">[f] </tspan><tspan fill="#dadada" font-weight="bold">fresh </tspan><tspan fill="#dadada" font-weight="bold">review</tspan></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="661.6" rx="10" ry="10" stroke="#80808080" stroke-width="0.5" width="991.2"/>
+<rect fill="none" height="659.6" rx="9" ry="9" stroke="#ffffff80" stroke-width="0.5" width="989.2" x="1" y="1"/>
+</g>
+<style>
+@font-face {
+	font-family: JetBrains Mono;
+	font-weight: 100 800;
+	font-style: normal;
+	src: url(https://raw.githubusercontent.com/pamburus/fonts/refs/heads/main/JetBrainsMono/fonts/variable/JetBrainsMono%5Bwght%5D.woff2) format('woff2');
+}
+</style>
+</svg>
+</g>
+</svg>

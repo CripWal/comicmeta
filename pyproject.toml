@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "comicmeta"
+version = "1.0.1"
+description = "Controlled ComicVine metadata pipeline for comic archives (CBZ-safe)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Chris Gutierrez" }]
+keywords = ["comics", "comicvine", "comicinfo", "cbz", "metadata"]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Graphics :: Editors",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+[project.scripts]
+comicmeta = "comicmeta.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/CripWal/comicmeta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+comicmeta = ["py.typed"]
+
+[tool.setuptools.exclude-package-data]
+comicmeta = []
+
+[tool.setuptools]
+include-package-data = false
