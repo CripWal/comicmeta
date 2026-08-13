@@ -8,12 +8,12 @@ version = "1.0.1"
 description = "Controlled ComicVine metadata pipeline for comic archives (CBZ-safe)"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "CripWal" }]
 keywords = ["comics", "comicvine", "comicinfo", "cbz", "metadata"]
 classifiers = [
     "Environment :: Console",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
