@@ -1,77 +1,106 @@
-# comicmeta
+<p align="center">
+  <img src="docs/showcase/browse-cover.svg" alt="comicmeta — browse your library, review against ComicVine, write ComicInfo.xml safely" style="max-width: 720px; width: 100%; height: auto;">
+</p>
 
-A CLI for the controlled ComicVine metadata pipeline for comic archives. Review
-matches, then write `ComicInfo.xml` into your CBZ files — the metadata format
-Kavita, Jellyfin, and Komga read for library organization.
+A comic archive without `ComicInfo.xml` is just a folder of images. Your reader — Kavita, Jellyfin, Komga — can't tell one issue from the next, and filling that metadata in by hand, series after series, is the kind of chore a terminal should swallow whole.
 
-Every step **before** `write` is read-only. `write` requires an explicit
-reviewed mapping and creates verified backups. CBZ is the only writeable
-format; CBR is reported but never modified. The interactive experience is
-designed for macOS Terminal, with local, external-drive, and NAS libraries
-using the same commands.
+comicmeta is a **review-first ComicVine metadata pipeline** for comic archives. It scans your library, matches every file against ComicVine, walks you through the review, and writes `ComicInfo.xml` into each CBZ — with backups, and only the files you approve. Everything before `write` is read-only.
 
-Pure Python stdlib — zero production runtime dependencies. Works on Python 3.11+.
+Pure Python stdlib, zero production dependencies. Python 3.11+.
 
-## Install
+## Get started
 
-```sh
-pip install comicmeta
-```
+1. **Install**
 
-Or via Homebrew:
+   ```sh
+   pip install comicmeta
+   ```
 
-```sh
-brew tap CripWal/comicmeta
-brew install comicmeta
-```
+   or via Homebrew:
 
-Or Docker (for NAS / headless batch operations — see [Docker](#docker)):
+   ```sh
+   brew tap CripWal/comicmeta
+   brew install comicmeta
+   ```
 
-```sh
-docker build -t comicmeta .
-```
+2. **Open your terminal** in your comic folder:
 
-## Quick start
+   ```sh
+   cd /path/to/comics
+   comicmeta
+   ```
 
-```sh
-cd /path/to/comics
-comicmeta
-```
+   The dashboard opens with the pipeline ready. Arrow around, jump straight to a step, or open Settings — and for a quick read of the library without the TUI:
 
-Running `comicmeta` with no arguments opens an interactive dashboard
-navigable with arrow keys. It guides you through health, browse, review,
-organize, and write. For a direct safe preview:
+   ```sh
+   comicmeta health --source /path/to/comics
+   comicmeta organize --source /path/to/comics --dry-run
+   ```
 
-```sh
-comicmeta health --source /path/to/comics
-comicmeta organize --source /path/to/comics --dry-run
-```
+## Browse the library
 
-Organize offers an explicit apply step after showing its proposed changes.
-`Ctrl-C` quits cleanly.
+Expand the tree down to your files, open an issue, and see its cover, metadata, and summary. Flag anything that needs research, choose a named alternate cover, or open the series gallery — all read-only.
 
-## Interactive walkthrough
+<p align="center">
+  <img src="docs/showcase/browse.svg" alt="comicmeta's browse view: the library tree and issue card" style="max-width: 720px; width: 100%; height: auto;">
+</p>
 
-Animated SVG recordings of the terminal UI (open in a browser to play —
-CSS animations, no video):
+## Review against ComicVine
 
-### Dashboard — arrow-key navigation
-<img src="docs/showcase/menu.svg" alt="Dashboard navigation" width="640">
+comicmeta queries ComicVine for every series, scores the candidates, and lets you accept, skip, or flag each one. State persists between runs, so a big library can be reviewed across sessions.
 
-### Browse — expand the library tree and open an issue card
-<img src="docs/showcase/browse.svg" alt="Browse the library tree" width="640">
+<p align="center">
+  <img src="docs/showcase/review.svg" alt="comicmeta's volume review: scroll ComicVine candidates and accept" style="max-width: 720px; width: 100%; height: auto;">
+</p>
 
-### Browse an issue — cover art preview
-<img src="docs/showcase/browse-cover.svg" alt="Browse with cover art" width="640">
+## Convert, write, done
 
-### Volume review — scroll ComicVine candidates and accept
-<img src="docs/showcase/review.svg" alt="Volume review" width="640">
+CBR archives can't carry `ComicInfo.xml`, so comicmeta offers to convert them to CBZ before reviewing. Once the review is complete, `write` inserts ComicInfo into only the approved files — after a verified backup.
 
-### Review flow — CBR warning, convert picker, volume review
-<img src="docs/showcase/review-convert.svg" alt="Review with convert picker" width="640">
+<p align="center">
+  <img src="docs/showcase/review-convert.svg" alt="comicmeta's review flow: CBR warning, convert picker, volume review" style="max-width: 720px; width: 100%; height: auto;">
+</p>
 
-### Settings panel
-<img src="docs/showcase/settings.svg" alt="Settings panel" width="640">
+## Everything, lightly
+
+The whole app in one glance — each of these is a real command, and each has a
+dedicated page in the [wiki](#the-wiki) when you want to go deep.
+
+| Do this | Command | What it does |
+|---|---|---|
+| Browse | `browse` | Read-only tree of the library, covers, flags, series gallery |
+| Check up | `health` | Scan for corrupt archives and missing metadata |
+| Name things | `organize` | Rename files/folders to `Series (Year) #NNN`; dry-run by default |
+| Convert | `convert` | CBR → CBZ when a reader won't touch CBR |
+| Review | `review-volumes` / `review-issues` | Match files against ComicVine, accept/skip/flag |
+| Write | `write` | Insert `ComicInfo.xml` into approved CBZs, with backups |
+| Research | `flags` / `missing` | Track flagged series and ComicVine issues not in your library |
+| Configure | `settings` / `context` | TOML settings; local vs NAS context |
+
+## The wiki
+
+[wiki]: https://github.com/CripWal/comicmeta/wiki
+
+The README is the headline; the [wiki][wiki] is the full story. It covers
+install and first-run ([Getting Started][wiki:gs]), the review-to-write flow
+([Review and Write][wiki:rw]), renaming and health ([Health and Organize][wiki:ho]),
+libraries on a NAS ([Library Contexts][wiki:lc]), covers ([Browse and
+Covers][wiki:bc]), settings, troubleshooting, and the 1.0 release notes.
+
+[wiki:gs]: https://github.com/CripWal/comicmeta/wiki/Getting-Started
+[wiki:rw]: https://github.com/CripWal/comicmeta/wiki/Review-and-Write
+[wiki:ho]: https://github.com/CripWal/comicmeta/wiki/Health-and-Organize
+[wiki:lc]: https://github.com/CripWal/comicmeta/wiki/Library-Contexts
+[wiki:bc]: https://github.com/CripWal/comicmeta/wiki/Browse-and-Covers
+
+## Safe by design
+
+| Promise | How |
+|---|---|
+| Nothing changes before you approve it | Every step up to `write` is read-only |
+| `write` never surprises you | Requires an explicit reviewed mapping and creates a verified backup per file |
+| CBZ only | CBR is reported or converted — never modified in place |
+| Failures stay small | A failed file rolls back from its backup; the batch continues |
 
 ## The pipeline
 
@@ -94,7 +123,11 @@ skips files that already have complete metadata. `write` refuses to replace any
 existing ComicInfo.xml automatically; those files require a separately
 approved replacement flow.
 
-## Mac vs NAS
+## Where it runs
+
+Local drive, external share, or NAS — the same commands either way.
+
+### Mac vs NAS
 
 If your comic library lives on a local drive (external HDD/SSD, internal
 storage), run comicmeta directly — it's fast.
@@ -129,11 +162,7 @@ renames:
 |---------|-------|-----|
 | Metadata review and mapping | Either | Uses JSON state and reports; run it wherever your working state is available |
 | Archive inspection, health, and discovery | Near the library | Reads CBZ/CBR archives, so local or NAS execution avoids unnecessary network traffic |
-| Write and organize | On the library’s host | Mutates files and folders; use the configured context or run locally on the mounted drive |
-
-Contexts replace the need for a hand-maintained NAS wrapper: they store the
-remote host, library path, and state path in ComicMeta and work regardless of
-the directory from which you launch the command.
+| Write and organize | On the library's host | Mutates files and folders; use the configured context or run locally on the mounted drive |
 
 ### Docker
 
@@ -159,7 +188,7 @@ The Docker container runs **headless batch commands only** (discover, inspect,
 write, health, etc.). Interactive review stays on your workstation against
 synced state files.
 
-## Full command reference
+## Commands
 
 ```sh
 # Query ComicVine and write a candidate report (read-only)
@@ -196,7 +225,7 @@ comicmeta write --source /path/to/comics --mapping reviewed-mapping.json \
   --report write-report.json
 ```
 
-### Other commands
+Other commands:
 
 ```sh
 comicmeta status [--json]      # one-glance view of context, library, pipeline state
@@ -213,26 +242,10 @@ comicmeta self-test            # smoke-test the environment + config
 comicmeta settings [--init]    # show/scaffold/edit comicmeta.toml
 comicmeta help [command]       # show help for a command (alias for --help)
 comicmeta completion zsh|bash  # generate a shell completion script
-
-For full-color cover previews in macOS Terminal, comicmeta offers to install
-the optional `timg` renderer with Homebrew on first run. No software is
-installed on the library drive. Cover previews can be enabled or disabled
-later from Settings. Browse supports flagging/unflagging from the issue view,
-named alternate-cover selection, and a gallery for a series.
 ```
 
 Global flags: `--context NAME` (run against a NAS context), `--debug` (show a
 full traceback on unexpected errors), `--no-input` (never prompt; fail instead).
-
-The dashboard runs `organize` as a dry-run first, then offers an explicit apply
-step. It can infer missing starting years and series names from numbered archive
-filenames, including collected editions named like `01 (of 5) (1993)`.
-For rsync NAS contexts, the current comicmeta source is synchronized
-automatically before remote commands run; `context edit NAME --sync` remains
-available for an explicit manual sync.
-`comicmeta status` answers "where am I?" — the active context, library size, and
-which pipeline phases have data, with a suggested next command. Errors link to
-the GitHub issue tracker so bugs are easy to report.
 
 ## Settings
 
@@ -259,23 +272,9 @@ The ComicVine API key is read from an environment variable (default
 `COMICVINE_API_KEY`) or a file path (`api.key_file` in settings). The key is
 never persisted by comicmeta or written to logs.
 
-Running `comicmeta settings` opens a centered interactive panel. Appearance
-controls and compact connection summaries are shown first; press `[a]` for API,
-paths, review, and write-safety settings. Press `Enter` on a connection to open
-its SSH settings. The selected row is preserved while searching, expanding
-connections, and changing settings:
-
-| Context field | Default | Meaning |
-|---------------|---------|---------|
-| `host` | — | NAS hostname or IP |
-| `ssh_user` | — | SSH username |
-| `ssh_port` | `22` | SSH port |
-| `identity_file` | (default keys) | SSH identity/private-key path |
-| `connect_timeout` | `10` | SSH connect timeout (seconds) |
-| `library_path` | — | comic library path on the NAS |
-| `exec` | `rsync` | `rsync` (source + NAS Python) or `docker` |
-
-Set them per-context: `comicmeta context edit nas --ssh-port 2222 --identity-file ~/.ssh/id_ed25519`.
+For full-color cover previews, comicmeta offers to install the optional `timg`
+renderer on first run. No software is installed on the library drive. Browse
+supports flagging, named alternate-cover selection, and a series gallery.
 
 ### Exit codes
 
@@ -285,6 +284,14 @@ collisions, and unsupported archive writes. A failure at file N rolls back
 **only** file N from its verified backup; successfully written files earlier in
 the run are kept, the failed file is logged, and the batch continues. Re-running
 `comicmeta write` skips files that already have ComicInfo.
+
+## Privacy
+
+comicmeta talks to [ComicVine](https://comicvine.gamespot.com) only when you
+run a discovery/fetch command, using your own API key — which stays on your
+machine, never in logs. Nothing is uploaded from your library; metadata flows
+into your CBZ files and stays there. The repo is open source (MIT), so there is
+nothing to hide behind.
 
 ## Development
 
@@ -298,7 +305,7 @@ python -m build --sdist
 ```
 
 GitHub Actions runs the test suite on Python 3.11 through 3.14 for pushes and
-pull requests.
+pull requests. Tagging a `v*` release publishes to PyPI via trusted publishing.
 
 Run `python -m comicmeta --help` for the full command list.
 
