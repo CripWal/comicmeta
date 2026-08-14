@@ -51,12 +51,13 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=run)
 
 
-def validate_mapping(source: Path, mapping: dict) -> tuple[list[tuple[Path, dict]], list[str]]:
+def validate_mapping(source: Path, mapping: dict, replacement_paths: set[str] | None = None) -> tuple[list[tuple[Path, dict]], list[str]]:
     """Return (writable, skipped) — writable archives to touch and the relative
     paths skipped with their reason, so callers can tell a successful no-op
     ("everything already has ComicInfo") apart from a genuine nothing-to-write."""
     if not isinstance(mapping, dict) or not mapping:
         die("mapping must be a non-empty JSON object keyed by relative archive path")
+    replacement_paths = replacement_paths or set()
     validated = []
     skipped: list[str] = []
     for relative, metadata in mapping.items():
@@ -79,7 +80,7 @@ def validate_mapping(source: Path, mapping: dict) -> tuple[list[tuple[Path, dict
         if not isinstance(metadata, dict):
             die(f"metadata must be an object: {relative}")
         _archive.comicinfo_xml(metadata)
-        if _archive.root_comicinfo(path):
+        if _archive.root_comicinfo(path) and relative not in replacement_paths:
             reason = "already-has-comicinfo-requires-explicit-replacement"
             print(f"SKIP path={relative} reason={reason}", file=sys.stderr)
             skipped.append(f"{relative} ({reason})")
@@ -285,6 +286,7 @@ def execute(
     make_backups: bool = True,
     retention_days: int = 0,
     purge_after_verify: bool = False,
+    replacement_paths: set[str] | None = None,
 ) -> None:
     if not source.is_dir():
         die(f"source does not exist: {source}")
@@ -292,7 +294,7 @@ def execute(
     _prune_stale_temp_files(source_root)
     mapping_data = load_json(mapping, "mapping")
     try:
-        validated, skipped = validate_mapping(source_root, mapping_data)
+        validated, skipped = validate_mapping(source_root, mapping_data, replacement_paths)
     except ValueError as error:
         die(str(error))
     if not validated:
@@ -370,6 +372,10 @@ def execute(
                 })
                 written.append((path, backup))
                 spinner.progress(count, total, item=relative.as_posix())
+                # A replacement-requested archive is now rewritten; drop the request.
+                if replacement_paths and relative.as_posix() in replacement_paths:
+                    from comicmeta._commands import replacement
+                    replacement.clear_request(source_root, relative.as_posix())
                 # Per-file WROTE lines are machine output for the report log;
                 # on an interactive terminal the single spinner bar is enough.
                 if not sys.stdout.isatty():
@@ -411,7 +417,7 @@ def execute(
                 print(f"PURGED backups removed={removed} freed={pretty_bytes(freed)} reason=retention")
 
 
-def _dry_run(source: Path, mapping: Path, backup_dir: Path, report: Path, staging_dir: Path | None = None) -> None:
+def _dry_run(source: Path, mapping: Path, backup_dir: Path, report: Path, staging_dir: Path | None = None, replacement_paths: set[str] | None = None) -> None:
     """Validate the write against every mapped file without touching production.
 
     Streams per-file: copy one archive to a temp dir, write it, validate it,
@@ -445,7 +451,7 @@ def _dry_run(source: Path, mapping: Path, backup_dir: Path, report: Path, stagin
                     failed.append((relative, error))
                     print(f"DRY_FAIL path={relative} error={error}", file=sys.stderr)
                     continue
-                if existing_comicinfo:
+                if existing_comicinfo and relative not in (replacement_paths or set()):
                     print(
                         f"DRY_SKIP path={relative} reason=already-has-comicinfo-requires-explicit-replacement",
                         file=sys.stderr,
@@ -514,8 +520,11 @@ def run(args: argparse.Namespace) -> None:
     retention_days = int(_config.get(flat, "write.backup_retention") or 0)
     purge_after_verify = bool(_config.get(flat, "write.keep_backup_after_verify"))
 
+    from comicmeta._commands import replacement
+    replacement_paths = replacement.requested_paths(source)
+
     if getattr(args, "dry_run", False):
-        _dry_run(source, mapping, backup_dir, report, getattr(args, "staging_dir", None))
+        _dry_run(source, mapping, backup_dir, report, getattr(args, "staging_dir", None), replacement_paths)
         return
 
     if not mapping.is_file():
@@ -566,5 +575,10 @@ def run(args: argparse.Namespace) -> None:
         else:
             die("write.enforce_expected_hashes is on but no staging audit was found")
 
+    if replacement_paths:
+        print(f"  ↻ {len(replacement_paths)} archive(s) marked for ComicInfo replacement will be rewritten.")
+        print()
+
     execute(source, mapping, backup_dir, report, expected, make_backups=make_backups,
-            retention_days=retention_days, purge_after_verify=purge_after_verify)
+            retention_days=retention_days, purge_after_verify=purge_after_verify,
+            replacement_paths=replacement_paths)

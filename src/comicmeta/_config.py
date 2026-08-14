@@ -30,6 +30,7 @@ DEFAULTS: dict = {
         "cover_state": "comicmeta-cover-preferences.json",
         "mapping": "comic-metadata-reviewed-mapping.json",
         "kavita_export": "comicmeta-kavita-export.json",
+        "replacement_state": "comicmeta-replacement-requests.json",
         "backup_dir": "comicmeta-backups/latest",
         "write_report": "comicmeta-write-report.json",
     },
@@ -89,6 +90,7 @@ SETTINGS_META = {
     "paths.cover_state": ("Cover preferences", "path"),
     "paths.mapping": ("Writer mapping file", "path"),
     "paths.kavita_export": ("Kavita sync export", "path"),
+    "paths.replacement_state": ("Replacement request state", "path"),
     "paths.backup_dir": ("Write backup directory", "path"),
     "paths.write_report": ("Write report file", "path"),
     "api.key_env": ("API key environment variable", "str"),
@@ -132,6 +134,7 @@ SETTINGS_DESCRIPTIONS = {
     "paths.cover_state": "Selected named cover artwork per archive; CBZ files remain untouched.",
     "paths.mapping": "Reviewed writer mapping — the input to `write`.",
     "paths.kavita_export": "Reviewed ComicVine export reserved for a future Kavita API sync.",
+    "paths.replacement_state": "Archives marked in browse for ComicInfo replacement on the next review+write.",
     "paths.backup_dir": "Where `write` stores per-file backups before rewriting.",
     "paths.write_report": "`write` output report (per-file success/failure).",
     "api.key_env": "Environment variable that holds the ComicVine API key.",
@@ -167,6 +170,7 @@ ADVANCED_KEYS = {
     "paths.candidates", "paths.volume_state", "paths.volume_summary",
     "paths.policy", "paths.issue_candidates", "paths.issue_state",
     "paths.issue_summary", "paths.mapping", "paths.kavita_export", "paths.backup_dir",
+    "paths.replacement_state",
     "paths.write_report",
     "appearance.cover_previews_configured",
     "write.backup_configured",
@@ -210,7 +214,8 @@ def state_dir(source: Path | None = None) -> Path:
 _STATE_KEYS = {
     "paths.candidates", "paths.volume_state", "paths.volume_summary",
     "paths.issue_candidates", "paths.issue_state", "paths.issue_summary",
-    "paths.cover_state", "paths.mapping", "paths.kavita_export", "paths.backup_dir", "paths.write_report",
+    "paths.cover_state", "paths.mapping", "paths.kavita_export", "paths.backup_dir",
+    "paths.replacement_state", "paths.write_report",
 }
 
 

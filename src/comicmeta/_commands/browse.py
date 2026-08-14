@@ -44,6 +44,7 @@ class Node:
         self.expanded = False
         self.has_comicinfo: bool | None = None
         self.flagged = False
+        self.replacement = False
         self._comicinfo_checked = False
 
     def label(self) -> str:
@@ -82,6 +83,7 @@ def _flagged_series(source: Path) -> set[str]:
 def _build_tree(source: Path, exclude: set[str]) -> Node:
     root = Node(source.name or str(source), source, True)
     flagged_series = _flagged_series(source)
+    replacements = _replacement_requests(source)
     entries: dict[Path, Node] = {source: root}
     for path in sorted(source.rglob("*"), key=lambda p: (p.is_file(), str(p).casefold())):
         if exclude and any(part in exclude for part in path.relative_to(source).parts):
@@ -95,6 +97,7 @@ def _build_tree(source: Path, exclude: set[str]) -> Node:
                 parent.children.append(node)
         elif path.is_file() and path.suffix.lower() in _archive.ARCHIVE_SUFFIXES:
             node = Node(path.name, path, False)
+            node.replacement = str(path.relative_to(source)) in replacements
             entries[path] = node
             parent = entries.get(path.parent)
             if parent:
@@ -139,13 +142,26 @@ def _render_tree(root: Node, selected: int, colors: Palette) -> None:
             ci = node.comicinfo()
             mark = "✓" if ci else ("·" if ci is False else "?")
             flag = "✦ " if node.flagged else ""
-            line = f"    {marker} {indent}  {flag}{mark} {colors.path(node.label())}"
+            repl = "↻ " if node.replacement else ""
+            line = f"    {marker} {indent}  {flag}{repl}{mark} {colors.path(node.label())}"
         if index == selected:
             print(colors.title(line) if node.is_dir else colors.bold(line))
         else:
             print(line)
     print()
-    print(colors.muted("  [↑/↓] move · [→/Enter] open · [←] collapse/up · [f] flag · [q] quit"))
+    print(colors.muted("  [↑/↓] move · [→/Enter] open · [←] collapse/up · [f] flag · [r] replace ComicInfo · [q] quit"))
+def _toggle_replacement(path: Path, source_root: Path) -> bool:
+    """Toggle the ComicInfo-replacement request for one archive; return new state."""
+    from comicmeta._commands import replacement
+    relative = str(path.relative_to(source_root))
+    return replacement.toggle(source_root, relative)
+
+
+def _replacement_requests(source_root: Path) -> set[str]:
+    from comicmeta._commands import replacement
+    return replacement.requested_paths(source_root)
+
+
 def _toggle_flag(path: Path, source_root: Path) -> bool:
     """Toggle a series or issue research flag; return the new state."""
     from comicmeta._common import atomic_json, load_json
@@ -208,6 +224,8 @@ def _browse(root: Node, source_root: Path, backup_dir: Path | None, colors: Pale
                             break
             elif key == "f":
                 node.flagged = _toggle_flag(node.path, source_root)
+            elif key == "r":
+                node.replacement = _toggle_replacement(node.path, source_root)
         return 0
     finally:
         leave_alt_screen()
@@ -245,6 +263,11 @@ def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root
             print(colors.warn(f"      series: {series_note}"))
         if issue_note:
             print(colors.warn(f"      issue:  {issue_note}"))
+        print()
+    from comicmeta._commands import replacement as replacement_cmd
+    if replacement_cmd.is_requested(str(relative), source_root):
+        print(colors.warn("  ↻ MARKED FOR COMICINFO REPLACEMENT"))
+        print(colors.muted("      Will be re-reviewed against ComicVine and rewritten on `write`."))
         print()
 
     title = metadata.get("series") if metadata else path.stem
@@ -309,7 +332,7 @@ def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root
         print(f"    Pages             {_page_count(path) or '—'}")
         print(f"    Size              {pretty_bytes(path.stat().st_size)}")
     print()
-    print(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag · [a] choose named cover · [g] series gallery · [q] back"))
+    print(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag · [r] replace ComicInfo · [a] choose named cover · [g] series gallery · [q] back"))
 
 
 def _page_count(path: Path) -> int | None:
@@ -366,6 +389,8 @@ def _open_issue_card(selected_path: Path, source_root: Path, backup_dir: Path | 
             _edit_from_card(siblings[index], source_root, backup_dir, colors)
         elif key == "f":
             _toggle_flag(siblings[index], source_root)
+        elif key == "r":
+            _toggle_replacement(siblings[index], source_root)
         elif key == "a":
             _choose_cover(siblings[index], source_root, colors)
         elif key == "g":

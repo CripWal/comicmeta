@@ -36,11 +36,12 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
 def collect(flat: dict) -> tuple[list[dict], list[dict]]:
     """Return (series_flags, issue_flags) from the review state files."""
     get = lambda key: _config.get(flat, key)
-    volume_state = Path(get("paths.volume_state"))
-    issue_state = Path(get("paths.issue_state"))
+    volume_state = Path(get("paths.volume_state")) if get("paths.volume_state") else None
+    issue_state = Path(get("paths.issue_state")) if get("paths.issue_state") else None
+    replacement_state = Path(get("paths.replacement_state")) if get("paths.replacement_state") else None
 
     series_flags = []
-    if volume_state.is_file():
+    if volume_state and volume_state.is_file():
         state = load_json(volume_state, "volume state")
         for query, selection in sorted(state.get("selections", {}).items()):
             if selection.get("status") == "flagged":
@@ -51,7 +52,7 @@ def collect(flat: dict) -> tuple[list[dict], list[dict]]:
                 })
 
     issue_flags = []
-    if issue_state.is_file():
+    if issue_state and issue_state.is_file():
         state = load_json(issue_state, "issue state")
         for path, review in sorted(state.get("reviews", {}).items()):
             if review.get("status") == "flagged":
@@ -59,6 +60,14 @@ def collect(flat: dict) -> tuple[list[dict], list[dict]]:
                     "path": path,
                     "note": review.get("note") or "further research required",
                 })
+    if replacement_state and replacement_state.is_file():
+        state = load_json(replacement_state, "replacement state")
+        for path, request in sorted((state.get("requests", {}) if isinstance(state, dict) else {}).items()):
+            issue_flags.append({
+                "path": path,
+                "note": request.get("note") or "marked for ComicInfo replacement in browse",
+                "replacement": True,
+            })
     return series_flags, issue_flags
 
 
@@ -134,7 +143,8 @@ def run(args: argparse.Namespace) -> None:
     if not issue_flags:
         print("    none")
     for flag in issue_flags:
-        print(f"    {colors.warn('⚑')} {flag['path']}")
+        badge = colors.good("↻") if flag.get("replacement") else colors.warn("⚑")
+        print(f"    {badge} {flag['path']}")
         print(f"        {flag['note']}")
     print()
     print(colors.muted("  To clear flags once resolved, run: comicmeta flags --clear"))
@@ -147,8 +157,8 @@ def clear_flags(args: argparse.Namespace, colors) -> None:
     enter_alt_screen()
     flat = _config.load(getattr(args, "source", None))
     get = lambda key: _config.get(flat, key)
-    volume_state = Path(get("paths.volume_state"))
-    issue_state = Path(get("paths.issue_state"))
+    volume_state = Path(get("paths.volume_state")) if get("paths.volume_state") else None
+    issue_state = Path(get("paths.issue_state")) if get("paths.issue_state") else None
 
     series_flags, issue_flags = collect(flat)
     if not series_flags and not issue_flags:
@@ -158,7 +168,7 @@ def clear_flags(args: argparse.Namespace, colors) -> None:
     cleared = 0
     if series_flags:
         print(f"  SERIES ({len(series_flags)}) — [↑/↓] select · [Enter] clear · [q] skip all")
-        if volume_state.is_file():
+        if volume_state and volume_state.is_file():
             state = load_json(volume_state, "volume state")
         else:
             state = {"selections": {}}
@@ -185,21 +195,31 @@ def clear_flags(args: argparse.Namespace, colors) -> None:
 
     if issue_flags:
         print(f"  ISSUES ({len(issue_flags)}) — [↑/↓] select · [Enter] clear · [q] quit")
-        if issue_state.is_file():
+        if issue_state and issue_state.is_file():
             state = load_json(issue_state, "issue state")
         else:
             state = {"reviews": {}}
+        replacement_state_path = Path(get("paths.replacement_state")) if get("paths.replacement_state") else None
+        if replacement_state_path and replacement_state_path.is_file():
+            repl_state = load_json(replacement_state_path, "replacement state")
+        else:
+            repl_state = {"requests": {}}
         index = 0
         while issue_flags:
             flag = issue_flags[index]
-            print(f"    {colors.warn('▸')} {flag['path']}")
+            badge = colors.good("▸↻") if flag.get("replacement") else colors.warn("▸⚑")
+            print(f"    {badge} {flag['path']}")
             print(f"        {flag['note']}")
             key = read_key()
             if key in {"q", "ctrl-c", "ctrl-d"}:
                 break
             if key == "enter":
                 path = flag["path"]
-                if path in state.get("reviews", {}):
+                if flag.get("replacement"):
+                    if path in repl_state.get("requests", {}):
+                        del repl_state["requests"][path]
+                        atomic_json(replacement_state_path, repl_state)
+                elif path in state.get("reviews", {}):
                     del state["reviews"][path]
                     atomic_json(issue_state, state)
                 issue_flags.pop(index)

@@ -335,7 +335,9 @@ def interactive(report_path: Path, state_path: Path, summary_path: Path, policy:
     report = load_json(report_path, "report")
     groups = grouped_items(report, policy, score_threshold, score_margin)
     if not groups:
-        die("no review-required groups found")
+        print("  ✓ Nothing to review — every archive either has complete ComicInfo")
+        print("    or is marked for replacement.")
+        return
     state = load_state(state_path, report_path)
     from comicmeta._commands.flags import counts
     from comicmeta import _config as config_mod

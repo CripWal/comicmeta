@@ -32,6 +32,23 @@ def test_collect_flagged(tmp_path, monkeypatch):
     assert len(issues) == 1 and issues[0]["note"] == "check date"
 
 
+def test_collect_includes_replacement_requests(tmp_path, monkeypatch):
+    from comicmeta import _config
+    directory, vol, iss = _state()
+    repl = directory / "repl.json"
+    repl.write_text(json.dumps({"requests": {
+        "Marvel/Y (2020)/Y (2020) #001.cbz": {"note": "tagged in browse"},
+    }}))
+    monkeypatch.setattr(_config, "get", lambda flat, key: {
+        "paths.volume_state": str(vol),
+        "paths.issue_state": str(iss),
+        "paths.replacement_state": str(repl),
+    }.get(key))
+    series, issues = collect({})
+    assert len(issues) == 1 and issues[0]["replacement"] is True
+    assert issues[0]["path"] == "Marvel/Y (2020)/Y (2020) #001.cbz"
+
+
 def test_run_lists_flags(tmp_path, monkeypatch):
     from comicmeta import _config
     directory, vol, iss = _state(volume={"X (2020)": {"status": "flagged", "note": "n"}})

@@ -135,6 +135,13 @@ def discover(source: Path, report: Path, api_key: str, limit: int, timeout: int 
         }
         if item["has_comicinfo"]:
             audit_item(path, item)
+            # An archive explicitly marked for replacement (e.g. download-tool
+            # metadata that is wrong) must go through review again even when its
+            # existing ComicInfo audits as complete.
+            from comicmeta._commands import replacement
+            if replacement.is_requested(relative, source):
+                item["status"] = "review-required"
+                item["replacement_requested"] = True
         else:
             item["status"] = "review-required"
             queries.add(item["query"])
@@ -214,6 +221,13 @@ def rescan(source: Path, report: Path, api_key: str | None, limit: int, timeout:
         }
         if item["has_comicinfo"]:
             audit_item(path, item)
+            # An archive explicitly marked for replacement (e.g. download-tool
+            # metadata that is wrong) must go through review again even when its
+            # existing ComicInfo audits as complete.
+            from comicmeta._commands import replacement
+            if replacement.is_requested(relative, source):
+                item["status"] = "review-required"
+                item["replacement_requested"] = True
         else:
             item["status"] = "review-required"
         if item["status"] == "review-required":

@@ -46,9 +46,26 @@ reviewed mapping. The full staged sequence above is the production safety path.
 - Requires reviewed mapping data.
 - Creates verified backups before mutation.
 - Refuses path traversal and unsafe destinations.
-- Refuses to replace any existing root `ComicInfo.xml`; replacement is a separate
-  future operation requiring explicit approval.
+- Refuses to replace any existing root `ComicInfo.xml` **unless the archive was
+  explicitly marked for replacement in browse** (`[r]`). Marked archives go
+  through review again and are rewritten on the next `write`.
 - Preserves successfully written files if a later file fails.
+
+### Replacing existing metadata
+
+Download tools (e.g. Kapowarr) can embed ComicInfo that is incomplete or wrong.
+To re-review and replace such a file:
+
+1. In `comicmeta browse`, move to the archive and press `r` — it shows a `↻`
+   marker and is added to the replacement-request state.
+2. Run `comicmeta review` — the marked file is forced through review again even
+   though its existing ComicInfo audits as complete.
+3. Run `comicmeta write` — the guard against overwriting existing ComicInfo is
+   lifted for marked files, and each request clears automatically after a
+   successful write.
+
+Replacement-requested files are listed by `comicmeta flags` alongside research
+flags, so you can see what is pending before a batch write.
 
 ### Backup lifecycle
 

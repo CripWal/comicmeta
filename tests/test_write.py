@@ -647,3 +647,29 @@ def test_write_dry_run_rejects_nonexistent_staging_dir(tmp_path):
     assert result.returncode != 0
     assert "staging directory does not exist" in result.stderr
     assert "Traceback" not in result.stderr
+
+
+def test_write_replaces_requested_comicinfo(tmp_path, monkeypatch):
+    """An archive marked for replacement is rewritten even with existing ComicInfo."""
+    import os as _os
+    from comicmeta._commands import replacement
+    source = tmp_path / "source"
+    relative = "Series (2020)/Series (2020) #001.cbz"
+    comic = source / relative
+    comic.parent.mkdir(parents=True)
+    with zipfile.ZipFile(comic, "w") as archive:
+        archive.writestr("ComicInfo.xml", "<ComicInfo><Series>Wrong</Series></ComicInfo>")
+        archive.writestr("001.jpg", b"page")
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "cfg"))
+    replacement.toggle(source, relative)
+    mapping = tmp_path / "m.json"
+    mapping.write_text(json.dumps({relative: {
+        "series": "X", "volume": "1", "number": "1", "year": "2020", "format": "Issue",
+    }}))
+    result = run("write", "--yes", "--source", source, "--mapping", mapping,
+                 "--backup-dir", tmp_path / "b", "--report", tmp_path / "r.json")
+    assert result.returncode == 0, result.stderr
+    with zipfile.ZipFile(comic) as archive:
+        xml = archive.read("ComicInfo.xml").decode()
+    assert "<Series>X</Series>" in xml
+    assert replacement.is_requested(relative, source) is False  # cleared after write
