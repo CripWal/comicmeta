@@ -7,3 +7,10 @@ dist/
 comicmeta.toml
 .DS_Store
 .hypothesis/
+
+# Internal dev notes, baselines, and plans not intended for the public repo
+BACKBURNER.md
+baselines/
+docs/design-nas-contexts-*.md
+docs/plans/
+tap/
