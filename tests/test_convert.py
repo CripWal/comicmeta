@@ -124,7 +124,7 @@ def test_backups_lists_files(tmp_path, monkeypatch):
     b = tmp_path / "backup" / "latest"
     (b / "sub").mkdir(parents=True)
     (b / "sub/a.cbr").write_bytes(b"data")
-    args = Namespace(source=tmp_path, backup_dir=tmp_path / "backup", list=True, delete=False)
+    args = Namespace(source=tmp_path, backup_dir=tmp_path / "backup", list=True, delete=False, purge=False)
     out = io.StringIO()
     with contextlib.redirect_stdout(out):
         run(args)
@@ -141,6 +141,6 @@ def test_backups_delete_removes_files_after_confirmation(tmp_path, monkeypatch):
     monkeypatch.setattr(sys, "stdin", mock.Mock(isatty=lambda: True))
     monkeypatch.setattr("comicmeta._tui.confirm", lambda *args, **kwargs: True)
 
-    backups.run(Namespace(source=tmp_path, backup_dir=backup, list=False, delete=True))
+    backups.run(Namespace(source=tmp_path, backup_dir=backup, list=False, delete=True, purge=False))
 
     assert not backup.exists()

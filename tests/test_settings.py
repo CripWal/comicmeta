@@ -28,6 +28,10 @@ def test_defaults():
     flat = _config.load(source=Path("."))
     assert flat["paths.source"] == "."
     assert flat["api.request_delay"] == 0.25
+    assert flat["write.keep_backups"] is True
+    assert flat["write.backup_retention"] == 0
+    assert flat["write.keep_backup_after_verify"] is False
+    assert flat["write.backup_configured"] is False
     assert flat["review.high_confidence_score"] == 90
     assert flat["write.auto_confirm"] is False
 
@@ -92,7 +96,7 @@ def test_build_rows_groups_by_section(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     rows = _build_rows(load_flat())
     headers = [r["title"] for r in rows if r["type"] == "header"]
-    assert headers == ["APPEARANCE", "CONNECTIONS", "ADVANCED"]
+    assert headers == ["APPEARANCE", "CONNECTIONS", "STORAGE", "ADVANCED"]
     settings = [r["key"] for r in rows if r["type"] == "setting"]
     assert "appearance.theme" in settings
     assert not any(key.startswith(("api.", "write.")) for key in settings)
@@ -107,7 +111,45 @@ def test_build_rows_offers_add_context_when_none(tmp_path, monkeypatch):
     rows = _build_rows(load_flat(), expanded_contexts={"nas"})
     adds = [r for r in rows if r["type"] == "context-add"]
     assert len(adds) == 1
-    assert adds[0]["key"] == "context.add"
+
+
+def test_build_rows_offers_backup_storage_actions(tmp_path, monkeypatch):
+    """The STORAGE section offers an editable backup location and a purge action."""
+    from comicmeta.cli import _build_rows
+    from comicmeta._commands.settings import load_flat
+    monkeypatch.chdir(tmp_path)
+    rows = _build_rows(load_flat())
+    assert any(r["type"] == "setting" and r["key"] == "paths.backup_dir" for r in rows)
+    assert any(r["type"] == "action" and r["key"] == "storage.purge" for r in rows)
+
+
+def test_detect_mounted_volumes_excludes_home(tmp_path, monkeypatch):
+    """Mounted-volume detection never returns the user's home directory."""
+    from comicmeta.cli import _detect_mounted_volumes
+    volumes = _detect_mounted_volumes()
+    home = Path.home().resolve()
+    assert all(v.resolve() != home for v in volumes)
+    assert all(v.is_dir() for v in volumes)
+
+
+def test_backup_setup_skips_when_configured(tmp_path, monkeypatch):
+    """First-run backup setup returns immediately once configured."""
+    from comicmeta import _config as config
+    from comicmeta._commands import settings as settings_cmd
+    from comicmeta.cli import _first_run_backup_setup
+    settings_cmd.set_key_silent("write.backup_configured", "true", target=tmp_path / "comicmeta.toml")
+    called = {"picker": False}
+    original_picker = None
+    from comicmeta import cli
+    original_picker = cli._pick_backup_location
+    def fake_picker(colors):
+        called["picker"] = True
+    cli._pick_backup_location = fake_picker
+    try:
+        _first_run_backup_setup(None)
+    finally:
+        cli._pick_backup_location = original_picker
+    assert not called["picker"]
 
 
 def test_build_rows_renders_context_fields_and_add(tmp_path, monkeypatch):

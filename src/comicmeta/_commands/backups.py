@@ -26,10 +26,11 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.add_argument("--source", "-s", type=Path, help="comic library root (default: current directory)")
     parser.add_argument("--backup-dir", type=Path, help="backup directory (default: from settings)")
     parser.add_argument("--list", action="store_true", help="list backups (default)")
-    parser.add_argument("--delete", action="store_true", help="delete all backups after listing")
+    parser.add_argument("--delete", action="store_true", help="delete all backups (alias of --purge)")
+    parser.add_argument("--purge", action="store_true", help="delete all backups after showing space to be freed")
     add_examples(parser, [
         "comicmeta backups",
-        "comicmeta backups --delete",
+        "comicmeta backups --purge",
     ])
     parser.set_defaults(handler=run)
 
@@ -59,12 +60,15 @@ def run(args: argparse.Namespace) -> None:
     print()
     print(f"  BACKUPS files={len(files)} total={pretty_bytes(total)}")
 
-    if args.delete:
+    if args.delete or args.purge:
         if not sys.stdin.isatty():
-            die("backups --delete needs confirmation; run it interactively")
+            die("backups --purge needs confirmation; run it interactively")
         from comicmeta._tui import confirm
-        if confirm(f"  Delete {len(files)} backup files?", default=False):
+        if confirm(
+            f"  Delete {len(files)} backup files ({pretty_bytes(total)}) to free {pretty_bytes(total)}?",
+            default=False,
+        ):
             shutil.rmtree(backup_dir)
-            print(f"  Deleted backup directory: {backup_dir}")
+            print(f"  Freed {colors.muted(pretty_bytes(total))} — deleted backup directory: {backup_dir}")
         else:
             print("  Delete cancelled.")

@@ -41,6 +41,7 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.add_argument("--dry-run", action="store_true", help="stage and validate without modifying production")
     parser.add_argument("--staging-dir", type=Path, help="directory for dry-run staging copies (default: system temp)")
     parser.add_argument("--yes", "-y", action="store_true", help="skip the confirmation prompt")
+    parser.add_argument("--no-backups", action="store_true", help="write without creating backups (overrides write.keep_backups)")
     add_examples(parser, [
         "comicmeta write",
         "comicmeta write --dry-run",
@@ -233,7 +234,58 @@ def _prune_stale_temp_files(source_root: Path) -> None:
             pass
 
 
-def execute(source: Path, mapping: Path, backup_dir: Path, report_path: Path, expected: Path | None, make_backups: bool = True) -> None:
+def purge_backups(backup_dir: Path, retention_days: int = 0) -> tuple[int, int]:
+    """Delete backups, returning (files_removed, bytes_freed).
+
+    With a positive ``retention_days``, only backups older than that many days
+    are removed (rolling retention). Otherwise the whole backup directory is
+    removed. Called after a fully validated write when ``write.keep_backup_after_verify``
+    or ``write.backup_retention`` is configured.
+    """
+    if not backup_dir.is_dir():
+        return 0, 0
+    removed = 0
+    freed = 0
+    now = time.time()
+    if retention_days > 0:
+        cutoff = now - retention_days * 86400
+        for path in backup_dir.rglob("*"):
+            if not path.is_file():
+                continue
+            try:
+                if path.stat().st_mtime >= cutoff:
+                    continue
+            except OSError:
+                continue
+            try:
+                size = path.stat().st_size
+                path.unlink()
+            except OSError:
+                continue
+            removed += 1
+            freed += size
+    else:
+        for path in backup_dir.rglob("*"):
+            if path.is_file():
+                try:
+                    freed += path.stat().st_size
+                except OSError:
+                    pass
+        shutil.rmtree(backup_dir, ignore_errors=True)
+        removed = len(list(backup_dir.rglob("*"))) if backup_dir.exists() else 0
+    return removed, freed
+
+
+def execute(
+    source: Path,
+    mapping: Path,
+    backup_dir: Path,
+    report_path: Path,
+    expected: Path | None,
+    make_backups: bool = True,
+    retention_days: int = 0,
+    purge_after_verify: bool = False,
+) -> None:
     if not source.is_dir():
         die(f"source does not exist: {source}")
     source_root = source.resolve()
@@ -269,10 +321,11 @@ def execute(source: Path, mapping: Path, backup_dir: Path, report_path: Path, ex
                 die(f"production hash does not match staging audit: {relative}")
             before_hashes[path] = before
     try:
-        backup_dir.mkdir(parents=True, exist_ok=True)
+        if make_backups:
+            backup_dir.mkdir(parents=True, exist_ok=True)
     except OSError as error:
         die(f"backup directory is not writable: {backup_dir} ({error})")
-    if not os.access(backup_dir, os.W_OK):
+    if make_backups and not os.access(backup_dir, os.W_OK):
         die(f"backup directory is not writable: {backup_dir}")
     report = {"generated_at": datetime.now(timezone.utc).isoformat(), "items": []}
     written = []
@@ -286,7 +339,8 @@ def execute(source: Path, mapping: Path, backup_dir: Path, report_path: Path, ex
         for count, (path, metadata) in enumerate(validated, 1):
             relative = path.relative_to(source_root)
             backup = backup_dir / relative
-            backup.parent.mkdir(parents=True, exist_ok=True)
+            if make_backups:
+                backup.parent.mkdir(parents=True, exist_ok=True)
             before = before_hashes.get(path) if required_hashes is not None else _archive.sha256(path)
             bytes_before += path.stat().st_size
             try:
@@ -338,7 +392,8 @@ def execute(source: Path, mapping: Path, backup_dir: Path, report_path: Path, ex
         spinner.succeed(f"Wrote {succeeded}/{total} archives")
     elapsed = time.monotonic() - started_at
     per_file = elapsed / total if total else 0.0
-    print(f"▸ WRITE — {succeeded}/{total} archive(s) written with backups in {pretty_duration(elapsed)}")
+    backup_note = "with backups" if make_backups else "without backups"
+    print(f"▸ WRITE — {succeeded}/{total} archive(s) written {backup_note} in {pretty_duration(elapsed)}")
     print(f"SUMMARY wrote={succeeded} failed={len(failed)} time={pretty_duration(elapsed)} avg={pretty_duration(per_file)}/file size={pretty_bytes(bytes_before)}")
     for relative, error in failed:
         print(f"FAILED path={relative} error={error}", file=sys.stderr)
@@ -346,6 +401,14 @@ def execute(source: Path, mapping: Path, backup_dir: Path, report_path: Path, ex
     report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if failed and succeeded == 0:
         die(f"all {total} writes failed; first error: {failed[0][1]}")
+    if succeeded and not failed:
+        if purge_after_verify:
+            removed, freed = purge_backups(backup_dir)
+            print(f"PURGED backups removed={removed} freed={pretty_bytes(freed)} reason=after-verified-write")
+        elif retention_days > 0:
+            removed, freed = purge_backups(backup_dir, retention_days)
+            if removed:
+                print(f"PURGED backups removed={removed} freed={pretty_bytes(freed)} reason=retention")
 
 
 def _dry_run(source: Path, mapping: Path, backup_dir: Path, report: Path, staging_dir: Path | None = None) -> None:
@@ -447,6 +510,9 @@ def run(args: argparse.Namespace) -> None:
     mapping = args.mapping or Path(_config.get(flat, "paths.mapping"))
     backup_dir = args.backup_dir or Path(_config.get(flat, "paths.backup_dir"))
     report = args.report or Path(_config.get(flat, "paths.write_report"))
+    make_backups = not args.no_backups and bool(_config.get(flat, "write.keep_backups"))
+    retention_days = int(_config.get(flat, "write.backup_retention") or 0)
+    purge_after_verify = bool(_config.get(flat, "write.keep_backup_after_verify"))
 
     if getattr(args, "dry_run", False):
         _dry_run(source, mapping, backup_dir, report, getattr(args, "staging_dir", None))
@@ -480,9 +546,13 @@ def run(args: argparse.Namespace) -> None:
         rows = [
             ("Library", str(source)),
             ("Mapping", str(mapping)),
-            ("Backup", str(backup_dir)),
+            ("Backup", str(backup_dir) if make_backups else "disabled (no backups)"),
             ("Files", f"{count} archive{'s' if count != 1 else ''}" if count else "—"),
         ]
+        if make_backups and purge_after_verify:
+            rows.append(("Backups", "purge after verified write"))
+        elif make_backups and retention_days > 0:
+            rows.append(("Backups", f"keep {retention_days}d, purge older"))
         _write_summary_panel(colors, rows)
         print()
         if not confirm("  Proceed with the write?", default=False):
@@ -496,4 +566,5 @@ def run(args: argparse.Namespace) -> None:
         else:
             die("write.enforce_expected_hashes is on but no staging audit was found")
 
-    execute(source, mapping, backup_dir, report, expected)
+    execute(source, mapping, backup_dir, report, expected, make_backups=make_backups,
+            retention_days=retention_days, purge_after_verify=purge_after_verify)

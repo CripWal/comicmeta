@@ -495,6 +495,63 @@ def test_execute_without_backups(tmp_path):
         assert "ComicInfo.xml" in archive.namelist()
 
 
+def test_write_no_backups_flag(tmp_path):
+    """--no-backups writes metadata without creating backups."""
+    source = tmp_path / "source"
+    target = source / "a.cbz"
+    target.parent.mkdir(parents=True)
+    with zipfile.ZipFile(target, "w") as archive:
+        archive.writestr("001.jpg", b"page")
+    mapping = tmp_path / "m.json"
+    mapping.write_text(json.dumps({
+        "a.cbz": {"series": "X", "volume": "1", "number": "1", "year": "2020", "format": "Issue"},
+    }))
+    backup = tmp_path / "backup"
+    result = run("write", "--yes", "--no-backups", "--source", source,
+                 "--mapping", mapping, "--backup-dir", backup, "--report", tmp_path / "r.json")
+    assert result.returncode == 0, result.stderr
+    assert not backup.exists()
+    with zipfile.ZipFile(target) as archive:
+        assert "ComicInfo.xml" in archive.namelist()
+
+
+def test_execute_purges_after_verified_write(tmp_path):
+    """write.keep_backup_after_verify deletes backups after a clean write."""
+    from comicmeta._commands.write import execute
+    source = tmp_path / "source"
+    target = source / "a.cbz"
+    target.parent.mkdir(parents=True)
+    with zipfile.ZipFile(target, "w") as archive:
+        archive.writestr("001.jpg", b"page")
+    mapping = tmp_path / "m.json"
+    mapping.write_text(json.dumps({
+        "a.cbz": {"series": "X", "volume": "1", "number": "1", "year": "2020", "format": "Issue"},
+    }))
+    backup = tmp_path / "backup"
+    report = tmp_path / "r.json"
+    execute(source, mapping, backup, report, None, purge_after_verify=True)
+    assert not backup.exists()  # backups purged after verified write
+
+
+def test_execute_retention_keeps_fresh_deletes_old(tmp_path):
+    """write.backup_retention removes backups older than the cutoff."""
+    from comicmeta._commands.write import purge_backups
+    import time
+    backup = tmp_path / "backup"
+    (backup / "sub").mkdir(parents=True)
+    old = backup / "sub/old.cbz"
+    new = backup / "sub/new.cbz"
+    old.write_bytes(b"old-backup")
+    new.write_bytes(b"new-backup")
+    cutoff = time.time() - 10 * 86400  # 10 days ago
+    os.utime(old, (cutoff, cutoff))
+    removed, freed = purge_backups(backup, retention_days=3)
+    assert removed == 1
+    assert freed == len(b"old-backup")
+    assert not old.exists()
+    assert new.exists()
+
+
 def test_write_skips_missing_mapped_archive(tmp_path):
     """A mapping entry whose file was deleted must not abort the whole write.
 

@@ -53,6 +53,10 @@ DEFAULTS: dict = {
     "write": {
         "enforce_expected_hashes": False,
         "auto_confirm": False,
+        "keep_backups": True,
+        "backup_retention": 0,
+        "keep_backup_after_verify": False,
+        "backup_configured": False,
     },
     "appearance": {
         "color": True,
@@ -102,6 +106,10 @@ SETTINGS_META = {
     "review.continue_to_write": ("Continue to write after review", "bool"),
     "write.enforce_expected_hashes": ("Enforce expected hashes", "bool"),
     "write.auto_confirm": ("Auto-confirm write", "bool"),
+    "write.keep_backups": ("Keep write backups", "bool"),
+    "write.backup_retention": ("Backup retention (days)", "int"),
+    "write.keep_backup_after_verify": ("Purge backups after verified write", "bool"),
+    "write.backup_configured": ("Backup location configured", "bool"),
     "appearance.color": ("Enable colors", "bool"),
     "appearance.dashboard": ("Interactive dashboard", "bool"),
     "appearance.check_for_updates": ("Check for updates", "bool"),
@@ -141,6 +149,10 @@ SETTINGS_DESCRIPTIONS = {
     "review.continue_to_write": "Ask to continue to `write` after review finishes.",
     "write.enforce_expected_hashes": "Require a staging audit (expected hashes) before writing.",
     "write.auto_confirm": "Skip the `write` confirmation prompt.",
+    "write.keep_backups": "Keep per-file backups before rewriting. When off, `write` touches archives with no safety copy.",
+    "write.backup_retention": "Keep backups for this many days, then auto-delete older ones. 0 keeps them forever.",
+    "write.keep_backup_after_verify": "Auto-purge a library's backups after a fully validated write completes.",
+    "write.backup_configured": "Internal marker that first-run backup setup has been completed.",
     "appearance.color": "Enable ANSI colors in terminal output.",
     "appearance.dashboard": "Show the interactive dashboard when run with no command.",
     "appearance.check_for_updates": "Check PyPI for a newer version on startup.",
@@ -157,6 +169,7 @@ ADVANCED_KEYS = {
     "paths.issue_summary", "paths.mapping", "paths.kavita_export", "paths.backup_dir",
     "paths.write_report",
     "appearance.cover_previews_configured",
+    "write.backup_configured",
 }
 
 # Order sections for display in the interactive menu.

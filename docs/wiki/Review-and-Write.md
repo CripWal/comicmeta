@@ -50,6 +50,34 @@ reviewed mapping. The full staged sequence above is the production safety path.
   future operation requiring explicit approval.
 - Preserves successfully written files if a later file fails.
 
+### Backup lifecycle
+
+On the first interactive launch, comicmeta asks where backups should live:
+a mounted volume (NAS or external drive), a custom path, the default state-dir
+location, or no backups. That choice is recorded once; the location is always
+re-editable from the settings panel (STORAGE → Backup location).
+
+Backups are per-library, stored under `paths.backup_dir`
+(`~/.config/comicmeta/libraries/<hash>/comicmeta-backups/latest/` by default).
+`comicmeta backups` lists them and `comicmeta backups --purge` deletes them after
+showing the space to be freed.
+
+Three `[write]` settings control how much space backups consume:
+
+| Setting | Default | Effect |
+|---|---|---|
+| `write.keep_backups` | `true` | When `false`, `write` touches archives with no safety copy. `--no-backups` on the CLI does the same for one run. |
+| `write.backup_retention` | `0` | Keep backups this many days, then auto-delete older ones on the next successful write. `0` keeps them forever. |
+| `write.keep_backup_after_verify` | `false` | Auto-purge a library's entire backup directory after a fully validated write completes. |
+
+Choosing "no backups" is risky: converting a `.cbr` moves the original into the
+backup directory, so without one an interrupted conversion can leave no
+recoverable original.
+
+`--purge` (or `--delete`) requires an interactive confirmation; in non-interactive
+use pass nothing — the commands refuse to run without a TTY so backups are never
+destroyed by a script.
+
 ## ComicVine fields and ComicInfo mapping
 
 Discovery and issue fetching retain ComicVine issue/volume IDs, canonical URLs,

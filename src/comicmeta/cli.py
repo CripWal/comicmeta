@@ -361,6 +361,8 @@ def _render_settings_menu(colors: Palette, rows: list, selected: int, settings_p
             value = f"{context.get('host') or 'not configured'} · {context.get('library_path') or 'no library path'}"
         elif row["type"] == "advanced-toggle":
             value = "API · paths · review · write"
+        elif row["type"] == "action":
+            value = "run"
         elif row["type"] == "context-setting":
             value = _context_value_display(row)
         elif row["type"] == "context-add":
@@ -482,6 +484,9 @@ def _build_rows(flat: dict, show_advanced: bool = False, expanded_contexts: set[
                         "kind": kind, "context": ctx, "context_field": field, "flat": flat,
                     })
         rows.append({"type": "context-add", "key": "context.add", "label": "＋ Add connection…", "flat": flat})
+        rows.append({"type": "header", "title": "STORAGE"})
+        rows.append({"type": "setting", "key": "paths.backup_dir", "label": "Backup location", "flat": flat})
+        rows.append({"type": "action", "key": "storage.purge", "label": "Purge backups…", "flat": flat})
         rows.append({"type": "header", "title": "ADVANCED"})
         rows.append({"type": "advanced-toggle", "key": "settings.advanced", "label": "Show advanced settings…", "flat": flat})
         return rows
@@ -522,6 +527,8 @@ def _build_rows(flat: dict, show_advanced: bool = False, expanded_contexts: set[
         "label": "＋ Add NAS context…",
         "flat": flat,
     })
+    rows.append({"type": "header", "title": "STORAGE"})
+    rows.append({"type": "action", "key": "storage.purge", "label": "Purge backups…", "flat": flat})
     return rows
 
 
@@ -739,6 +746,33 @@ def _run_context_add(colors: Palette) -> None:
         enter_alt_screen()
 
 
+def _run_purge_backups(colors: Palette) -> bool:
+    """Purge this library's backups from the settings panel.
+
+    Leaves the alt screen so the size preview and confirmation render in
+    normal scrollback, then re-enters. Returns True if the backup directory
+    existed and was removed, so the settings panel can mark itself dirty.
+    """
+    import argparse as _argparse
+    from comicmeta import _config
+    from comicmeta._commands import backups as backups_cmd
+    from comicmeta._tui import enter_alt_screen, leave_alt_screen
+    flat = _config.load(None)
+    backup_dir = Path(_config.get(flat, "paths.backup_dir"))
+    existed = backup_dir.is_dir()
+    _clear_screen()
+    leave_alt_screen()
+    _clear_screen()
+    try:
+        ns = _argparse.Namespace(source=None, backup_dir=None, list=False, delete=False, purge=True)
+        backups_cmd.run(ns)
+    except SystemExit:
+        pass
+    finally:
+        enter_alt_screen()
+    return existed and not backup_dir.exists()
+
+
 def _settings_screen(parser: argparse.ArgumentParser, colors: Palette) -> int:
     """Interactive settings menu: navigate, search, edit, init, or return."""
     from comicmeta import _config
@@ -763,7 +797,7 @@ def _settings_screen(parser: argparse.ArgumentParser, colors: Palette) -> int:
         set_theme(_config.get(flat, "appearance.theme"))
         colors = Palette(color_enabled(), theme=_config.get(flat, "appearance.theme"))
         rows = _filter_rows(_build_rows(flat, show_advanced, expanded_contexts), search)
-        selectable = [i for i, r in enumerate(rows) if r["type"] in ("setting", "context-summary", "context-setting", "context-add", "advanced-toggle")]
+        selectable = [i for i, r in enumerate(rows) if r["type"] in ("setting", "context-summary", "context-setting", "context-add", "advanced-toggle", "action")]
         selected = next(
             (i for i in selectable if rows[i].get("key") == selected_key),
             selectable[0] if selectable else 0,
@@ -835,6 +869,11 @@ def _settings_screen(parser: argparse.ArgumentParser, colors: Palette) -> int:
                     dirty = True
                     remember_selection()
                     break
+                if rows and rows[selected]["type"] == "action":
+                    if _run_purge_backups(colors):
+                        dirty = True
+                    remember_selection()
+                    break
                 if rows and rows[selected]["type"] == "advanced-toggle":
                     remember_selection()
                     show_advanced = True
@@ -882,6 +921,28 @@ def _is_truenas() -> bool:
         return "truenas" in Path("/etc/version").read_text(encoding="utf-8", errors="ignore").casefold()
     except OSError:
         return False
+
+
+def _detect_mounted_volumes() -> list[Path]:
+    """Return currently-mounted volume mount points to offer as backup targets.
+
+    macOS lists external/NAS mounts under /Volumes; Linux puts removable and
+    network mounts under /media and /mnt. Only real directories are returned;
+    the root filesystem and the user's home are excluded as non-volumes.
+    """
+    candidates: list[Path] = []
+    for base in ("/Volumes", "/media", "/mnt", "/run/media"):
+        root = Path(base)
+        try:
+            if not root.is_dir():
+                continue
+            for entry in sorted(root.iterdir()):
+                if entry.is_dir():
+                    candidates.append(entry)
+        except OSError:
+            continue
+    home = Path.home().resolve()
+    return [p for p in candidates if p.resolve() != home]
 
 
 def _configure_cover_previews(colors: Palette, prompt: bool = True) -> bool:
@@ -945,6 +1006,100 @@ def _first_run_cover_setup(colors: Palette) -> None:
     print()
 
 
+def _first_run_backup_setup(colors: Palette) -> None:
+    """Ask once where backups should live, on the first interactive launch."""
+    from comicmeta._commands import settings as settings_cmd
+    flat = _config.load(None)
+    if _config.get(flat, "write.backup_configured") or not is_interactive():
+        return
+    if _DASHBOARD_CONTEXT not in (None, _context.LOCAL_CONTEXT_NAME):
+        return  # NAS backups resolve on the NAS; configured there in settings
+    _pick_backup_location(colors)
+    settings_cmd.set_key_silent("write.backup_configured", "true")
+
+
+def _pick_backup_location(colors: Palette) -> None:
+    """Pick where backups should live: default, mounted volume, custom, or none.
+
+    Offers the default state-dir location, any currently-mounted volumes (NAS
+    or external drives), a custom path, or explicitly no backups. Records the
+    choice into settings so it only runs once.
+    """
+    from comicmeta._commands import settings as settings_cmd
+    flat = _config.load(None)
+    default_dir = Path(_config.get(flat, "paths.backup_dir"))
+    volumes = _detect_mounted_volumes()
+    options: list[tuple[str, str, str | None]] = []  # (key, label, value)
+    options.append(("default", f"Default location", str(default_dir)))
+    for volume in volumes:
+        target = volume / "comicmeta-backups"
+        options.append((str(volume), f"{volume.name} (mounted volume)", str(target)))
+    options.append(("custom", "Custom path…", None))
+    options.append(("none", "No backups (risky)", None))
+    if not volumes:
+        # No volumes to choose from — keep the picker short.
+        options = [
+            ("default", "Default location", str(default_dir)),
+            ("custom", "Custom path…", None),
+            ("none", "No backups (risky)", None),
+        ]
+
+    selected = 0
+    while True:
+        _clear_screen()
+        print(colors.title("▸ BACKUP LOCATION"))
+        print(colors.muted("  Where should comicmeta keep the original archives it backs up"))
+        print(colors.muted("  before writing metadata? A bad write never destroys an original."))
+        print()
+        for index, (key, label, value) in enumerate(options):
+            marker = "❯" if index == selected else " "
+            line = f"  {marker} {label}"
+            if key == "none":
+                line += colors.warn("  ⚠ no safety copy")
+            elif value:
+                line += f"  {colors.muted(value)}"
+            if index == selected:
+                print(colors.bold(line))
+            else:
+                print(line)
+        print()
+        print(colors.muted("  [↑/↓] move · [Enter] choose · [q] skip (use default)"))
+        key = read_key()
+        if key in {"q", "ctrl-c", "ctrl-d"}:
+            break
+        if key == "up":
+            selected = max(0, selected - 1)
+            continue
+        if key == "down":
+            selected = min(len(options) - 1, selected + 1)
+            continue
+        if key != "enter":
+            continue
+        kind, label, value = options[selected]
+        target = settings_cmd.settings_target()
+        if kind == "default":
+            pass  # keep the resolved default location
+        elif kind == "custom":
+            from comicmeta._tui import prompt_edit
+            print()
+            value = prompt_edit("  Backup path: ", current=str(default_dir))
+            if not value or not value.strip():
+                print(colors.muted("  Cancelled; keeping default location."))
+                break
+            settings_cmd.set_key_silent("paths.backup_dir", value.strip(), target=target)
+        elif kind == "none":
+            print()
+            print(colors.warn("  No backups: `write` will touch archives with no safety copy."))
+            print(colors.warn("  Converting a .cbr moves the original into the backup directory —"))
+            print(colors.warn("  without one, errors can leave you with no recoverable original."))
+            if confirm("  Disable backups anyway?", default=False):
+                settings_cmd.set_key_silent("write.keep_backups", "false", target=target)
+        else:
+            # A mounted volume: back up next to the library on the NAS/external drive.
+            settings_cmd.set_key_silent("paths.backup_dir", str(Path(value)), target=target)
+        break
+
+
 def _review_held_count() -> int:
     """Volumes still held for later (skipped/flagged) in the current review.
 
@@ -973,6 +1128,7 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
     selected = 0
     update_hint = ""
     _first_run_cover_setup(colors)
+    _first_run_backup_setup(colors)
     try:
         if _config.get(_config.load(None), "appearance.check_for_updates"):
             from comicmeta._commands.update_check import latest_version
