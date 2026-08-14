@@ -123,6 +123,63 @@ def test_build_rows_offers_backup_storage_actions(tmp_path, monkeypatch):
     assert any(r["type"] == "action" and r["key"] == "storage.purge" for r in rows)
 
 
+def test_settings_panel_fits_narrow_terminal(tmp_path, monkeypatch):
+    """The settings panel must never draw lines wider than the terminal."""
+    import io
+    import contextlib
+    import shutil
+    from types import SimpleNamespace
+    from comicmeta import _common
+    from comicmeta.cli import _render_settings_menu, _build_rows
+    from comicmeta._commands.settings import load_flat
+    monkeypatch.chdir(tmp_path)
+
+    def strip_ansi(text):
+        import re
+        return re.sub(r"\x1b\[[0-9;]*m", "", text)
+
+    for cols in (40, 50, 60, 80, 100, 120):
+        fake = SimpleNamespace(columns=cols, lines=24)
+        original = shutil.get_terminal_size
+        shutil.get_terminal_size = lambda f: fake
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                _render_settings_menu(_common.Palette(False), _build_rows(load_flat(), show_advanced=True), 0, None)
+        finally:
+            shutil.get_terminal_size = original
+        for line in buf.getvalue().split("\n"):
+            assert len(strip_ansi(line)) <= cols, f"overflow at {cols} cols: {line!r}"
+
+
+def test_dashboard_fits_narrow_terminal(tmp_path, monkeypatch):
+    """The dashboard menu must never draw lines wider than the terminal."""
+    import io
+    import contextlib
+    import shutil
+    from types import SimpleNamespace
+    from comicmeta import _common
+    from comicmeta.cli import _render_menu
+    monkeypatch.chdir(tmp_path)
+
+    def strip_ansi(text):
+        import re
+        return re.sub(r"\x1b\[[0-9;]*m", "", text)
+
+    for cols in (40, 60, 80, 100, 120):
+        fake = SimpleNamespace(columns=cols, lines=24)
+        original = shutil.get_terminal_size
+        shutil.get_terminal_size = lambda f: fake
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                _render_menu(_common.Palette(False), 0, None, None)
+        finally:
+            shutil.get_terminal_size = original
+        for line in buf.getvalue().split("\n"):
+            assert len(strip_ansi(line)) <= cols, f"overflow at {cols} cols: {line!r}"
+
+
 def test_detect_mounted_volumes_excludes_home(tmp_path, monkeypatch):
     """Mounted-volume detection never returns the user's home directory."""
     from comicmeta.cli import _detect_mounted_volumes

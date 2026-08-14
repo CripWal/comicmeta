@@ -263,6 +263,10 @@ def _render_menu(colors: Palette, selected: int, conn=None, ctx=None) -> None:
     }.get(DASHBOARD_STEPS[selected][0])
     if action:
         rows.append(center(colors.bold(action)))
+    # Fit every rendered line to the terminal width so nothing wraps on narrow
+    # terminals (wordmark, long descriptions, and the hint all truncate).
+    width = shutil.get_terminal_size((100, 24)).columns
+    rows = [_truncate_ansi(row, width) for row in rows]
     print("\n".join(rows))
 
 
@@ -297,6 +301,34 @@ def _context_value_display(row: dict) -> str:
 
 def _strip_ansi(text: str) -> str:
     return _ANSI_ESCAPE.sub("", text)
+
+
+def _truncate_ansi(text: str, width: int) -> str:
+    """Truncate a (possibly ANSI-colored) line to ``width`` visible columns.
+
+    ANSI escape sequences are preserved but don't count toward the width; when
+    the visible text is longer than ``width`` it is cut and an ellipsis appended
+    inside the last color span, so the border never overflows on narrow terms.
+    """
+    if len(_strip_ansi(text)) <= width:
+        return text
+    if width <= 0:
+        return ""
+    result: list[str] = []
+    visible = 0
+    ellipsis = "…"
+    for char in text:
+        if char == "\x1b":
+            result.append(char)
+            continue
+        if visible >= width - len(ellipsis):
+            if visible < width:
+                result.append(ellipsis)
+                visible = width
+            continue
+        result.append(char)
+        visible += 1
+    return "".join(result)
 
 
 def _selected_description(rows: list, selected: int) -> str | None:
@@ -414,42 +446,46 @@ def _render_settings_menu(colors: Palette, rows: list, selected: int, settings_p
             widths.append(len(_strip_ansi(item)))
         else:
             widths.append(len(_strip_ansi(item[1])))
-    inner_width = max(widths, default=40) + 4
+    # Never build a panel wider than the terminal; content is truncated to fit.
+    max_inner = max(12, terminal_size.columns - 2)
+    inner_width = min(max(widths, default=40) + 4, max_inner)
     # Search line at the top.
     search_line = "❯ " + search + "▍"
     # Assemble the panel.
     lines = ["┌" + "─" * inner_width + "┐"]
     lines.append("│" + colors.title(" comicmeta settings ") + " " * max(0, inner_width - len(" comicmeta settings ")) + "│")
     lines.append("│" + " " * inner_width + "│")
-    lines.append("│ " + search_line + " " * max(0, inner_width - len(search_line) - 1) + "│")
+    lines.append("│ " + _truncate_ansi(search_line, inner_width - 1) + " " * max(0, inner_width - len(_strip_ansi(search_line)) - 1) + "│")
     lines.append("├" + "─" * inner_width + "┤")
     for item in visible_body:
         if isinstance(item, str):
-            lines.append("│" + item + " " * max(0, inner_width - len(_strip_ansi(item))) + "│")
+            lines.append("│" + _truncate_ansi(item, inner_width) + " " * max(0, inner_width - len(_strip_ansi(item))) + "│")
             continue
         kind, text = item
         if kind == "header":
-            lines.append("│" + text + " " * max(0, inner_width - len(_strip_ansi(text))) + "│")
+            lines.append("│" + _truncate_ansi(text, inner_width) + " " * max(0, inner_width - len(_strip_ansi(text))) + "│")
             continue
         if kind == "row":
-            lines.append("│ " + text + " " * max(0, inner_width - len(_strip_ansi(text)) - 1) + "│")
+            lines.append("│ " + _truncate_ansi(text, inner_width - 1) + " " * max(0, inner_width - len(_strip_ansi(text)) - 1) + "│")
         else:  # selected: full-width reverse-video bar
-            padded = " " + text + " " * max(0, inner_width - len(_strip_ansi(text)) - 1)
+            fitted = _truncate_ansi(text, inner_width - 1)
+            padded = " " + fitted + " " * max(0, inner_width - len(_strip_ansi(fitted)) - 1)
             lines.append("│" + colors.reverse(padded) + "│")
     # Description line for the selected row, above the closing border.
     description = _selected_description(rows, selected)
     if description:
         lines.append("├" + "─" * inner_width + "┤")
         desc = colors.muted("  " + description)
-        lines.append("│" + desc + " " * max(0, inner_width - len(_strip_ansi(desc))) + "│")
+        lines.append("│" + _truncate_ansi(desc, inner_width) + " " * max(0, inner_width - len(_strip_ansi(desc))) + "│")
     lines.append("└" + "─" * inner_width + "┘")
     lines.append("")
-    advanced_hint = "  [a] hide advanced" if show_advanced else "  [a] advanced"
-    search_hint = "  type to search · ⌫ clear"
-    lines.append(colors.muted(f"{search_hint} · {advanced_hint} · [↑/↓] move · [Enter] open/edit · [q] back"))
     # Center the whole panel horizontally on the terminal.
     terminal_width = terminal_size.columns
     pad_left = max(0, (terminal_width - (inner_width + 2)) // 2)
+    advanced_hint = "  [a] hide advanced" if show_advanced else "  [a] advanced"
+    search_hint = "  type to search · ⌫ clear"
+    hint = colors.muted(f"{search_hint} · {advanced_hint} · [↑/↓] move · [Enter] open/edit · [q] back")
+    lines.append(_truncate_ansi(hint, terminal_width - pad_left))
     if pad_left:
         lines = [" " * pad_left + line for line in lines]
     print("\n".join(lines))
