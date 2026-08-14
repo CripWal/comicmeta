@@ -403,16 +403,18 @@ def _render_settings_menu(colors: Palette, rows: list, selected: int, settings_p
         body.append(("row", colors.muted("no settings file; using built-in defaults")))
     terminal_size = shutil.get_terminal_size((80, 24))
     visible_body = _settings_viewport(body, selected_body_index, terminal_size.lines)
-    # Measure content width from the widest plain line.
-    widths = []
-    for item in visible_body:
-        if isinstance(item, str):
-            widths.append(len(_strip_ansi(item)))
-        else:
-            widths.append(len(_strip_ansi(item[1])))
     # Never build a panel wider than the terminal; content is truncated to fit.
     max_inner = max(12, terminal_size.columns - 2)
-    inner_width = min(max(widths, default=40) + 4, max_inner)
+    # Compute the panel width from the FULL body (not the visible window) so the
+    # panel size stays stable while scrolling — visible-only widths made the
+    # panel grow/shrink every frame as different-length values came into view.
+    all_widths = []
+    for item in body:
+        if isinstance(item, str):
+            all_widths.append(len(_strip_ansi(item)))
+        else:
+            all_widths.append(len(_strip_ansi(item[1])))
+    inner_width = min(max(all_widths, default=40) + 4, max_inner)
     # Search line at the top.
     search_line = "❯ " + search + "▍"
     # Assemble the panel.
@@ -778,7 +780,7 @@ def _settings_screen(parser: argparse.ArgumentParser, colors: Palette) -> int:
     """Interactive settings menu: navigate, search, edit, init, or return."""
     from comicmeta import _config
     from comicmeta._commands import settings as settings_cmd
-    from comicmeta._tui import read_key
+    from comicmeta._tui import confirm, read_key
 
     show_advanced = False
     expanded_contexts: set[str] = set()
@@ -853,11 +855,17 @@ def _settings_screen(parser: argparse.ArgumentParser, colors: Palette) -> int:
                     remember_selection()
                     break
                 if rows and rows[selected]["type"] == "context-summary":
-                    name = rows[selected]["context"].name
-                    if name in expanded_contexts:
-                        expanded_contexts.remove(name)
+                    ctx = rows[selected]["context"]
+                    name = ctx.name
+                    active_name = _context.active_context().name
+                    if name != active_name and confirm(f"  Make '{name}' the active context?"):
+                        _context.set_active_context(name)
+                        dirty = True
                     else:
-                        expanded_contexts.add(name)
+                        if name in expanded_contexts:
+                            expanded_contexts.remove(name)
+                        else:
+                            expanded_contexts.add(name)
                     remember_selection()
                     break
                 if rows and rows[selected]["type"] == "context-setting":

@@ -75,19 +75,19 @@ def test_prompt_edit_prefill_and_arrows():
     assert result == "aXbc"
 
 
-def test_prompt_edit_lone_esc_ignored():
-    """A lone ESC must be ignored and must not swallow the next typed char."""
+def test_prompt_edit_lone_esc_cancels():
+    """A lone ESC must cancel the edit (return None), not insert or swallow."""
     keys = iter([b"\x1b", b"X", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
                 with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
-                    # lone ESC: select says nothing ready
+                    # lone ESC: select says nothing ready after ESC
                     with mock.patch("comicmeta._tui.select.select", return_value=([], [], [])):
                         with mock.patch("comicmeta._tui.termios"):
                             with mock.patch("comicmeta._tui.tty"):
                                 result = _tui.prompt_edit("k: ", current="abc")
-    assert result == "abcX"
+    assert result is None
 
 
 def test_prompt_edit_multi_byte_escape_no_leak():

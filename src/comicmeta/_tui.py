@@ -254,9 +254,10 @@ def _redraw_line(prompt: str, value: list[str], cursor: int, secret: bool) -> No
 def _escape_action() -> str:
     """Read and fully consume one ESC sequence, returning 'left'/'right'/''.
 
-    A lone ESC or an incomplete/multi-byte sequence is consumed without ever
-    returning bytes that could leak into the edited value. Uses non-blocking
-    raw-fd reads so a bare ESC never blocks waiting for more input.
+    A lone ESC returns ``'esc'`` so callers can cancel; incomplete or
+    unrecognized sequences are consumed and return ``''`` so nothing leaks
+    into the edited value. Uses non-blocking raw-fd reads so a bare ESC never
+    blocks waiting for more input.
     """
     def raw_read(timeout: float) -> str:
         if not select.select([sys.stdin.fileno()], [], [], timeout)[0]:
@@ -268,7 +269,7 @@ def _escape_action() -> str:
 
     prefix = raw_read(0.05)
     if prefix == "":
-        return ""  # lone ESC: nothing follows
+        return "esc"  # lone ESC: nothing follows
     if prefix == "[":
         # CSI sequence: consume parameter bytes and any intermediates until a final byte.
         while True:
@@ -360,13 +361,16 @@ def prompt_edit(prompt: str, current: str = "", secret: bool = False) -> str | N
                 continue
             if char == "\x1b":  # escape sequence (arrow keys / lone ESC)
                 action = _escape_action()
+                if action == "esc":
+                    print()
+                    return None  # lone ESC cancels the edit
                 if action == "left":
                     cursor = max(0, cursor - 1)
                     _redraw_line(prompt, value, cursor, secret)
                 elif action == "right":
                     cursor = min(len(value), cursor + 1)
                     _redraw_line(prompt, value, cursor, secret)
-                # lone ESC and unrecognized sequences: ignore, never insert bytes
+                # unrecognized sequences: ignore, never insert bytes
                 continue
             if char >= " ":  # printable character: insert at cursor
                 value.insert(cursor, char)

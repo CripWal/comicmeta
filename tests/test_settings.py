@@ -152,6 +152,42 @@ def test_settings_panel_fits_narrow_terminal(tmp_path, monkeypatch):
             assert len(strip_ansi(line)) <= cols, f"overflow at {cols} cols: {line!r}"
 
 
+def test_settings_panel_width_stable_while_scrolling(tmp_path, monkeypatch):
+    """The panel width must not change as the selection scrolls through rows.
+
+    Regression: the width was computed from the *visible* window, so rows with
+    long values (e.g. absolute state paths) resized the panel every frame.
+    """
+    import io
+    import contextlib
+    import shutil
+    import re
+    from types import SimpleNamespace
+    from comicmeta import _common
+    from comicmeta.cli import _render_settings_menu, _build_rows
+    from comicmeta._commands.settings import load_flat
+    monkeypatch.chdir(tmp_path)
+
+    def strip_ansi(text):
+        return re.sub(r"\x1b\[[0-9;]*m", "", text)
+
+    def top_width(selected):
+        fake = SimpleNamespace(columns=140, lines=24)
+        original = shutil.get_terminal_size
+        shutil.get_terminal_size = lambda f: fake
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                _render_settings_menu(_common.Palette(False), _build_rows(load_flat(), show_advanced=True), selected, None)
+        finally:
+            shutil.get_terminal_size = original
+        return len(strip_ansi(buf.getvalue().split("\n")[0]))
+
+    rows = _build_rows(load_flat(), show_advanced=True)
+    widths = {top_width(i) for i in range(0, len(rows))}
+    assert len(widths) == 1, f"panel width changed while scrolling: {widths}"
+
+
 def test_dashboard_fits_narrow_terminal(tmp_path, monkeypatch):
     """The dashboard menu must never draw lines wider than the terminal."""
     import io
