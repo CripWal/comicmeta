@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-from comicmeta._common import ALLOWED_FIELDS, REQUIRED_FIELDS, add_examples, load_json
+from comicmeta._common import ALLOWED_FIELDS, REQUIRED_FIELDS, add_examples, atomic_write, load_json
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -31,7 +31,9 @@ def generate_mapping(candidates: dict, review: dict) -> tuple[dict, list[str]]:
     formats = {
         match["path"]: match.get("archive_format", "").casefold()
         for series in candidates.get("series", [])
+        if isinstance(series, dict)
         for match in series.get("matches", [])
+        if isinstance(match, dict) and match.get("path") is not None
     }
     mapping = {}
     skipped = []
@@ -80,7 +82,13 @@ def run(args: argparse.Namespace) -> None:
     candidates = load_json(args.candidates, "candidates")
     review = load_json(args.review, "review")
     reviewed = review.get("reviews", {})
-    candidate_paths = {match["path"] for series in candidates.get("series", []) for match in series.get("matches", [])}
+    candidate_paths = {
+        match["path"]
+        for series in candidates.get("series", [])
+        if isinstance(series, dict)
+        for match in series.get("matches", [])
+        if isinstance(match, dict) and match.get("path") is not None
+    }
     missing = [path for path in sorted(candidate_paths) if path not in reviewed]
     if missing:
         # Partial review is usable: build the mapping from what IS reviewed and
@@ -98,13 +106,11 @@ def run(args: argparse.Namespace) -> None:
         raise SystemExit(str(error))
     if not mapping:
         raise SystemExit("No reviewed CBZ mappings found")
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(mapping, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(args.output, json.dumps(mapping, indent=2, sort_keys=True) + "\n")
     export_path = getattr(args, "kavita_export", None) or args.output.with_name("comicmeta-kavita-export.json")
-    export_path.parent.mkdir(parents=True, exist_ok=True)
-    export_path.write_text(
+    atomic_write(
+        export_path,
         json.dumps(kavita_export(mapping, candidates.get("active_source") or candidates.get("scanned_source")), indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
     )
     print(f"▸ MAP — {len(mapping)} CBZ archive(s) carry reviewed metadata")
     print(f"MAPPING cbz={len(mapping)} skipped={len(skipped)} output={args.output}")

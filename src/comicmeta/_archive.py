@@ -10,7 +10,7 @@ import zipfile
 from pathlib import Path
 from xml.etree import ElementTree
 
-from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, serialize_multi
+from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, atomic_write, serialize_multi
 
 ARCHIVE_SUFFIXES = {".cbz", ".cbr", ".cb7", ".cbt"}
 
@@ -92,8 +92,7 @@ class ComicInfoCache:
 
     def _save(self) -> None:
         try:
-            self._path.parent.mkdir(parents=True, exist_ok=True)
-            self._path.write_text(json.dumps(
+            atomic_write(self._path, json.dumps(
                 {"version": self._CACHE_VERSION, "entries": self._entries}, indent=2))
         except OSError:
             pass

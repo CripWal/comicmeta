@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, Palette, add_examples, die
+from comicmeta._common import color_enabled, Palette, add_examples, die, _truncate_ansi, _terminal_size
 from comicmeta._tui import read_key
 
 
@@ -122,14 +122,23 @@ def _render_tree(root: Node, selected: int, colors: Palette) -> None:
     nodes = _visible_nodes(root)
     if sys.stdout.isatty():
         print("\033[2J\033[H", end="")
+    terminal_cols, terminal_rows = _terminal_size((80, 24))
     print(colors.title("▸ LIBRARY"))
     from comicmeta._commands.flags import status_line
     flags = status_line(colors, root.path)
     if flags:
         print(flags)
-    print(colors.muted(f"  {root.path}"))
+    print(_truncate_ansi(colors.muted(f"  {root.path}"), terminal_cols))
     print()
-    for index, (node, depth) in enumerate(nodes):
+    limit = max(5, terminal_rows - 8)
+    if len(nodes) <= limit:
+        start, end = 0, len(nodes)
+    else:
+        start = max(0, min(selected - limit // 2, len(nodes) - limit))
+        end = start + limit
+    if start > 1:
+        print(colors.muted(f"    … {start - 1} more"))
+    for index, (node, depth) in enumerate(nodes[start:end], start):
         if node is root:
             continue
         marker = "▸" if index == selected else " "
@@ -148,8 +157,10 @@ def _render_tree(root: Node, selected: int, colors: Palette) -> None:
             print(colors.title(line) if node.is_dir else colors.bold(line))
         else:
             print(line)
+    if end < len(nodes):
+        print(colors.muted(f"    … {len(nodes) - end} more"))
     print()
-    print(colors.muted("  [↑/↓] move · [→/Enter] open · [←] collapse/up · [f] flag · [r] replace ComicInfo · [q] quit"))
+    print(_truncate_ansi(colors.muted("  [↑/↓] move · [→/Enter] open · [←] collapse/up · [f] flag · [r] replace ComicInfo · [q] quit"), terminal_cols))
 def _toggle_replacement(path: Path, source_root: Path) -> bool:
     """Toggle the ComicInfo-replacement request for one archive; return new state."""
     from comicmeta._commands import replacement
@@ -198,6 +209,12 @@ def _browse(root: Node, source_root: Path, backup_dir: Path | None, colors: Pale
                 selected = len(nodes) - 1
             if selected < 1:
                 selected = 1
+            selected = min(selected, len(nodes) - 1)
+            if len(nodes) <= 1:
+                _render_tree(root, selected, colors)
+                print(colors.warn("  No comics or folders found in this library."))
+                read_key()
+                return 0
             _render_tree(root, selected, colors)
             key = read_key()
             if key in {"q", "ctrl-c", "ctrl-d"}:
@@ -242,33 +259,34 @@ def _sibling_archives(path: Path) -> list[Path]:
 def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root: Path, colors: Palette) -> None:
     from comicmeta._humanize import pretty_bytes
     from comicmeta._commands.inspect import read_comicinfo
-    import shutil as _shutil
 
     if sys.stdout.isatty():
         print("\033[2J\033[H", end="")
     relative = path.relative_to(source_root)
     metadata = read_comicinfo(path) if path.suffix.lower() == ".cbz" else None
-    width = min(100, _shutil.get_terminal_size((100, 24)).columns)
+    term_cols, term_rows = _terminal_size((100, 24))
+    width = min(100, term_cols)
+    budget = max(6, term_rows - 8)
+    lines: list[str] = []
 
-    print(colors.title("▸ COMIC"))
-    print(colors.muted(f"  {relative.parent}"))
-    print(colors.muted(f"  {index + 1}/{len(siblings)}"))
-    print()
+    lines.append(colors.title("▸ COMIC"))
+    lines.append(_truncate_ansi(colors.muted(f"  {relative.parent}"), width))
+    lines.append(colors.muted(f"  {index + 1}/{len(siblings)}"))
 
     from comicmeta._commands.flags import flag_for
     series_note, issue_note = flag_for(path.resolve(), source_root)
     if series_note or issue_note:
-        print(colors.warn("  ✦ FLAGGED FOR RESEARCH"))
+        lines.append("")
+        lines.append(colors.warn("  ✦ FLAGGED FOR RESEARCH"))
         if series_note:
-            print(colors.warn(f"      series: {series_note}"))
+            lines.append(colors.warn(f"      series: {series_note}"))
         if issue_note:
-            print(colors.warn(f"      issue:  {issue_note}"))
-        print()
+            lines.append(colors.warn(f"      issue:  {issue_note}"))
     from comicmeta._commands import replacement as replacement_cmd
     if replacement_cmd.is_requested(str(relative), source_root):
-        print(colors.warn("  ↻ MARKED FOR COMICINFO REPLACEMENT"))
-        print(colors.muted("      Will be re-reviewed against ComicVine and rewritten on `write`."))
-        print()
+        lines.append("")
+        lines.append(colors.warn("  ↻ MARKED FOR COMICINFO REPLACEMENT"))
+        lines.append(colors.muted("      Will be re-reviewed against ComicVine and rewritten on `write`."))
 
     title = metadata.get("series") if metadata else path.stem
     subtitle = ""
@@ -276,20 +294,22 @@ def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root
         subtitle = f"Issue #{metadata['number']}"
         if metadata.get("title"):
             subtitle += f" — {metadata['title']}"
-    print(colors.bold(f"  {title}"))
+    lines.append("")
+    lines.append(colors.bold(f"  {title}"))
     if subtitle:
-        print(f"  {subtitle}")
-    print()
+        lines.append(f"  {subtitle}")
 
+    cover = None
     try:
         if path.suffix.lower() == ".cbz" and path.is_file():
             from comicmeta import _cover
             cover = _cover.preview(path, source_root)
-            if cover:
-                print(cover)
-                print()
     except Exception:
-        pass
+        cover = None
+    if cover and len(lines) + len(cover.splitlines()) + 2 <= budget:
+        lines.append("")
+        lines.extend(cover.splitlines())
+        lines.append("")
 
     if metadata:
         date = "-".join(
@@ -301,38 +321,48 @@ def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root
         ) or "—"
         volume = metadata.get("volume") or "—"
         fmt = metadata.get("format") or "—"
-        print(f"  {colors.bold('BASIC METADATA')}")
-        print(f"    Volume            {volume}")
-        print(f"    Issue             {metadata.get('number') or '—'}")
-        print(f"    Date              {date}")
-        print(f"    Format            {fmt}")
-        print(f"    Publisher         {metadata.get('publisher') or '—'}")
-        print(f"    SeriesGroup       {metadata.get('series_group') or '—'}")
-        print(f"    StoryArc          {metadata.get('story_arc') or '—'}")
-        print()
-        print(f"  {colors.bold('FILE')}")
-        print(f"    Path              {colors.path(str(relative))}")
-        print(f"    Pages             {_page_count(path) or '—'}")
-        print(f"    Size              {pretty_bytes(path.stat().st_size)}")
-        print(f"    ComicInfo         {colors.good('present')}")
+        lines.append("")
+        lines.append(f"  {colors.bold('BASIC METADATA')}")
+        for row in (
+            ("Volume", volume),
+            ("Issue", metadata.get("number") or "—"),
+            ("Date", date),
+            ("Format", fmt),
+            ("Publisher", metadata.get("publisher") or "—"),
+            ("SeriesGroup", metadata.get("series_group") or "—"),
+            ("StoryArc", metadata.get("story_arc") or "—"),
+        ):
+            lines.append(f"    {row[0]:<14}{row[1]}")
+        lines.append("")
+        lines.append(f"  {colors.bold('FILE')}")
+        lines.append(f"    Path              {colors.path(str(relative))}")
+        lines.append(f"    Pages             {_page_count(path) or '—'}")
+        lines.append(f"    Size              {pretty_bytes(path.stat().st_size)}")
+        lines.append(f"    ComicInfo         {colors.good('present')}")
         summary = metadata.get("summary")
         if summary:
-            print()
-            print(f"  {colors.bold('SUMMARY')}")
+            lines.append("")
+            lines.append(f"  {colors.bold('SUMMARY')}")
             import textwrap
-            for line in textwrap.wrap(summary, max(30, width - 4))[:6]:
-                print(f"    {line}")
+            for wrapped in textwrap.wrap(summary, max(10, width - 4))[:6]:
+                lines.append(f"    {wrapped}")
         web = metadata.get("web")
         if web:
-            print()
-            print(f"  {colors.muted(web)}")
+            lines.append("")
+            lines.append(colors.muted(web))
     else:
-        print(f"  {colors.warn('(no ComicInfo.xml present)')}")
-        print(f"    Path              {colors.path(str(relative))}")
-        print(f"    Pages             {_page_count(path) or '—'}")
-        print(f"    Size              {pretty_bytes(path.stat().st_size)}")
-    print()
-    print(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag · [r] replace ComicInfo · [a] choose named cover · [g] series gallery · [q] back"))
+        lines.append("")
+        lines.append(f"  {colors.warn('(no ComicInfo.xml present)')}")
+        lines.append(f"    Path              {colors.path(str(relative))}")
+        lines.append(f"    Pages             {_page_count(path) or '—'}")
+        lines.append(f"    Size              {pretty_bytes(path.stat().st_size)}")
+
+    footer = [""]
+    footer.append(_truncate_ansi(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag · [r] replace ComicInfo · [a] choose named cover · [g] series gallery · [q] back"), width))
+    if len(lines) + len(footer) > term_rows:
+        lines = lines[:term_rows - len(footer)]
+    lines = [_truncate_ansi(line, width) for line in lines]
+    print("\n".join(lines + footer))
 
 
 def _page_count(path: Path) -> int | None:

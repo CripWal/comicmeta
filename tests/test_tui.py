@@ -112,11 +112,14 @@ def test_prompt_edit_esc_then_printable_not_swallowed():
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
                 with mock.patch("sys.stdin.read", lambda *a: next(keys)):
-                    # select says ready; the ESC is followed by a non-'[' char.
-                    with mock.patch("comicmeta._tui.select.select", return_value=([object()], [], [])):
+                    # select is ready for the ESC + lead byte, then nothing follows.
+                    with mock.patch("comicmeta._tui.select.select", side_effect=[
+                        ([object()], [], []),
+                        ([], [], []),
+                    ]):
                         with mock.patch("comicmeta._tui.termios"):
                             with mock.patch("comicmeta._tui.tty"):
                                 result = _tui.prompt_edit("k: ", current="")
     # ESC + Z: ESC handler reads 'Z' as the post-ESC byte, sees it's not '[',
-    # drains it (ignored); then X is typed normally.
+    # drains nothing more; then X is typed normally.
     assert result == "X"

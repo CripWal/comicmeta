@@ -15,7 +15,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, die
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, die, _truncate_ansi, _terminal_size
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -162,8 +162,9 @@ def _all_clear_banner(colors, total: int) -> None:
     """Boxed ALL-CLEAR banner shown when health has nothing to report."""
     line1 = f"  ✓  ALL CLEAR — {total} archive{'s' if total != 1 else ''} checked"
     line2 = "     no corrupt · no missing metadata"
-    inner = max(len(line1), len(line2))
+    cols, _ = _terminal_size((80, 24))
+    inner = min(max(len(line1), len(line2)), max(4, cols - 4))
     print(colors.good("┌" + "─" * (inner + 2) + "┐"))
-    print(colors.good("│" + line1.ljust(inner + 2) + "│"))
-    print(colors.good("│" + line2.ljust(inner + 2) + "│"))
+    print(colors.good("│" + _truncate_ansi(line1, inner + 2).ljust(inner + 2) + "│"))
+    print(colors.good("│" + _truncate_ansi(line2, inner + 2).ljust(inner + 2) + "│"))
     print(colors.good("└" + "─" * (inner + 2) + "┘"))

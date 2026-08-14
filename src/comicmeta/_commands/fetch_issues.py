@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from comicmeta import _comicvine
-from comicmeta._common import add_examples, load_json
+from comicmeta._common import add_examples, atomic_write, load_json
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -55,6 +55,9 @@ def build_report(candidates: dict, selections: dict, policy: dict, fetcher) -> d
             # for it — skip instead of aborting the whole report.
             skipped += 1
             continue
+        if selection.get("candidate_id") is None:
+            skipped += 1
+            continue
         issues = fetcher(selection["candidate_id"])
         matches = _comicvine.match_files(query, local_items, issues, selection)
         result["series"].append({
@@ -81,8 +84,8 @@ def run(args: argparse.Namespace) -> None:
     selections = args.selections or Path(_config.get(flat, "paths.volume_state"))
     policy_path = args.policy or Path(_config.get(flat, "paths.policy"))
     report = args.report or Path(_config.get(flat, "paths.issue_candidates"))
-    request_delay = args.request_delay if args.request_delay is not None else float(_config.get(flat, "api.request_delay"))
-    timeout = int(_config.get(flat, "api.timeout"))
+    request_delay = args.request_delay if args.request_delay is not None else _config.as_float(_config.get(flat, "api.request_delay"), 0.25)
+    timeout = _config.as_int(_config.get(flat, "api.timeout"), 30)
     user_agent = _config.get(flat, "api.user_agent")
     if args.api_key_env is None:
         args.api_key_env = _config.get(flat, "api.key_env")
@@ -99,8 +102,7 @@ def run(args: argparse.Namespace) -> None:
             lambda volume_id: _comicvine.fetch_volume_issues(api_key, volume_id, request_delay, timeout=timeout, user_agent=user_agent),
         )
         spinner.update("Fetch complete")
-    report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(json.dumps(report_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(report, json.dumps(report_data, indent=2, sort_keys=True) + "\n")
     status_counts: dict[str, int] = defaultdict(int)
     for series in report_data["series"]:
         for match in series["matches"]:

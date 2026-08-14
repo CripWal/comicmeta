@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
+import shutil
 import sys
 import tempfile
 from datetime import datetime, timezone
@@ -22,6 +25,51 @@ PROVENANCE_FIELDS = (
     "cover_url", "cover_width", "cover_height",
 )
 ALLOWED_FIELDS = COMICINFO_FIELDS + PROVENANCE_FIELDS
+
+
+_ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
+
+
+def _strip_ansi(text: str) -> str:
+    """Return ``text`` with ANSI SGR escape sequences removed."""
+    return _ANSI_ESCAPE.sub("", text)
+
+
+def _truncate_ansi(text: str, width: int) -> str:
+    """Truncate a (possibly ANSI-colored) line to ``width`` visible columns.
+
+    ANSI escape sequences are preserved but don't count toward the width; when
+    the visible text is longer than ``width`` it is cut and an ellipsis appended
+    inside the last color span, so the border never overflows on narrow terms.
+    """
+    if len(_strip_ansi(text)) <= width:
+        return text
+    if width <= 0:
+        return ""
+    result: list[str] = []
+    visible = 0
+    ellipsis = "…"
+    for char in text:
+        if char == "\x1b":
+            result.append(char)
+            continue
+        if visible >= width - len(ellipsis):
+            if visible < width:
+                result.append(ellipsis)
+                visible = width
+            continue
+        result.append(char)
+        visible += 1
+    return "".join(result)
+
+
+def _terminal_size(fallback=(80, 24)) -> tuple[int, int]:
+    """Return (columns, rows), tolerating os.terminal_size and test mocks."""
+    size = shutil.get_terminal_size(fallback)
+    try:
+        return size.columns, size.lines
+    except AttributeError:
+        return size[0], size[1]
 
 
 def serialize_multi(value: object) -> str:
@@ -50,15 +98,28 @@ def load_json(path: Path, label: str = "file") -> dict:
         raise SystemExit(f"Invalid JSON {path}: {error}")
 
 
-def atomic_json(path: Path, value: dict) -> None:
+def atomic_write(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    value["updated_at"] = datetime.now(timezone.utc).isoformat()
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as handle:
-        json.dump(value, handle, indent=2, sort_keys=True)
-        handle.write("\n")
+        handle.write(text)
         temporary = Path(handle.name)
-    temporary.replace(path)
+    try:
+        try:
+            os.replace(temporary, path)
+        except OSError as error:
+            if error.errno not in (22, 5, 16, 35):
+                raise
+            shutil.copyfile(temporary, path)
+            temporary.unlink(missing_ok=True)
+    except BaseException:
+        temporary.unlink(missing_ok=True)
+        raise
     path.chmod(0o644)
+
+
+def atomic_json(path: Path, value: dict) -> None:
+    value["updated_at"] = datetime.now(timezone.utc).isoformat()
+    atomic_write(path, json.dumps(value, indent=2, sort_keys=True) + "\n")
 
 
 def color_enabled(args=None, *, stream=None) -> bool:

@@ -22,7 +22,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from comicmeta import _archive
-from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, add_examples, die, load_json, serialize_multi
+from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, add_examples, atomic_write, die, load_json, serialize_multi, _truncate_ansi, _terminal_size
 
 _TRANSIENT_ERRNOS = {22, 5, 16, 35}
 
@@ -403,8 +403,7 @@ def execute(
     print(f"SUMMARY wrote={succeeded} failed={len(failed)} time={pretty_duration(elapsed)} avg={pretty_duration(per_file)}/file size={pretty_bytes(bytes_before)}")
     for relative, error in failed:
         print(f"FAILED path={relative} error={error}", file=sys.stderr)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(report_path, json.dumps(report, indent=2, sort_keys=True) + "\n")
     if failed and succeeded == 0:
         die(f"all {total} writes failed; first error: {failed[0][1]}")
     if succeeded and not failed:
@@ -439,7 +438,12 @@ def _dry_run(source: Path, mapping: Path, backup_dir: Path, report: Path, stagin
         validated = 0
         failed = []
         for relative, metadata in sorted(mapping_data.items()):
-            original = (source / relative).resolve()
+            relative_path = Path(relative)
+            if relative_path.is_absolute() or ".." in relative_path.parts:
+                die(f"mapping path is not safely relative: {relative}")
+            original = (source / relative_path).resolve()
+            if source.resolve() not in original.parents:
+                die(f"mapping path escapes source: {relative}")
             if not original.is_file():
                 failed.append((relative, FileNotFoundError("mapped archive missing from library")))
                 print(f"DRY_FAIL path={relative} error=mapped archive does not exist in library", file=sys.stderr)
@@ -500,10 +504,11 @@ def _write_summary_panel(colors, rows):
     """Boxed pre-write summary so the confirm step reads as a review screen."""
     label_w = max(len(label) for label, _ in rows)
     value_w = max(len(value) for _, value in rows)
-    inner = label_w + value_w + 3
+    cols, _ = _terminal_size((80, 24))
+    inner = min(label_w + value_w + 3, max(4, cols - 4))
     print(colors.muted("┌" + "─" * (inner + 2) + "┐"))
     for label, value in rows:
-        line = f"  {label:<{label_w}}  {value}"
+        line = _truncate_ansi(f"  {label:<{label_w}}  {value}", inner + 2)
         print(colors.muted("│" + line.ljust(inner + 2) + "│"))
     print(colors.muted("└" + "─" * (inner + 2) + "┘"))
 
@@ -517,7 +522,7 @@ def run(args: argparse.Namespace) -> None:
     backup_dir = args.backup_dir or Path(_config.get(flat, "paths.backup_dir"))
     report = args.report or Path(_config.get(flat, "paths.write_report"))
     make_backups = not args.no_backups and bool(_config.get(flat, "write.keep_backups"))
-    retention_days = int(_config.get(flat, "write.backup_retention") or 0)
+    retention_days = _config.as_int(_config.get(flat, "write.backup_retention"), 0)
     purge_after_verify = bool(_config.get(flat, "write.keep_backup_after_verify"))
 
     from comicmeta._commands import replacement

@@ -13,7 +13,7 @@ from pathlib import Path
 
 from comicmeta import _context
 from comicmeta._context import Context
-from comicmeta._common import Palette, add_examples, color_enabled, die
+from comicmeta._common import Palette, add_examples, color_enabled, die, _truncate_ansi
 from comicmeta._tui import prompt_edit
 
 
@@ -108,7 +108,9 @@ def _step(colors: Palette, current: int, total: int, label: str) -> None:
     """Print a step header with a dashed rule."""
     width = shutil.get_terminal_size((60, 24)).columns
     rule = "─" * max(10, width - 4)
-    print(f"\n  {colors.title(f'Step {current} of {total}')}  {colors.bold(label)}")
+    header = f"  {colors.title(f'Step {current} of {total}')}  {colors.bold(label)}"
+    print()
+    print(_truncate_ansi(header, width))
     print(f"  {colors.muted(rule)}")
 
 

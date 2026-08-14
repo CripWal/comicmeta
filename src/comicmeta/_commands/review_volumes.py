@@ -12,7 +12,7 @@ import webbrowser
 from collections import defaultdict
 from pathlib import Path
 
-from comicmeta._common import color_enabled, Palette, add_examples, atomic_json, die, load_json, progress_bar, require_tty
+from comicmeta._common import color_enabled, Palette, add_examples, atomic_json, die, load_json, progress_bar, require_tty, _truncate_ansi, _terminal_size
 
 SPECIAL_TERMS = ("omnibus", "deluxe edition", "annual", "collection", "hardcover")
 
@@ -51,6 +51,12 @@ def query_identity(query: str) -> tuple[str, str | None]:
     return title, year
 
 
+def _publisher_name(candidate: dict) -> str:
+    publisher = candidate.get("publisher")
+    name = publisher.get("name") if isinstance(publisher, dict) else publisher
+    return str(name or "")
+
+
 def publisher_for(paths: list[str]) -> str | None:
     roots = {Path(path).parts[0].casefold() for path in paths if Path(path).parts}
     if "marvel" in roots:
@@ -87,7 +93,7 @@ def score_candidate(group: dict, candidate: dict) -> tuple[int, list[str]]:
         reasons.append(f"year differs ({candidate_year})")
 
     expected_publisher = publisher_for(group["paths"])
-    publisher = (candidate.get("publisher") or {}).get("name") or ""
+    publisher = _publisher_name(candidate)
     if expected_publisher and normalized(publisher) == normalized(expected_publisher):
         score += 10
         reasons.append("publisher exact")
@@ -129,6 +135,8 @@ def grouped_items(report: dict, policy: dict | None = None, score_threshold: int
         candidates: dict[int, dict] = {}
         for item in items:
             for candidate in item.get("candidates", []):
+                if candidate.get("id") is None:
+                    continue
                 candidates.setdefault(candidate["id"], candidate)
         group = {
             "query": query,
@@ -141,7 +149,7 @@ def grouped_items(report: dict, policy: dict | None = None, score_threshold: int
         for candidate in candidates.values():
             score, reasons = score_candidate(group, candidate)
             scored.append({**candidate, "score": score, "score_reasons": reasons})
-        scored.sort(key=lambda value: (-value["score"], value.get("name") or "", value["id"]))
+        scored.sort(key=lambda value: (-value["score"], value.get("name") or "", value.get("id") or 0))
         group["candidates"] = scored
         group["recommendation"] = scored[0] if scored else None
         runner_up = scored[1]["score"] if len(scored) > 1 else 0
@@ -168,7 +176,7 @@ def selection_for(candidate: dict, status: str = "selected") -> dict:
         "comicvine_volume_id": candidate["id"],
         "name": candidate.get("name"),
         "start_year": candidate.get("start_year"),
-        "publisher": (candidate.get("publisher") or {}).get("name"),
+        "publisher": _publisher_name(candidate),
         "count_of_issues": candidate.get("count_of_issues"),
         "site_detail_url": candidate.get("site_detail_url"),
         "comicvine_url": candidate.get("site_detail_url"),
@@ -216,6 +224,7 @@ def render_group(group: dict, index: int, groups: list[dict], report: dict, stat
     completed = len(state["selections"])
     source = Path(report.get("source") or "")
     active_source = Path(policy.get("active_source") or source)
+    term_cols, term_rows = _terminal_size((80, 24))
     print(colors.title(f"▸ COMICVINE METADATA REVIEW"))
     flags_series, flags_issues = flag_count
     if flags_series or flags_issues:
@@ -230,7 +239,7 @@ def render_group(group: dict, index: int, groups: list[dict], report: dict, stat
     meta = f"reviewed {completed}/{len(groups)} · {', '.join(group['formats'])} · {len(group['paths'])} file"
     if len(group["paths"]) > 1:
         meta += "s"
-    print(f"  {progress_bar(completed, len(groups))}  {colors.muted(meta)}")
+    print(_truncate_ansi(f"  {progress_bar(completed, len(groups))}  {colors.muted(meta)}", term_cols))
     if group.get("blocked_reason"):
         print(colors.warn(f"  ⚠ BLOCKED: {group['blocked_reason']}"))
     current = state["selections"].get(group["query"])
@@ -240,8 +249,11 @@ def render_group(group: dict, index: int, groups: list[dict], report: dict, stat
         else:
             print(colors.good(f"  ✓ Saved: {current.get('status')} — {current.get('name') or 'no candidate'}"))
     print()
+    available = max(1, term_rows - 18)
+    candidate_count = min(9, len(group["candidates"]), max(1, ((available * 2) // 3) // 3))
+    path_cap = max(1, (available - candidate_count * 3) // 2)
     print(colors.bold("  FILE PATHS"))
-    visible = group["paths"] if show_all else group["paths"][:6]
+    visible = group["paths"][:path_cap] if show_all else group["paths"][:min(6, path_cap)]
     for relative in visible:
         print(f"    {'Active':<11} {colors.path(active_source / relative)}")
         if active_source != source:
@@ -252,30 +264,37 @@ def render_group(group: dict, index: int, groups: list[dict], report: dict, stat
     print(colors.bold("  CANDIDATES"))
     if not group["candidates"]:
         print(colors.warn("    No candidates returned"))
-    for number, candidate in enumerate(group["candidates"][:9], 1):
-        is_selected = (number - 1) == selected_candidate
+    cand_start = min(max(0, selected_candidate - candidate_count // 2), max(0, len(group["candidates"]) - candidate_count))
+    cand_end = min(len(group["candidates"]), cand_start + candidate_count)
+    if cand_start:
+        print(colors.muted(f"    … {cand_start} more"))
+    for number in range(cand_start, cand_end):
+        candidate = group["candidates"][number]
+        is_selected = number == selected_candidate
         marker = "✦" if candidate is group["recommendation"] else ("▸" if is_selected else " ")
         confidence = colors.good(f"{candidate['score']}% high confidence") if candidate["score"] >= 90 else colors.warn(f"{candidate['score']}% review")
-        publisher = (candidate.get("publisher") or {}).get("name") or "Unknown publisher"
+        publisher = _publisher_name(candidate) or "Unknown publisher"
         if is_selected:
-            print(f"    {marker} {number}  {colors.bold(candidate.get('name') or 'Untitled')} ({candidate.get('start_year') or '?'})")
-            print(f"         ID {candidate['id']} · {publisher} · {candidate.get('count_of_issues') or '?'} issues · {confidence}")
-            print(colors.muted(f"         {candidate.get('site_detail_url') or 'No link'}"))
+            print(_truncate_ansi(f"    {marker} {number + 1}  {colors.bold(candidate.get('name') or 'Untitled')} ({candidate.get('start_year') or '?'})", term_cols))
+            print(_truncate_ansi(f"         ID {candidate.get('id') or '?'} · {publisher} · {candidate.get('count_of_issues') or '?'} issues · {confidence}", term_cols))
+            print(_truncate_ansi(f"         {candidate.get('site_detail_url') or 'No link'}", term_cols))
         else:
-            print(f"    {marker} {number}  {colors.muted(candidate.get('name') or 'Untitled')} ({candidate.get('start_year') or '?'})")
-            print(colors.muted(f"         ID {candidate['id']} · {publisher} · {candidate.get('count_of_issues') or '?'} issues · {confidence}"))
-            print(colors.muted(f"         {candidate.get('site_detail_url') or 'No link'}"))
+            print(_truncate_ansi(f"    {marker} {number + 1}  {colors.muted(candidate.get('name') or 'Untitled')} ({candidate.get('start_year') or '?'})", term_cols))
+            print(_truncate_ansi(f"         ID {candidate.get('id') or '?'} · {publisher} · {candidate.get('count_of_issues') or '?'} issues · {confidence}", term_cols))
+            print(_truncate_ansi(f"         {candidate.get('site_detail_url') or 'No link'}", term_cols))
+    if cand_end < len(group["candidates"]):
+        print(colors.muted(f"    … {len(group['candidates']) - cand_end} more"))
     print()
     recommendation = group.get("recommendation")
     if group.get("blocked_reason"):
         print(colors.warn("  Recommendation disabled by review policy"))
     elif recommendation:
         label = "high confidence" if group["high_confidence"] else "review recommended"
-        print(f"  Recommended: {recommendation.get('name')} — {label}")
+        print(_truncate_ansi(f"  Recommended: {recommendation.get('name')} — {label}", term_cols))
     print()
-    print(colors.muted("  [↑/↓] choose candidate · [Enter] select · [a] accept · [o] open · [s] skip"))
-    print(colors.muted("  [←/→] prev/next series · [n] next · [p] pin volume ID/URL · [!] flag for research"))
-    print(colors.muted("  [h] accept all · [f] show all paths · [q] back"))
+    print(_truncate_ansi(colors.muted("  [↑/↓] choose candidate · [Enter] select · [a] accept · [o] open · [s] skip"), term_cols))
+    print(_truncate_ansi(colors.muted("  [←/→] prev/next series · [n] next · [p] pin volume ID/URL · [!] flag for research"), term_cols))
+    print(_truncate_ansi(colors.muted("  [h] accept all · [f] show all paths · [q] back"), term_cols))
 
 
 def list_groups(groups: list[dict], colors: Palette, report: dict, policy: dict) -> None:
@@ -330,148 +349,152 @@ def prompt_volume_id() -> int | None:
 
 
 def interactive(report_path: Path, state_path: Path, summary_path: Path, policy: dict, colors: Palette, score_threshold: int = 90, score_margin: int = 15) -> None:
-    from comicmeta._tui import confirm, enter_alt_screen, read_key
+    from comicmeta._tui import confirm, enter_alt_screen, leave_alt_screen, read_key
     enter_alt_screen()
-    report = load_json(report_path, "report")
-    groups = grouped_items(report, policy, score_threshold, score_margin)
-    if not groups:
-        print("  ✓ Nothing to review — every archive either has complete ComicInfo")
-        print("    or is marked for replacement.")
-        return
-    state = load_state(state_path, report_path)
-    from comicmeta._commands.flags import counts
-    from comicmeta import _config as config_mod
-    active_source = Path(policy.get("active_source") or report.get("source") or "")
-    flag_count = counts(config_mod.load(active_source))
-    index = 0
-    show_all = False
-    selected_candidate = 0
-    while True:
-        group = groups[index]
-        render_group(group, index, groups, report, state, policy, colors, show_all, selected_candidate, flag_count)
-        key = read_key()
-        if key in {"q", "ctrl-c", "ctrl-d"}:
-            break
-        if key == "f":
-            show_all = not show_all
-            continue
-        if key == "!":
-            from comicmeta._tui import prompt_edit
-            note = prompt_edit("  Flag note (for research): ")
-            state["selections"][group["query"]] = {
-                "status": "flagged",
-                "note": note or "flagged for further research",
-            }
-            atomic_json(state_path, state)
-            index, done = _advance(index, len(groups))
-            show_all = False
-            selected_candidate = 0
-            if done:
+    try:
+        report = load_json(report_path, "report")
+        groups = grouped_items(report, policy, score_threshold, score_margin)
+        if not groups:
+            print("  ✓ Nothing to review — every archive either has complete ComicInfo")
+            print("    or is marked for replacement.")
+            return
+        state = load_state(state_path, report_path)
+        from comicmeta._commands.flags import counts
+        from comicmeta import _config as config_mod
+        active_source = Path(policy.get("active_source") or report.get("source") or "")
+        flag_count = counts(config_mod.load(active_source))
+        index = 0
+        show_all = False
+        selected_candidate = 0
+        while True:
+            group = groups[index]
+            render_group(group, index, groups, report, state, policy, colors, show_all, selected_candidate, flag_count)
+            key = read_key()
+            if key in {"q", "ctrl-c", "ctrl-d"}:
                 break
-            continue
-        if key == "p":
-            from comicmeta import _config
-            from comicmeta._comicvine import fetch_volume
-            volume_id = prompt_volume_id()
-            if volume_id:
-                try:
-                    volume = fetch_volume(api_key(), volume_id)
-                except Exception as error:
-                    print(colors.warn(f"  ✗ Could not fetch volume {volume_id}: {error}"))
-                    read_key()
-                    continue
-                pinned = {
-                    "id": volume["id"],
-                    "name": volume.get("name"),
-                    "start_year": volume.get("start_year"),
-                    "publisher": volume.get("publisher"),
-                    "count_of_issues": volume.get("count_of_issues"),
-                    "site_detail_url": volume.get("site_detail_url"),
-                    "score": 100,
-                    "pinned": True,
+            if key == "f":
+                show_all = not show_all
+                continue
+            if key == "!":
+                from comicmeta._tui import prompt_edit
+                note = prompt_edit("  Flag note (for research): ")
+                state["selections"][group["query"]] = {
+                    "status": "flagged",
+                    "note": note or "flagged for further research",
                 }
-                group["candidates"].insert(0, pinned)
-                group["recommendation"] = pinned
-                group["high_confidence"] = True
+                atomic_json(state_path, state)
+                index, done = _advance(index, len(groups))
+                show_all = False
+                selected_candidate = 0
+                if done:
+                    break
+                continue
+            if key == "p":
+                from comicmeta import _config
+                from comicmeta._comicvine import fetch_volume
+                volume_id = prompt_volume_id()
+                if volume_id:
+                    try:
+                        volume = fetch_volume(api_key(), volume_id)
+                    except Exception as error:
+                        print(colors.warn(f"  ✗ Could not fetch volume {volume_id}: {error}"))
+                        read_key()
+                        continue
+                    pinned = {
+                        "id": volume["id"],
+                        "name": volume.get("name"),
+                        "start_year": volume.get("start_year"),
+                        "publisher": volume.get("publisher"),
+                        "count_of_issues": volume.get("count_of_issues"),
+                        "site_detail_url": volume.get("site_detail_url"),
+                        "score": 100,
+                        "pinned": True,
+                    }
+                    group["candidates"].insert(0, pinned)
+                    group["recommendation"] = pinned
+                    group["high_confidence"] = True
+                    selected_candidate = 0
+                    continue
+            if key == "o":
+                current = state["selections"].get(group["query"])
+                url = current.get("site_detail_url") if current else None
+                url = url or (group["recommendation"] or {}).get("site_detail_url")
+                if url:
+                    webbrowser.open(url)
+                continue
+            if key in {"up"}:
+                selected_candidate = max(0, selected_candidate - 1)
+                continue
+            if key in {"down"}:
+                selected_candidate = min(len(group["candidates"]) - 1, selected_candidate + 1)
+                continue
+            if key == "left":
+                index = max(0, index - 1)
+                show_all = False
                 selected_candidate = 0
                 continue
-        if key == "o":
-            current = state["selections"].get(group["query"])
-            url = current.get("site_detail_url") if current else None
-            url = url or (group["recommendation"] or {}).get("site_detail_url")
-            if url:
-                webbrowser.open(url)
-            continue
-        if key in {"up"}:
-            selected_candidate = max(0, selected_candidate - 1)
-            continue
-        if key in {"down"}:
-            selected_candidate = min(len(group["candidates"]) - 1, selected_candidate + 1)
-            continue
-        if key == "left":
-            index = max(0, index - 1)
-            show_all = False
-            selected_candidate = 0
-            continue
-        if key == "right":
-            index = min(len(groups) - 1, index + 1)
-            show_all = False
-            selected_candidate = 0
-            continue
-        if key == "enter" and not group.get("blocked_reason") and group["candidates"]:
-            state["selections"][group["query"]] = selection_for(group["candidates"][selected_candidate])
-            atomic_json(state_path, state)
-            index, done = _advance(index, len(groups))
-            show_all = False
-            selected_candidate = 0
-            if done:
-                break
-            continue
-        if key == "a" and group["recommendation"] and not group.get("blocked_reason"):
-            state["selections"][group["query"]] = selection_for(group["recommendation"])
-            atomic_json(state_path, state)
-            index, done = _advance(index, len(groups))
-            show_all = False
-            selected_candidate = 0
-            if done:
-                break
-            continue
-        if key.isdigit() and not group.get("blocked_reason") and 1 <= int(key) <= min(9, len(group["candidates"])):
-            state["selections"][group["query"]] = selection_for(group["candidates"][int(key) - 1])
-            atomic_json(state_path, state)
-            index, done = _advance(index, len(groups))
-            show_all = False
-            selected_candidate = 0
-            if done:
-                break
-            continue
-        if key == "s":
-            state["selections"][group["query"]] = {"status": "skipped"}
-            atomic_json(state_path, state)
-            index, done = _advance(index, len(groups))
-            show_all = False
-            selected_candidate = 0
-            if done:
-                break
-            continue
-        if key == "h":
-            pending = [g for g in groups if g["high_confidence"] and g["query"] not in state["selections"]]
-            if pending and confirm(f"Accept {len(pending)} high-confidence recommendations?", default=False):
-                for candidate_group in pending:
-                    state["selections"][candidate_group["query"]] = selection_for(
-                        candidate_group["recommendation"], "auto-selected"
-                    )
+            if key == "right":
+                index = min(len(groups) - 1, index + 1)
+                show_all = False
+                selected_candidate = 0
+                continue
+            if key == "enter" and not group.get("blocked_reason") and group["candidates"]:
+                state["selections"][group["query"]] = selection_for(group["candidates"][selected_candidate])
                 atomic_json(state_path, state)
-            continue
-        if key in {"n", ""}:
-            index = min(len(groups) - 1, index + 1)
-            show_all = False
-            selected_candidate = 0
+                index, done = _advance(index, len(groups))
+                show_all = False
+                selected_candidate = 0
+                if done:
+                    break
+                continue
+            if key == "a" and group["recommendation"] and not group.get("blocked_reason"):
+                state["selections"][group["query"]] = selection_for(group["recommendation"])
+                atomic_json(state_path, state)
+                index, done = _advance(index, len(groups))
+                show_all = False
+                selected_candidate = 0
+                if done:
+                    break
+                continue
+            if key.isdigit() and not group.get("blocked_reason") and 1 <= int(key) <= min(9, len(group["candidates"])):
+                state["selections"][group["query"]] = selection_for(group["candidates"][int(key) - 1])
+                atomic_json(state_path, state)
+                index, done = _advance(index, len(groups))
+                show_all = False
+                selected_candidate = 0
+                if done:
+                    break
+                continue
+            if key == "s":
+                state["selections"][group["query"]] = {"status": "skipped"}
+                atomic_json(state_path, state)
+                index, done = _advance(index, len(groups))
+                show_all = False
+                selected_candidate = 0
+                if done:
+                    break
+                continue
+            if key == "h":
+                pending = [g for g in groups if g["high_confidence"] and g["query"] not in state["selections"]]
+                if pending and confirm(f"Accept {len(pending)} high-confidence recommendations?", default=False):
+                    for candidate_group in pending:
+                        state["selections"][candidate_group["query"]] = selection_for(
+                            candidate_group["recommendation"], "auto-selected"
+                        )
+                    atomic_json(state_path, state)
+                continue
+            if key in {"n", ""}:
+                index = min(len(groups) - 1, index + 1)
+                show_all = False
+                selected_candidate = 0
 
-    atomic_json(state_path, state)
-    write_summary(summary_path, report, groups, state, policy)
-    print(f"Saved state: {state_path}")
-    print(f"Review summary: {summary_path}")
+        atomic_json(state_path, state)
+        write_summary(summary_path, report, groups, state, policy)
+        print(f"Saved state: {state_path}")
+        print(f"Review summary: {summary_path}")
+
+    finally:
+        leave_alt_screen()
 
 
 def run(args: argparse.Namespace) -> None:

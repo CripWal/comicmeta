@@ -13,7 +13,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field, fields
 from pathlib import Path
 
-from comicmeta._common import die
+from comicmeta._common import atomic_write, die
 
 CONTEXTS_DIR_NAME = "contexts"
 ACTIVE_FILE = "active_context"
@@ -212,8 +212,7 @@ def set_active_context(name: str) -> None:
     if load_context(name) is None:
         die(f"context not found: {name}")
     path = _active_path()
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(name + "\n", encoding="utf-8")
+    atomic_write(path, name + "\n")
 
 
 def save_context(ctx) -> None:
@@ -225,8 +224,7 @@ def save_context(ctx) -> None:
         die(f"'{LOCAL_CONTEXT_NAME}' is a reserved context name")
     _validate_context(ctx)
     path = _context_path(ctx.name)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(_toml_for(ctx), encoding="utf-8")
+    atomic_write(path, _toml_for(ctx))
 
 
 def remove_context(name: str) -> bool:

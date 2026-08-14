@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 
 from comicmeta import _archive
-from comicmeta._common import add_examples, load_json
+from comicmeta._common import add_examples, atomic_write, load_json
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -79,7 +79,6 @@ def run(args: argparse.Namespace) -> None:
         report = prepare(args.source, args.destination, mapping)
     except ValueError as error:
         raise SystemExit(str(error))
-    args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(json.dumps({"items": report}, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(args.report, json.dumps({"items": report}, indent=2, sort_keys=True) + "\n")
     print(f"▸ STAGE — {len(report)} reviewed CBZ file(s) staged (hashes verified)")
     print(f"STAGED files={len(report)} destination={args.destination} report={args.report}")

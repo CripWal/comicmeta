@@ -1,5 +1,6 @@
 import io
 import contextlib
+import os
 import zipfile
 from pathlib import Path
 from unittest import mock
@@ -80,8 +81,9 @@ def test_render_tree_has_footer(tmp_path):
     make_cbz(tmp_path / "Marvel/Hawkeye (1983)/Hawkeye (1983) #001.cbz")
     root = B._build_tree(tmp_path, set())
     buf = io.StringIO()
-    with contextlib.redirect_stdout(buf):
-        B._render_tree(root, 0, Palette(False))
+    with mock.patch("shutil.get_terminal_size", return_value=os.terminal_size((160, 40))):
+        with contextlib.redirect_stdout(buf):
+            B._render_tree(root, 0, Palette(False))
     out = buf.getvalue()
     assert "[↑/↓] move" in out
     assert "[→/Enter] open" in out

@@ -10,7 +10,7 @@ import textwrap
 import webbrowser
 from pathlib import Path
 
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, atomic_json, die, load_json, progress_bar, require_tty
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, atomic_json, die, load_json, progress_bar, require_tty, _truncate_ansi
 
 EDIT_FIELDS = (
     "series", "volume", "number", "year", "month", "day", "format", "title", "publisher", "web",
@@ -51,7 +51,11 @@ def review_items(report: dict) -> list[dict]:
     scanned_source = Path(report.get("scanned_source") or "")
     result = []
     for series in report.get("series", []):
+        if not isinstance(series, dict):
+            continue
         for match in series.get("matches", []):
+            if not isinstance(match, dict):
+                continue
             metadata = match.get("metadata_candidate")
             required = metadata and all(str(metadata.get(field, "")).strip() for field in REQUIRED_FIELDS)
             high_confidence = bool(
@@ -59,14 +63,14 @@ def review_items(report: dict) -> list[dict]:
                 and metadata.get("format") == "Issue" and required
             )
             result.append({
-                "query": series["query"],
-                "path": match["path"],
+                "query": series.get("query"),
+                "path": match.get("path"),
                 "archive_format": match.get("archive_format"),
                 "status": match["status"],
                 "metadata": metadata,
                 "issue": match.get("issue"),
-                "active_path": str(active_source / match["path"]),
-                "scanned_path": str(scanned_source / match["path"]),
+                "active_path": str(active_source / match["path"]) if match.get("path") else "",
+                "scanned_path": str(scanned_source / match["path"]) if match.get("path") else "",
                 "high_confidence": high_confidence,
                 "existing_issues": match.get("existing_issues"),
             })
@@ -145,7 +149,11 @@ def render(item: dict, index: int, items: list[dict], state: dict, colors: Palet
     # would inflate the bar past 100%.
     done = sum(1 for candidate in items if candidate["path"] in state["reviews"])
     width = min(100, shutil.get_terminal_size((100, 24)).columns)
-    print(colors.title("▸ COMICVINE ISSUE REVIEW"))
+
+    def out(text: str) -> None:
+        print(_truncate_ansi(text, width))
+
+    out(colors.title("▸ COMICVINE ISSUE REVIEW"))
     flags_series, flags_issues = flag_count
     if flags_series or flags_issues:
         parts = []
@@ -154,21 +162,21 @@ def render(item: dict, index: int, items: list[dict], state: dict, colors: Palet
         if flags_series:
             parts.append(f"{flags_series}✦")
         badge = " ".join(parts) if parts else "0"
-        print(colors.warn(f"  ComicMeta {badge} · run: comicmeta flags"))
-    print(colors.bold(f"  {item['query']} [{index + 1}/{len(items)}]"))
-    print(f"  {progress_bar(done, len(items))}  {colors.muted(f'reviewed {done}/{len(items)}')}")
+        out(colors.warn(f"  ComicMeta {badge} · run: comicmeta flags"))
+    out(colors.bold(f"  {item['query']} [{index + 1}/{len(items)}]"))
+    out(f"  {progress_bar(done, len(items))}  {colors.muted(f'reviewed {done}/{len(items)}')}")
     saved = state["reviews"].get(item["path"])
     if saved:
-        print(colors.good(f"  ✓ Saved: {saved['status']}"))
+        out(colors.good(f"  ✓ Saved: {saved['status']}"))
     print()
-    print(colors.bold("  FILE"))
-    print(f"    {'Active':<11} {colors.path(item['active_path'])}")
+    out(colors.bold("  FILE"))
+    out(f"    {'Active':<11} {colors.path(item['active_path'])}")
     if item["scanned_path"] != item["active_path"]:
-        print(f"    {'Scanned':<11} {colors.muted(item['scanned_path'])}")
-    print(f"    {'Format':<11} {(item.get('archive_format') or '?').upper()} · {item['status']} match")
+        out(f"    {'Scanned':<11} {colors.muted(item['scanned_path'])}")
+    out(f"    {'Format':<11} {(item.get('archive_format') or '?').upper()} · {item['status']} match")
     existing_issues = item.get("existing_issues")
     if existing_issues:
-        print(colors.warn(f"    ⚠ existing ComicInfo needs review: {'; '.join(existing_issues)}"))
+        out(colors.warn(f"    ⚠ existing ComicInfo needs review: {'; '.join(existing_issues)}"))
     try:
         from comicmeta import _cover
         cover_path = Path(item["active_path"])
@@ -176,14 +184,15 @@ def render(item: dict, index: int, items: list[dict], state: dict, colors: Palet
             cover = _cover.preview(cover_path)
             if cover:
                 print()
-                print(cover)
+                for cover_line in cover.splitlines():
+                    out(cover_line)
     except Exception:
         pass
     print()
     metadata = (saved or {}).get("metadata") or item.get("metadata")
-    print(colors.bold("  COMICINFO CANDIDATE"))
+    out(colors.bold("  COMICINFO CANDIDATE"))
     if not metadata:
-        print(colors.warn("    No issue metadata candidate"))
+        out(colors.warn("    No issue metadata candidate"))
     else:
         date = "-".join(
             part for part in (
@@ -192,6 +201,7 @@ def render(item: dict, index: int, items: list[dict], state: dict, colors: Palet
                 str(metadata.get("day") or "").zfill(2) if metadata.get("day") else "",
             ) if part
         ) or "?"
+        label_width = min(20, max(4, width - 30))
         for field in (
             "series", "series_sort", "localized_series", "volume", "number", "count",
             "year", "month", "day", "format", "title", "publisher", "imprint",
@@ -203,24 +213,25 @@ def render(item: dict, index: int, items: list[dict], state: dict, colors: Palet
             if value in (None, ""):
                 continue
             label = EDIT_LABELS.get(field, field.replace("_", " ").title())
-            print(f"    {label:<20} {value}")
-        print(f"    {'Date':<11} {date}")
-        print(f"    {'Web':<20} {metadata.get('web', '(none)')}")
+            out(f"    {label:<{label_width}} {value}")
+        out(f"    {'Date':<{label_width}} {date}")
+        out(f"    {'Web':<{label_width}} {metadata.get('web', '(none)')}")
         summary = metadata.get("summary")
         if summary:
-            print("    Summary")
-            for line in textwrap.wrap(summary, max(30, width - 8))[:3]:
-                print(f"      {line}")
+            out("    Summary")
+            for line in textwrap.wrap(str(summary), max(10, width - 8))[:3]:
+                out(f"      {line}")
         if metadata.get("notes"):
-            print(f"    {'Notes':<20} {metadata['notes']}")
+            out(f"    {'Notes':<{label_width}} {metadata['notes']}")
     print()
     if item["high_confidence"]:
-        print(colors.good("  ✓ High confidence: exact number, ordinary issue, required fields present"))
+        out(colors.good("  ✓ High confidence: exact number, ordinary issue, required fields present"))
     else:
-        print(colors.warn(_manual_review_hint(item)))
+        for hint_line in _manual_review_hint(item).splitlines():
+            out(colors.warn(hint_line))
     print()
-    print(colors.muted("  [↑/↓] prev/next file · [Enter] accept · [e] edit · [m] manual"))
-    print(colors.muted("  [o] open · [s] skip · [!] flag for research · [h] accept all · [q] save & quit"))
+    out(colors.muted("  [↑/↓] prev/next file · [Enter] accept · [e] edit · [m] manual"))
+    out(colors.muted("  [o] open · [s] skip · [!] flag for research · [h] accept all · [q] save & quit"))
 
 
 def _manual_review_hint(item: dict) -> str:
@@ -299,110 +310,114 @@ def _advance(index: int, total: int) -> tuple[int, bool]:
 
 
 def interactive(report_path: Path, state_path: Path, summary_path: Path, colors: Palette) -> None:
-    from comicmeta._tui import confirm, enter_alt_screen, read_key
+    from comicmeta._tui import confirm, enter_alt_screen, leave_alt_screen, read_key
     enter_alt_screen()
-    report = load_json(report_path, "report")
-    items = review_items(report)
-    if not items:
-        die("no issue candidates found")
-    state = load_state(state_path, report_path)
-    from comicmeta._commands.flags import counts
-    from comicmeta import _config as config_mod
-    flag_count = counts(config_mod.load(Path(report.get("active_source") or "")))
+    try:
+        report = load_json(report_path, "report")
+        items = review_items(report)
+        if not items:
+            die("no issue candidates found")
+        state = load_state(state_path, report_path)
+        from comicmeta._commands.flags import counts
+        from comicmeta import _config as config_mod
+        flag_count = counts(config_mod.load(Path(report.get("active_source") or "")))
 
-    def pending_items() -> list[int]:
-        """Indices of items still needing a decision (not in review state)."""
-        return [i for i, candidate in enumerate(items) if candidate["path"] not in state["reviews"]]
+        def pending_items() -> list[int]:
+            """Indices of items still needing a decision (not in review state)."""
+            return [i for i, candidate in enumerate(items) if candidate["path"] not in state["reviews"]]
 
-    pending = pending_items()
-    index_in_pending = 0 if pending else 0
-    while True:
-        if not pending:
-            break  # all items reviewed
-        index = pending[index_in_pending]
-        item = items[index]
-        render(item, index, items, state, colors, flag_count)
-        key = read_key()
-        if key in {"q", "ctrl-c", "ctrl-d"}:
-            # Save and go back to the caller; do not auto-continue to write.
-            atomic_json(state_path, state)
-            write_summary(summary_path, items, state)
-            print(f"Saved state: {state_path}")
-            print(f"Review summary: {summary_path}")
-            return 1  # back / quit early
-        if key == "o":
-            review = state["reviews"].get(item["path"])
-            metadata = (review or {}).get("metadata") or item.get("metadata") or {}
-            if metadata.get("web"):
-                webbrowser.open(metadata["web"])
-            continue
-        if key in {"enter", "a"} and item.get("metadata"):
-            current = state["reviews"].get(item["path"])
-            metadata = (current or {}).get("metadata") or item["metadata"]
-            state["reviews"][item["path"]] = accepted(metadata)
-            atomic_json(state_path, state)
-            pending = pending_items()
-            index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
-            continue
-        if key == "e" and item.get("metadata"):
-            current = state["reviews"].get(item["path"])
-            before = (current or {}).get("metadata") or item["metadata"]
-            edited = edit_metadata(before)
-            state["reviews"][item["path"]] = accepted(edited, "edited")
-            atomic_json(state_path, state)
-            continue
-        if key == "m":
-            manual = manual_metadata(item)
-            if manual is not None:
-                state["reviews"][item["path"]] = accepted(manual, "manual")
+        pending = pending_items()
+        index_in_pending = 0 if pending else 0
+        while True:
+            if not pending:
+                break  # all items reviewed
+            index = pending[index_in_pending]
+            item = items[index]
+            render(item, index, items, state, colors, flag_count)
+            key = read_key()
+            if key in {"q", "ctrl-c", "ctrl-d"}:
+                # Save and go back to the caller; do not auto-continue to write.
+                atomic_json(state_path, state)
+                write_summary(summary_path, items, state)
+                print(f"Saved state: {state_path}")
+                print(f"Review summary: {summary_path}")
+                return 1  # back / quit early
+            if key == "o":
+                review = state["reviews"].get(item["path"])
+                metadata = (review or {}).get("metadata") or item.get("metadata") or {}
+                if metadata.get("web"):
+                    webbrowser.open(metadata["web"])
+                continue
+            if key in {"enter", "a"} and item.get("metadata"):
+                current = state["reviews"].get(item["path"])
+                metadata = (current or {}).get("metadata") or item["metadata"]
+                state["reviews"][item["path"]] = accepted(metadata)
                 atomic_json(state_path, state)
                 pending = pending_items()
                 index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
-            continue
-        if key == "!":
-            from comicmeta._tui import prompt_edit
-            note = prompt_edit("  Flag note (for research): ")
-            state["reviews"][item["path"]] = {
-                "status": "flagged",
-                "note": note or "flagged for further research",
-            }
-            atomic_json(state_path, state)
-            pending = pending_items()
-            index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
-            continue
-        if key == "s":
-            state["reviews"][item["path"]] = {"status": "skipped"}
-            atomic_json(state_path, state)
-            pending = pending_items()
-            index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
-            continue
-        if key == "h":
-            high = [candidate for candidate in items if candidate["high_confidence"] and candidate["path"] not in state["reviews"]]
-            if high and confirm(f"Accept {len(high)} high-confidence issue candidates?", default=False):
-                for candidate in high:
-                    state["reviews"][candidate["path"]] = accepted(candidate["metadata"], "auto-accepted")
+                continue
+            if key == "e" and item.get("metadata"):
+                current = state["reviews"].get(item["path"])
+                before = (current or {}).get("metadata") or item["metadata"]
+                edited = edit_metadata(before)
+                state["reviews"][item["path"]] = accepted(edited, "edited")
                 atomic_json(state_path, state)
-            # The remaining pending list is now only low-confidence / unmatched
-            # items; stay on the current one (or the first pending if current
-            # got auto-accepted).
-            pending = pending_items()
-            if not pending:
-                break
-            if item["path"] not in state["reviews"]:
-                index_in_pending = pending.index(index)
-            else:
-                index_in_pending = 0
-            continue
-        if key in {"up", "p"}:
-            index_in_pending = max(0, index_in_pending - 1)
-            continue
-        if key in {"down", "n", ""}:
-            index_in_pending = min(len(pending) - 1, index_in_pending + 1)
-    atomic_json(state_path, state)
-    write_summary(summary_path, items, state)
-    print(f"Saved state: {state_path}")
-    print(f"Review summary: {summary_path}")
-    return 0  # completed
+                continue
+            if key == "m":
+                manual = manual_metadata(item)
+                if manual is not None:
+                    state["reviews"][item["path"]] = accepted(manual, "manual")
+                    atomic_json(state_path, state)
+                    pending = pending_items()
+                    index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
+                continue
+            if key == "!":
+                from comicmeta._tui import prompt_edit
+                note = prompt_edit("  Flag note (for research): ")
+                state["reviews"][item["path"]] = {
+                    "status": "flagged",
+                    "note": note or "flagged for further research",
+                }
+                atomic_json(state_path, state)
+                pending = pending_items()
+                index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
+                continue
+            if key == "s":
+                state["reviews"][item["path"]] = {"status": "skipped"}
+                atomic_json(state_path, state)
+                pending = pending_items()
+                index_in_pending = min(index_in_pending, len(pending) - 1) if pending else 0
+                continue
+            if key == "h":
+                high = [candidate for candidate in items if candidate["high_confidence"] and candidate["path"] not in state["reviews"]]
+                if high and confirm(f"Accept {len(high)} high-confidence issue candidates?", default=False):
+                    for candidate in high:
+                        state["reviews"][candidate["path"]] = accepted(candidate["metadata"], "auto-accepted")
+                    atomic_json(state_path, state)
+                # The remaining pending list is now only low-confidence / unmatched
+                # items; stay on the current one (or the first pending if current
+                # got auto-accepted).
+                pending = pending_items()
+                if not pending:
+                    break
+                if item["path"] not in state["reviews"]:
+                    index_in_pending = pending.index(index)
+                else:
+                    index_in_pending = 0
+                continue
+            if key in {"up", "p"}:
+                index_in_pending = max(0, index_in_pending - 1)
+                continue
+            if key in {"down", "n", ""}:
+                index_in_pending = min(len(pending) - 1, index_in_pending + 1)
+        atomic_json(state_path, state)
+        write_summary(summary_path, items, state)
+        print(f"Saved state: {state_path}")
+        print(f"Review summary: {summary_path}")
+        return 0  # completed
+
+    finally:
+        leave_alt_screen()
 
 
 def run(args: argparse.Namespace) -> None:

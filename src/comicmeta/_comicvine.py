@@ -212,7 +212,10 @@ def fetch_volume_issues(api_key: str, volume_id: int, request_delay: float, time
         batch = payload.get("results", [])
         issues.extend(batch)
         offset += len(batch)
-        total = int(payload.get("number_of_total_results") or len(issues))
+        try:
+            total = int(payload.get("number_of_total_results"))
+        except (TypeError, ValueError):
+            total = len(issues)
         if not batch or offset >= total:
             break
         time.sleep(max(0, request_delay))

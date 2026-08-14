@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import argparse
 import difflib
-import re
 import shutil
 import sys
 import time
@@ -24,8 +23,8 @@ import comicmeta
 from comicmeta import _commands, _config, _context
 from comicmeta import _archive
 from comicmeta._comicvine import verify_api_key
-from comicmeta._common import PIPELINE, PIPELINE_CHAIN, Palette, color_enabled, render_wordmark
-from comicmeta._tui import confirm, is_interactive, read_key
+from comicmeta._common import PIPELINE, PIPELINE_CHAIN, Palette, color_enabled, render_wordmark, _strip_ansi, _truncate_ansi
+from comicmeta._tui import confirm, flush_input, is_interactive, read_key
 
 ISSUES_URL = "https://github.com/CripWal/comicmeta/issues"
 
@@ -181,12 +180,9 @@ def _clear_screen() -> None:
         print("\033[2J\033[H", end="", flush=True)
 
 
-_ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
-
-
 def _display_width(text: str) -> int:
     """Visible width of a rendered line, ignoring ANSI SGR escape codes."""
-    return len(_ANSI_ESCAPE.sub("", text))
+    return len(_strip_ansi(text))
 
 
 def _center(text: str, width: int) -> str:
@@ -297,38 +293,6 @@ def _context_value_display(row: dict) -> str:
     if row.get("kind") == "int":
         return str(value)
     return str(value)
-
-
-def _strip_ansi(text: str) -> str:
-    return _ANSI_ESCAPE.sub("", text)
-
-
-def _truncate_ansi(text: str, width: int) -> str:
-    """Truncate a (possibly ANSI-colored) line to ``width`` visible columns.
-
-    ANSI escape sequences are preserved but don't count toward the width; when
-    the visible text is longer than ``width`` it is cut and an ellipsis appended
-    inside the last color span, so the border never overflows on narrow terms.
-    """
-    if len(_strip_ansi(text)) <= width:
-        return text
-    if width <= 0:
-        return ""
-    result: list[str] = []
-    visible = 0
-    ellipsis = "…"
-    for char in text:
-        if char == "\x1b":
-            result.append(char)
-            continue
-        if visible >= width - len(ellipsis):
-            if visible < width:
-                result.append(ellipsis)
-                visible = width
-            continue
-        result.append(char)
-        visible += 1
-    return "".join(result)
 
 
 def _selected_description(rows: list, selected: int) -> str | None:
@@ -453,7 +417,8 @@ def _render_settings_menu(colors: Palette, rows: list, selected: int, settings_p
     search_line = "❯ " + search + "▍"
     # Assemble the panel.
     lines = ["┌" + "─" * inner_width + "┐"]
-    lines.append("│" + colors.title(" comicmeta settings ") + " " * max(0, inner_width - len(" comicmeta settings ")) + "│")
+    title_line = _truncate_ansi(colors.title(" comicmeta settings "), inner_width)
+    lines.append("│" + title_line + " " * max(0, inner_width - len(_strip_ansi(title_line))) + "│")
     lines.append("│" + " " * inner_width + "│")
     lines.append("│ " + _truncate_ansi(search_line, inner_width - 1) + " " * max(0, inner_width - len(_strip_ansi(search_line)) - 1) + "│")
     lines.append("├" + "─" * inner_width + "┤")
@@ -606,7 +571,7 @@ def _edit_value(colors: Palette, row: dict) -> bool:
         settings_cmd.set_key_silent("api.key_file", str(target))
         ok, message = verify_api_key(
             value.strip(),
-            timeout=int(_config.get(flat, "api.timeout")),
+            timeout=_config.as_int(_config.get(flat, "api.timeout"), 30),
             user_agent=_config.get(flat, "api.user_agent"),
         )
         if ok:
@@ -1217,6 +1182,7 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
                     code = _run_subcommand(["convert"])
                     ack_n = 0
                     if code == 0:
+                        flush_input()
                         ack()
                         ack(colors.bold("  [e] execute these conversions · any other key keeps dry-run only"))
                         if read_key() in {"e", "E"}:
@@ -1231,6 +1197,7 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
                     ack_n = 0
                     held = _review_held_count()
                     if held:
+                        flush_input()
                         ack()
                         ack(colors.warn(f"  [r] re-open review (fix {held} held volume{'s' if held != 1 else ''})"))
                         ack(colors.warn("  [f] fresh review (discard + re-review everything)"))
@@ -1246,6 +1213,7 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
                     code = _run_subcommand(["organize"])
                     ack_n = 0
                     if code == 0:
+                        flush_input()
                         ack()
                         ack(colors.bold("  [e] apply these organization changes · any other key keeps dry-run only"))
                         if read_key() in {"e", "E"}:
@@ -1255,6 +1223,7 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
                     _run_subcommand([name])
                     ack_n = 0
                 # Keep the step's output visible before the menu redraws.
+                flush_input()
                 ack()
                 ack(colors.muted("  [Enter] or [q] back to dashboard · [Ctrl+D] quit"))
                 if read_key() in {"ctrl-c", "ctrl-d"}:
@@ -1374,7 +1343,17 @@ def _connection_light(colors: Palette, state, ctx: dict | None = None) -> str:
     return f"{dot} {name}" if ok else f"{dot} {name} unavailable · press [c] for local"
 
 
+def _configure_stream_errors() -> None:
+    """Make prints survive filenames with undecodable bytes (SMB/NAS)."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="backslashreplace")
+        except (AttributeError, ValueError):
+            pass
+
+
 def main(argv: list[str] | None = None) -> None:
+    _configure_stream_errors()
     parser = build_parser()
     argv = sys.argv[1:] if argv is None else argv
     from comicmeta._common import set_theme

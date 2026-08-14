@@ -153,83 +153,87 @@ def run(args: argparse.Namespace) -> None:
 def clear_flags(args: argparse.Namespace, colors) -> None:
     """Interactively unflag series/issues so they can re-enter the write pool."""
     from comicmeta._common import color_enabled, atomic_json
-    from comicmeta._tui import confirm, enter_alt_screen, read_key
+    from comicmeta._tui import confirm, enter_alt_screen, leave_alt_screen, read_key
     enter_alt_screen()
-    flat = _config.load(getattr(args, "source", None))
-    get = lambda key: _config.get(flat, key)
-    volume_state = Path(get("paths.volume_state")) if get("paths.volume_state") else None
-    issue_state = Path(get("paths.issue_state")) if get("paths.issue_state") else None
+    try:
+        flat = _config.load(getattr(args, "source", None))
+        get = lambda key: _config.get(flat, key)
+        volume_state = Path(get("paths.volume_state")) if get("paths.volume_state") else None
+        issue_state = Path(get("paths.issue_state")) if get("paths.issue_state") else None
 
-    series_flags, issue_flags = collect(flat)
-    if not series_flags and not issue_flags:
-        print("  Nothing flagged. Nothing to clear.")
-        return
+        series_flags, issue_flags = collect(flat)
+        if not series_flags and not issue_flags:
+            print("  Nothing flagged. Nothing to clear.")
+            return
 
-    cleared = 0
-    if series_flags:
-        print(f"  SERIES ({len(series_flags)}) — [↑/↓] select · [Enter] clear · [q] skip all")
-        if volume_state and volume_state.is_file():
-            state = load_json(volume_state, "volume state")
-        else:
-            state = {"selections": {}}
-        index = 0
-        while series_flags:
-            flag = series_flags[index]
-            print(f"    {colors.warn('▸')} {flag['query']}")
-            print(f"        {flag['note']}")
-            key = read_key()
-            if key in {"q", "ctrl-c", "ctrl-d"}:
-                break
-            if key == "enter":
-                query = flag["query"]
-                if query in state.get("selections", {}):
-                    del state["selections"][query]
-                    atomic_json(volume_state, state)
-                series_flags.pop(index)
-                cleared += 1
-                index = min(index, len(series_flags) - 1) if series_flags else 0
-            elif key == "up":
-                index = max(0, index - 1)
-            elif key == "down":
-                index = min(len(series_flags) - 1, index + 1)
+        cleared = 0
+        if series_flags:
+            print(f"  SERIES ({len(series_flags)}) — [↑/↓] select · [Enter] clear · [q] skip all")
+            if volume_state and volume_state.is_file():
+                state = load_json(volume_state, "volume state")
+            else:
+                state = {"selections": {}}
+            index = 0
+            while series_flags:
+                flag = series_flags[index]
+                print(f"    {colors.warn('▸')} {flag['query']}")
+                print(f"        {flag['note']}")
+                key = read_key()
+                if key in {"q", "ctrl-c", "ctrl-d"}:
+                    break
+                if key == "enter":
+                    query = flag["query"]
+                    if query in state.get("selections", {}):
+                        del state["selections"][query]
+                        atomic_json(volume_state, state)
+                    series_flags.pop(index)
+                    cleared += 1
+                    index = min(index, len(series_flags) - 1) if series_flags else 0
+                elif key == "up":
+                    index = max(0, index - 1)
+                elif key == "down":
+                    index = min(len(series_flags) - 1, index + 1)
 
-    if issue_flags:
-        print(f"  ISSUES ({len(issue_flags)}) — [↑/↓] select · [Enter] clear · [q] quit")
-        if issue_state and issue_state.is_file():
-            state = load_json(issue_state, "issue state")
-        else:
-            state = {"reviews": {}}
-        replacement_state_path = Path(get("paths.replacement_state")) if get("paths.replacement_state") else None
-        if replacement_state_path and replacement_state_path.is_file():
-            repl_state = load_json(replacement_state_path, "replacement state")
-        else:
-            repl_state = {"requests": {}}
-        index = 0
-        while issue_flags:
-            flag = issue_flags[index]
-            badge = colors.good("▸↻") if flag.get("replacement") else colors.warn("▸⚑")
-            print(f"    {badge} {flag['path']}")
-            print(f"        {flag['note']}")
-            key = read_key()
-            if key in {"q", "ctrl-c", "ctrl-d"}:
-                break
-            if key == "enter":
-                path = flag["path"]
-                if flag.get("replacement"):
-                    if path in repl_state.get("requests", {}):
-                        del repl_state["requests"][path]
-                        atomic_json(replacement_state_path, repl_state)
-                elif path in state.get("reviews", {}):
-                    del state["reviews"][path]
-                    atomic_json(issue_state, state)
-                issue_flags.pop(index)
-                cleared += 1
-                index = min(index, len(issue_flags) - 1) if issue_flags else 0
-            elif key == "up":
-                index = max(0, index - 1)
-            elif key == "down":
-                index = min(len(issue_flags) - 1, index + 1)
+        if issue_flags:
+            print(f"  ISSUES ({len(issue_flags)}) — [↑/↓] select · [Enter] clear · [q] quit")
+            if issue_state and issue_state.is_file():
+                state = load_json(issue_state, "issue state")
+            else:
+                state = {"reviews": {}}
+            replacement_state_path = Path(get("paths.replacement_state")) if get("paths.replacement_state") else None
+            if replacement_state_path and replacement_state_path.is_file():
+                repl_state = load_json(replacement_state_path, "replacement state")
+            else:
+                repl_state = {"requests": {}}
+            index = 0
+            while issue_flags:
+                flag = issue_flags[index]
+                badge = colors.good("▸↻") if flag.get("replacement") else colors.warn("▸⚑")
+                print(f"    {badge} {flag['path']}")
+                print(f"        {flag['note']}")
+                key = read_key()
+                if key in {"q", "ctrl-c", "ctrl-d"}:
+                    break
+                if key == "enter":
+                    path = flag["path"]
+                    if flag.get("replacement"):
+                        if path in repl_state.get("requests", {}):
+                            del repl_state["requests"][path]
+                            atomic_json(replacement_state_path, repl_state)
+                    elif path in state.get("reviews", {}):
+                        del state["reviews"][path]
+                        atomic_json(issue_state, state)
+                    issue_flags.pop(index)
+                    cleared += 1
+                    index = min(index, len(issue_flags) - 1) if issue_flags else 0
+                elif key == "up":
+                    index = max(0, index - 1)
+                elif key == "down":
+                    index = min(len(issue_flags) - 1, index + 1)
 
-    print()
-    print(f"  Cleared {cleared} flag(s). Run `comicmeta review` again to re-review them.")
-    print(colors.muted("  Note: cleared series/issues are no longer excluded from write."))
+        print()
+        print(f"  Cleared {cleared} flag(s). Run `comicmeta review` again to re-review them.")
+        print(colors.muted("  Note: cleared series/issues are no longer excluded from write."))
+
+    finally:
+        leave_alt_screen()

@@ -21,7 +21,7 @@ import zipfile
 from pathlib import Path
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die, _truncate_ansi, _terminal_size
 
 ARCHIVE_SUFFIXES = {".cbr", ".cb7", ".cbt", ".cbz"}
 
@@ -194,10 +194,17 @@ def convert_picker(source: Path, mapping: dict, backup_dir: Path, colors, prompt
         if sys.stdout.isatty():
             print("\033[2J\033[H", end="", flush=True)
         print(colors.title("▸ CONVERT CBR → CBZ"))
-        print(colors.muted(prompt))
-        print(colors.muted("  Converting moves the original .cbr to comicmeta-backups/latest/"))
+        term_cols, term_rows = _terminal_size((80, 24))
+        print(_truncate_ansi(colors.muted(prompt), term_cols))
+        print(_truncate_ansi(colors.muted("  Converting moves the original .cbr to comicmeta-backups/latest/"), term_cols))
         print()
-        for index, cbr in enumerate(cbrs):
+        window = max(5, term_rows - 10)
+        start = min(max(0, selected - window // 2), max(0, len(cbrs) - window))
+        end = min(len(cbrs), start + window)
+        if start:
+            print(colors.muted(f"    … {start} more"))
+        for index in range(start, end):
+            cbr = cbrs[index]
             rel = cbr.relative_to(source)
             marker = "▸" if index == selected else " "
             check = "[x]" if index in toggled else "[ ]"
@@ -207,15 +214,17 @@ def convert_picker(source: Path, mapping: dict, backup_dir: Path, colors, prompt
                 print(colors.bold(line))
             else:
                 print(line)
+        if end < len(cbrs):
+            print(colors.muted(f"    … {len(cbrs) - end} more"))
         print()
         picked = toggled if toggled else {selected}
         picked_size = sum(sizes[i] for i in picked)
         summary = f"  {len(picked)} of {len(cbrs)} selected · {pretty_bytes(picked_size)}"
         if not toggled:
             summary += "  (selected row; space to add more)"
-        print(colors.bold(summary))
+        print(colors.bold(_truncate_ansi(summary, term_cols)))
         print()
-        print(colors.muted("  [↑/↓] move · [space] toggle · [a] all · [Enter] convert · [q] quit"))
+        print(_truncate_ansi(colors.muted("  [↑/↓] move · [space] toggle · [a] all · [Enter] convert · [q] quit"), term_cols))
         key = read_key()
         if key in {"q", "ctrl-c", "ctrl-d"}:
             return 0, 0
@@ -256,10 +265,11 @@ def _convert_summary(colors, found: int, applied: int, skipped: int) -> None:
         ("skipped", str(skipped)),
     ]
     label_w = max(len(label) for label, _ in rows)
-    inner = label_w + 3 + 6
+    cols, _ = _terminal_size((80, 24))
+    inner = min(label_w + 3 + 6, max(4, cols - 4))
     print(colors.muted("┌" + "─" * (inner + 2) + "┐"))
     for label, value in rows:
-        line = f"  {label:<{label_w}}  {value}"
+        line = _truncate_ansi(f"  {label:<{label_w}}  {value}", inner + 2)
         print(colors.muted("│" + line.ljust(inner + 2) + "│"))
     print(colors.muted("└" + "─" * (inner + 2) + "┘"))
 

@@ -205,7 +205,7 @@ def state_dir(source: Path | None = None) -> Path:
     if source is None:
         return root / "libraries" / "default"
     resolved = source if source.is_absolute() else source.resolve()
-    digest = hashlib.sha256(str(resolved).encode()).hexdigest()[:12]
+    digest = hashlib.sha256(str(resolved).encode("utf-8", "surrogateescape")).hexdigest()[:12]
     return root / "libraries" / digest
 
 
@@ -295,6 +295,20 @@ def load(source: Path | None = None, path: Path | None = None) -> dict:
 
 def get(flat: dict, key: str):
     return flat.get(key, FLAT_DEFAULTS.get(key))
+
+
+def as_int(value, default=0) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def as_float(value, default=0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
 
 
 def scan_excludes(flat: dict) -> set[str]:

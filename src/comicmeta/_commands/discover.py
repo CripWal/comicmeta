@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from comicmeta import _archive, _comicvine
-from comicmeta._common import add_examples, die
+from comicmeta._common import add_examples, atomic_write, die
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -157,8 +157,7 @@ def discover(source: Path, report: Path, api_key: str, limit: int, timeout: int 
             if item["status"] == "review-required" and item["query"] in by_query:
                 item["candidates"] = by_query[item["query"]]
     result["items"] = items
-    report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(report, json.dumps(result, indent=2, sort_keys=True) + "\n")
     return result
 
 
@@ -262,8 +261,7 @@ def rescan(source: Path, report: Path, api_key: str | None, limit: int, timeout:
                 result["added"].append(item["path"])
     result["items"] = items
     result["removed"] = sorted(set(cached) - seen)
-    report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    atomic_write(report, json.dumps(result, indent=2, sort_keys=True) + "\n")
     return result
 
 
@@ -272,8 +270,8 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     report = args.report or Path(_config.get(flat, "paths.candidates"))
-    limit = args.limit if args.limit is not None else int(_config.get(flat, "api.candidate_limit"))
-    timeout = int(_config.get(flat, "api.timeout"))
+    limit = args.limit if args.limit is not None else _config.as_int(_config.get(flat, "api.candidate_limit"), 10)
+    timeout = _config.as_int(_config.get(flat, "api.timeout"), 30)
     user_agent = _config.get(flat, "api.user_agent")
     if args.api_key_env is None:
         args.api_key_env = _config.get(flat, "api.key_env")
@@ -282,8 +280,8 @@ def run(args: argparse.Namespace) -> None:
     if not source.is_dir():
         die(f"source does not exist: {source}")
     api_key = _comicvine.api_key_from(args, flat)
-    request_delay = float(_config.get(flat, "api.request_delay"))
-    concurrency = int(_config.get(flat, "api.concurrency"))
+    request_delay = _config.as_float(_config.get(flat, "api.request_delay"), 0.25)
+    concurrency = _config.as_int(_config.get(flat, "api.concurrency"), 5)
     from comicmeta._spinner import Spinner
     with Spinner(f"Scanning {source} and querying ComicVine") as spinner:
         result = rescan(source, report, api_key, limit, timeout=timeout, user_agent=user_agent, exclude=_config.scan_excludes(flat), request_delay=request_delay, concurrency=concurrency)

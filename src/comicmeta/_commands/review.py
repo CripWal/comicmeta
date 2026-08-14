@@ -87,7 +87,13 @@ def _issue_review_complete(state_path: Path, candidates: dict) -> bool:
         return False
     state = load_json(state_path, "issue state")
     reviewed = set(state.get("reviews", {}))
-    candidate_paths = {match["path"] for series in candidates.get("series", []) for match in series.get("matches", [])}
+    candidate_paths = {
+        match["path"]
+        for series in candidates.get("series", [])
+        if isinstance(series, dict)
+        for match in series.get("matches", [])
+        if isinstance(match, dict) and match.get("path") is not None
+    }
     return bool(candidate_paths) and candidate_paths <= reviewed
 
 
@@ -219,12 +225,12 @@ def run(args: argparse.Namespace) -> None:
 
     # Phase 1: rescan the library (reuses cached candidates for unchanged files)
     api_key = _try_api_key(args, flat)
-    limit = int(_config.get(flat, "api.candidate_limit"))
+    limit = _config.as_int(_config.get(flat, "api.candidate_limit"), 10)
     from comicmeta._spinner import Spinner
     with Spinner(f"Scanning {source}") as spinner:
         result = discover.rescan(source, paths["candidates"], api_key, limit=limit, exclude=_config.scan_excludes(flat),
-                                 request_delay=float(_config.get(flat, "api.request_delay")),
-                                 concurrency=int(_config.get(flat, "api.concurrency")))
+                                 request_delay=_config.as_float(_config.get(flat, "api.request_delay"), 0.25),
+                                 concurrency=_config.as_int(_config.get(flat, "api.concurrency"), 5))
         spinner.update("Scan complete")
     if result["needs_api_key"]:
         die(
@@ -255,8 +261,8 @@ def run(args: argparse.Namespace) -> None:
                 # Rescan so converted CBZs are picked up as candidates.
                 print(f"▸ Re-scanning after conversion")
                 result = discover.rescan(source, paths["candidates"], api_key, limit=limit, exclude=_config.scan_excludes(flat),
-                                         request_delay=float(_config.get(flat, "api.request_delay")),
-                                         concurrency=int(_config.get(flat, "api.concurrency")))
+                                         request_delay=_config.as_float(_config.get(flat, "api.request_delay"), 0.25),
+                                         concurrency=_config.as_int(_config.get(flat, "api.concurrency"), 5))
                 print(f"  Scan: {result['reused']} unchanged, {result['queried']} new, {len(result['removed'])} removed")
         else:
             print(colors.muted("  Run `comicmeta convert` (or `comicmeta convert --execute`) to convert them."))
@@ -274,8 +280,8 @@ def run(args: argparse.Namespace) -> None:
             paths["candidates"], paths["volume_state"], paths["volume_summary"],
             policy_data,
             colors,
-            score_threshold=int(_config.get(flat, "review.high_confidence_score")),
-            score_margin=int(_config.get(flat, "review.high_confidence_margin")),
+            score_threshold=_config.as_int(_config.get(flat, "review.high_confidence_score"), 90),
+            score_margin=_config.as_int(_config.get(flat, "review.high_confidence_margin"), 15),
         )
     else:
         print("▸ Volumes already reviewed")

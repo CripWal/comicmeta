@@ -89,7 +89,9 @@ def _counts(paths: dict) -> dict:
     if issue_candidates.is_file():
         try:
             payload = load_json(issue_candidates, "issue candidates")
-            counts["issues"] = sum(len(s.get("matches", [])) for s in payload.get("series", []))
+            counts["issues"] = sum(
+                len(s.get("matches", [])) for s in payload.get("series", []) if isinstance(s, dict)
+            )
         except SystemExit:
             counts["issues"] = None
     if paths["mapping"].is_file():

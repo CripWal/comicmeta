@@ -36,6 +36,16 @@ def is_interactive() -> bool:
     return sys.stdin.isatty() and sys.stdout.isatty()
 
 
+def flush_input() -> None:
+    """Discard buffered input so a prompt only sees freshly-typed keys."""
+    if not is_interactive() or not _HAS_TERMIOS:
+        return
+    try:
+        termios.tcflush(sys.stdin, termios.TCIFLUSH)
+    except OSError:
+        pass
+
+
 _alt_screen = False
 
 
@@ -88,15 +98,28 @@ def _read_arrow_key(fd: int) -> str:
         return "ctrl-d"  # EOF / Ctrl-D
     if sequence != "\x1b":
         return sequence
-    if sys.stdin.read(1) != "[":
-        return "esc"
-    code = sys.stdin.read(1)
-    return {
-        "A": "up",
-        "B": "down",
-        "C": "right",
-        "D": "left",
-    }.get(code, "esc")
+    if not select.select([sys.stdin], [], [], 0.05)[0]:
+        return "esc"  # lone ESC: nothing follows
+    prefix = sys.stdin.read(1)
+    if prefix == "[":
+        code = sys.stdin.read(1)
+        return {
+            "A": "up",
+            "B": "down",
+            "C": "right",
+            "D": "left",
+        }.get(code, "esc")
+    if prefix == "O":  # application-cursor mode (ESC O A/B/C/D)
+        if not select.select([sys.stdin], [], [], 0.05)[0]:
+            return "esc"
+        code = sys.stdin.read(1)
+        return {
+            "A": "up",
+            "B": "down",
+            "C": "right",
+            "D": "left",
+        }.get(code, "esc")
+    return "esc"
 
 
 def read_key() -> str:
@@ -130,6 +153,8 @@ def read_key() -> str:
 
 def confirm(prompt: str, default: bool = False) -> bool:
     """Yes/no prompt with arrow-key or y/n input."""
+    if is_no_input():
+        return default
     suffix = "[Y/n]" if default else "[y/N]"
     print(f"{prompt} {suffix} ", end="", flush=True)
     answer = read_key()
@@ -139,11 +164,17 @@ def confirm(prompt: str, default: bool = False) -> bool:
     return answer.casefold() in {"y", "yes"}
 
 
-def prompt_hidden(prompt: str) -> str:
+def prompt_hidden(prompt: str) -> str | None:
     """Read a line of input with echo disabled (for secrets)."""
+    if is_no_input():
+        return None
     print(prompt, end="", flush=True)
     if not is_interactive() or not _HAS_TERMIOS:
-        value = input()
+        try:
+            value = input()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            return None
         print()
         return value
     fd = sys.stdin.fileno()
@@ -155,7 +186,11 @@ def prompt_hidden(prompt: str) -> str:
         termios.tcsetattr(fd, termios.TCSADRAIN, new)
         chars = []
         while True:
-            char = sys.stdin.read(1)
+            try:
+                char = sys.stdin.read(1)
+            except KeyboardInterrupt:
+                print()
+                return None
             if char == "" or char == "\x04":  # EOF / Ctrl-D
                 break
             if char == "\r" or char == "\n":
@@ -166,7 +201,7 @@ def prompt_hidden(prompt: str) -> str:
                 continue
             if char == "\x03":  # Ctrl-C
                 print()
-                raise KeyboardInterrupt
+                return None
             chars.append(char)
     finally:
         termios.tcsetattr(fd, termios.TCSADRAIN, previous)
@@ -174,12 +209,32 @@ def prompt_hidden(prompt: str) -> str:
     return "".join(chars)
 
 
+def _char_width(char: str) -> int:
+    """Terminal cell width of one character: 2 for wide, 0 for combining, else 1."""
+    codepoint = ord(char)
+    if codepoint in range(0x1100, 0x1160) or codepoint in range(0x2E80, 0xA4D0) \
+            or codepoint in range(0xAC00, 0xD7A4) or codepoint in range(0xF900, 0xFB00) \
+            or codepoint in range(0xFE30, 0xFE50) or codepoint in range(0xFF00, 0xFF61) \
+            or codepoint in range(0xFFE0, 0xFFE7) or codepoint in range(0x1F300, 0x1FB00):
+        return 2
+    if codepoint in range(0x0300, 0x0370) or codepoint in range(0x1AB0, 0x1B00) \
+            or codepoint in range(0x1DC0, 0x1E00) or codepoint in range(0x20D0, 0x2100) \
+            or codepoint in range(0xFE20, 0xFE30):
+        return 0
+    return 1
+
+
+def _display_width(text: str) -> int:
+    return sum(_char_width(char) for char in text)
+
+
 def _redraw_line(prompt: str, value: list[str], cursor: int, secret: bool) -> None:
     """Redraw the current input line in place, restoring the cursor position."""
     visible = "".join("•" if secret else ch for ch in value)
-    # \r start of line, \x1b[K clear to end, reprint, then move cursor left.
+    # \r start of line, \x1b[K clear to end, reprint, then move cursor left by
+    # display width so wide (CJK/emoji) and combining chars don't misalign.
     tail = f"\r{prompt}{visible}\x1b[K"
-    back = f"\x1b[{len(visible) - cursor}D"
+    back = f"\x1b[{_display_width(visible) - _display_width(visible[:cursor])}D"
     print(tail + back, end="", flush=True)
 
 
@@ -192,28 +247,44 @@ def _escape_action() -> str:
     """
     if not select.select([sys.stdin], [], [], 0.05)[0]:
         return ""  # lone ESC: nothing follows
-    if sys.stdin.read(1) != "[":
-        # ESC followed by a printable char (e.g. alt+key) — drain nothing, ignore.
-        return ""
-    # CSI sequence: consume parameter bytes and any intermediates until a final byte.
-    while True:
+    prefix = sys.stdin.read(1)
+    if prefix == "[":
+        # CSI sequence: consume parameter bytes and any intermediates until a final byte.
+        while True:
+            if not select.select([sys.stdin], [], [], 0.05)[0]:
+                return ""  # incomplete sequence: drop it
+            code = sys.stdin.read(1)
+            if code in ("", "\x03", "\x04"):
+                return ""
+            if code == "D":
+                return "left"
+            if code == "C":
+                return "right"
+            if code in "ABCD":
+                return ""  # up/down/home/end etc: recognized, no cursor action
+            if code == "~":
+                return ""  # function-key terminator: ignore
+            # parameter byte (digit, ';', '?', etc.) — keep consuming
+            if code in "0123456789;?<>=!":
+                continue
+            return ""  # any other byte: terminate and ignore
+    if prefix == "O":
+        # Application-cursor mode (ESC O A/B/C/D) and SS3 function keys (ESC O P..S).
         if not select.select([sys.stdin], [], [], 0.05)[0]:
-            return ""  # incomplete sequence: drop it
+            return ""  # bare ESC O: drop it
         code = sys.stdin.read(1)
         if code in ("", "\x03", "\x04"):
             return ""
-        if code == "D":
-            return "left"
-        if code == "C":
-            return "right"
         if code in "ABCD":
-            return ""  # up/down/home/end etc: recognized, no cursor action
-        if code == "~":
-            return ""  # function-key terminator: ignore
-        # parameter byte (digit, ';', '?', etc.) — keep consuming
-        if code in "0123456789;?<>=!":
-            continue
-        return ""  # any other byte: terminate and ignore
+            return {"A": "up", "B": "down", "C": "right", "D": "left"}.get(code, "")
+    # ESC followed by a non-CSI lead byte (alt+key, SS3 function key, ...): the
+    # lead byte was consumed above; drain any remainder so it can't leak.
+    for _ in range(8):
+        if not select.select([sys.stdin], [], [], 0.05)[0]:
+            break
+        if sys.stdin.read(1) in ("", "\x03", "\x04"):
+            break
+    return ""
 
 
 def prompt_edit(prompt: str, current: str = "", secret: bool = False) -> str | None:
@@ -224,6 +295,8 @@ def prompt_edit(prompt: str, current: str = "", secret: bool = False) -> str | N
     None on cancel (Ctrl-C/Ctrl-D/EOF). When `secret` is True, characters echo
     as `•`.
     """
+    if is_no_input():
+        return None
     if not is_interactive() or not _HAS_TERMIOS:
         print(prompt, end="", flush=True)
         try:
@@ -243,7 +316,11 @@ def prompt_edit(prompt: str, current: str = "", secret: bool = False) -> str | N
     try:
         tty.setcbreak(fd)
         while True:
-            char = sys.stdin.read(1)
+            try:
+                char = sys.stdin.read(1)
+            except KeyboardInterrupt:
+                print()
+                return None
             if char in ("", "\x04"):  # EOF / Ctrl-D
                 print()
                 return None
