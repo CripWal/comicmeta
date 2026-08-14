@@ -17,7 +17,7 @@ def _patch_tty():
 
 
 def test_prompt_edit_ctrl_c_keyboard_interrupt_cancels():
-    with mock.patch("sys.stdin.read", side_effect=KeyboardInterrupt):
+    with mock.patch("comicmeta._tui.os.read", side_effect=KeyboardInterrupt):
         with _patch_tty() as patches:
             assert _tui.prompt_edit("k: ", current="abc") is None
 
@@ -147,21 +147,26 @@ def test_redraw_line_cursor_math_uses_display_width():
 
 
 def test_read_arrow_key_application_cursor_mode():
-    keys = iter(["\x1b", "O", "B"])
+    keys = iter([b"\x1b", b"O", b"B"])
     with mock.patch("comicmeta._tui.select.select", return_value=([object()], [], [])):
-        with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+        with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
             assert _tui._read_arrow_key(0) == "down"
 
 
 def test_read_arrow_key_lone_esc_does_not_block():
-    with mock.patch("comicmeta._tui.select.select", return_value=([], [], [])):
-        with mock.patch("sys.stdin.read", return_value="\x1b"):
+    keys = iter([b"\x1b"])
+    # byte 1 (ESC) ready; the post-ESC prefix read times out (not ready)
+    with mock.patch("comicmeta._tui.select.select", side_effect=[
+        ([object()], [], []),
+        ([], [], []),
+    ]):
+        with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
             assert _tui._read_arrow_key(0) == "esc"
 
 
 def test_prompt_edit_ss3_function_key_does_not_leak():
-    keys = iter(["\x1b", "O", "P", "X", "\r"])
-    with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+    keys = iter([b"\x1b", b"O", b"P", b"X", b"\r"])
+    with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
         with mock.patch("comicmeta._tui.select.select", side_effect=[
             ([object()], [], []),  # ESC: lead byte available
             ([object()], [], []),  # ESC O: function-key byte available
@@ -173,8 +178,8 @@ def test_prompt_edit_ss3_function_key_does_not_leak():
 
 
 def test_prompt_edit_app_mode_arrows():
-    keys = iter(["\x1b", "O", "D", "X", "\r"])
-    with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+    keys = iter([b"\x1b", b"O", b"D", b"X", b"\r"])
+    with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
         with mock.patch("comicmeta._tui.select.select", return_value=([object()], [], [])):
             with _patch_tty():
                 result = _tui.prompt_edit("k: ", current="abc")

@@ -38,11 +38,11 @@ def test_prompt_edit_noninteractive_eof_returns_none():
 
 def test_prompt_edit_key_sequence():
     """Simulate: type 'a', backspace, type 'bc', Enter -> 'bc'."""
-    keys = iter(["a", "\x7f", "b", "c", "\r"])
+    keys = iter([b"a", b"\x7f", b"b", b"c", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     with mock.patch("comicmeta._tui.termios"):
                         with mock.patch("comicmeta._tui.tty"):
                             result = _tui.prompt_edit("k: ", current="")
@@ -50,11 +50,11 @@ def test_prompt_edit_key_sequence():
 
 
 def test_prompt_edit_cancel_on_ctrl_c():
-    keys = iter(["x", "\x03"])
+    keys = iter([b"x", b"\x03"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     with mock.patch("comicmeta._tui.termios"):
                         with mock.patch("comicmeta._tui.tty"):
                             result = _tui.prompt_edit("k: ", current="")
@@ -63,11 +63,11 @@ def test_prompt_edit_cancel_on_ctrl_c():
 
 def test_prompt_edit_prefill_and_arrows():
     """Prefill 'abc', move left twice, type 'X', Enter -> 'aXbc'."""
-    keys = iter(["\x1b", "[", "D", "\x1b", "[", "D", "X", "\r"])
+    keys = iter([b"\x1b", b"[", b"D", b"\x1b", b"[", b"D", b"X", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     with mock.patch("comicmeta._tui.select.select", return_value=([object()], [], [])):
                         with mock.patch("comicmeta._tui.termios"):
                             with mock.patch("comicmeta._tui.tty"):
@@ -77,11 +77,11 @@ def test_prompt_edit_prefill_and_arrows():
 
 def test_prompt_edit_lone_esc_ignored():
     """A lone ESC must be ignored and must not swallow the next typed char."""
-    keys = iter(["\x1b", "X", "\r"])
+    keys = iter([b"\x1b", b"X", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     # lone ESC: select says nothing ready
                     with mock.patch("comicmeta._tui.select.select", return_value=([], [], [])):
                         with mock.patch("comicmeta._tui.termios"):
@@ -92,11 +92,11 @@ def test_prompt_edit_lone_esc_ignored():
 
 def test_prompt_edit_multi_byte_escape_no_leak():
     """A Ctrl+Arrow sequence (ESC [ 1 ; 5 D) must not leak bytes into the value."""
-    keys = iter(["\x1b", "[", "1", ";", "5", "D", "X", "\r"])
+    keys = iter([b"\x1b", b"[", b"1", b";", b"5", b"D", b"X", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     with mock.patch("comicmeta._tui.select.select", return_value=([object()], [], [])):
                         with mock.patch("comicmeta._tui.termios"):
                             with mock.patch("comicmeta._tui.tty"):
@@ -107,11 +107,11 @@ def test_prompt_edit_multi_byte_escape_no_leak():
 
 def test_prompt_edit_esc_then_printable_not_swallowed():
     """ESC followed by a printable char must not swallow or insert the char."""
-    keys = iter(["\x1b", "Z", "X", "\r"])
+    keys = iter([b"\x1b", b"Z", b"X", b"\r"])
     with mock.patch("comicmeta._tui.is_interactive", return_value=True):
         with mock.patch("comicmeta._tui._HAS_TERMIOS", True):
             with mock.patch("sys.stdin.fileno", return_value=0):
-                with mock.patch("sys.stdin.read", lambda *a: next(keys)):
+                with mock.patch("comicmeta._tui.os.read", lambda *a: next(keys)):
                     # select is ready for the ESC + lead byte, then nothing follows.
                     with mock.patch("comicmeta._tui.select.select", side_effect=[
                         ([object()], [], []),

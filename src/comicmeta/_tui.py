@@ -8,6 +8,7 @@ and the caller should use its prompt path instead.
 from __future__ import annotations
 
 import atexit
+import os
 import select
 import sys
 
@@ -92,17 +93,31 @@ def erase_lines(n: int = 1) -> None:
 
 
 def _read_arrow_key(fd: int) -> str:
-    """Read one key under cbreak mode, decoding arrow escape sequences."""
-    sequence = sys.stdin.read(1)
+    """Read one key under cbreak mode, decoding arrow escape sequences.
+
+    Uses ``os.read`` on the raw fd, never ``sys.stdin.read``: the buffered
+    reader pulls the whole escape sequence into its internal buffer on the
+    first byte, which would make ``select`` report nothing ready and the
+    timeout fire on a lone-ESC check that should not.
+    """
+    def raw_read(timeout: float) -> str:
+        if not select.select([fd], [], [], timeout)[0]:
+            return ""
+        try:
+            return os.read(fd, 1).decode("utf-8", errors="replace")
+        except OSError:
+            return ""
+
+    sequence = raw_read(None)
     if sequence == "":
         return "ctrl-d"  # EOF / Ctrl-D
     if sequence != "\x1b":
         return sequence
-    if not select.select([sys.stdin], [], [], 0.05)[0]:
+    prefix = raw_read(0.05)
+    if prefix == "":
         return "esc"  # lone ESC: nothing follows
-    prefix = sys.stdin.read(1)
     if prefix == "[":
-        code = sys.stdin.read(1)
+        code = raw_read(None)
         return {
             "A": "up",
             "B": "down",
@@ -110,9 +125,7 @@ def _read_arrow_key(fd: int) -> str:
             "D": "left",
         }.get(code, "esc")
     if prefix == "O":  # application-cursor mode (ESC O A/B/C/D)
-        if not select.select([sys.stdin], [], [], 0.05)[0]:
-            return "esc"
-        code = sys.stdin.read(1)
+        code = raw_read(0.05)
         return {
             "A": "up",
             "B": "down",
@@ -243,18 +256,26 @@ def _escape_action() -> str:
 
     A lone ESC or an incomplete/multi-byte sequence is consumed without ever
     returning bytes that could leak into the edited value. Uses non-blocking
-    reads so a bare ESC never blocks waiting for more input.
+    raw-fd reads so a bare ESC never blocks waiting for more input.
     """
-    if not select.select([sys.stdin], [], [], 0.05)[0]:
+    def raw_read(timeout: float) -> str:
+        if not select.select([sys.stdin.fileno()], [], [], timeout)[0]:
+            return ""
+        try:
+            return os.read(sys.stdin.fileno(), 1).decode("utf-8", errors="replace")
+        except OSError:
+            return ""
+
+    prefix = raw_read(0.05)
+    if prefix == "":
         return ""  # lone ESC: nothing follows
-    prefix = sys.stdin.read(1)
     if prefix == "[":
         # CSI sequence: consume parameter bytes and any intermediates until a final byte.
         while True:
-            if not select.select([sys.stdin], [], [], 0.05)[0]:
+            code = raw_read(0.05)
+            if code == "":
                 return ""  # incomplete sequence: drop it
-            code = sys.stdin.read(1)
-            if code in ("", "\x03", "\x04"):
+            if code in ("\x03", "\x04"):
                 return ""
             if code == "D":
                 return "left"
@@ -270,19 +291,16 @@ def _escape_action() -> str:
             return ""  # any other byte: terminate and ignore
     if prefix == "O":
         # Application-cursor mode (ESC O A/B/C/D) and SS3 function keys (ESC O P..S).
-        if not select.select([sys.stdin], [], [], 0.05)[0]:
+        code = raw_read(0.05)
+        if code == "":
             return ""  # bare ESC O: drop it
-        code = sys.stdin.read(1)
-        if code in ("", "\x03", "\x04"):
-            return ""
         if code in "ABCD":
             return {"A": "up", "B": "down", "C": "right", "D": "left"}.get(code, "")
+        return ""  # SS3 function keys (P..S): consumed, no cursor action
     # ESC followed by a non-CSI lead byte (alt+key, SS3 function key, ...): the
     # lead byte was consumed above; drain any remainder so it can't leak.
     for _ in range(8):
-        if not select.select([sys.stdin], [], [], 0.05)[0]:
-            break
-        if sys.stdin.read(1) in ("", "\x03", "\x04"):
+        if raw_read(0.05) in ("", "\x03", "\x04"):
             break
     return ""
 
@@ -317,11 +335,15 @@ def prompt_edit(prompt: str, current: str = "", secret: bool = False) -> str | N
         tty.setcbreak(fd)
         while True:
             try:
-                char = sys.stdin.read(1)
+                chunk = os.read(fd, 1)
             except KeyboardInterrupt:
                 print()
                 return None
-            if char in ("", "\x04"):  # EOF / Ctrl-D
+            char = chunk.decode("utf-8", errors="replace")
+            if char == "":  # EOF / Ctrl-D
+                print()
+                return None
+            if char == "\x04":  # Ctrl-D
                 print()
                 return None
             if char == "\x03":  # Ctrl-C
