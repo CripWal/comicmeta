@@ -347,6 +347,7 @@ def _map_args(args: argparse.Namespace, paths: dict) -> argparse.Namespace:
         review=paths["issue_state"],
         output=paths["mapping"],
         kavita_export=paths.get("kavita_export"),
+        source=args.source,
     )
 
 
@@ -358,6 +359,7 @@ def _write_args(args: argparse.Namespace, paths: dict, flat: dict) -> argparse.N
         backup_dir=Path(_config.get(flat, "paths.backup_dir")),
         report=Path(_config.get(flat, "paths.write_report")),
         expected_hashes=None,
+        no_backups=False,
         dry_run=False,
         yes=True,  # review already confirmed "continue to write"; don't re-prompt
     )

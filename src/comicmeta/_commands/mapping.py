@@ -18,6 +18,7 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     )
     parser.add_argument("--candidates", "-c", type=Path, default=Path("comicvine-issue-candidates.json"), help="issue candidates JSON")
     parser.add_argument("--review", "-r", type=Path, default=Path("comicvine-issue-review-state.json"), help="completed issue review state JSON")
+    parser.add_argument("--source", "-s", type=Path, help="comic library root (default: current directory)")
     parser.add_argument("--output", "-o", type=Path, default=Path("comic-metadata-reviewed-mapping.json"), help="writer mapping JSON")
     parser.add_argument("--kavita-export", type=Path, help="future Kavita API synchronization export JSON")
     add_examples(parser, [
@@ -27,7 +28,23 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=run)
 
 
-def generate_mapping(candidates: dict, review: dict) -> tuple[dict, list[str]]:
+def _format_from_disk(source: Path | None, path: str) -> str | None:
+    """Return the archive's lowercase suffix when the file exists on disk.
+
+    Used as a fallback for reviewed volumes that fetch-issues skipped this run
+    (their archive_format is absent from the fresh candidates report). Returns
+    None when `source` is unavailable or the file is gone, so stale reviews
+    aren't silently mapped.
+    """
+    if source is None:
+        return None
+    file = (source / path)
+    if not file.is_file():
+        return None
+    return file.suffix.lower().lstrip(".")
+
+
+def generate_mapping(candidates: dict, review: dict, source: Path | None = None) -> tuple[dict, list[str]]:
     formats = {
         match["path"]: match.get("archive_format", "").casefold()
         for series in candidates.get("series", [])
@@ -41,8 +58,19 @@ def generate_mapping(candidates: dict, review: dict) -> tuple[dict, list[str]]:
         if result.get("status") not in {"accepted", "auto-accepted", "edited", "manual"}:
             skipped.append(f"{path}: status={result.get('status', 'unknown')}")
             continue
-        if formats.get(path) != "cbz":
-            skipped.append(f"{path}: archive-format={formats.get(path, 'unknown')}")
+        # `archive_format` is the archive's lowercase suffix, but it's only
+        # carried in the issue-candidates report for volumes that had pending
+        # review-required files this run. Volumes already reviewed in a prior
+        # run are skipped by fetch-issues, so their format is absent here —
+        # fall back to the on-disk file rather than mislabelling them unknown.
+        fmt = formats.get(path)
+        if fmt is None:
+            fmt = _format_from_disk(source, path)
+        if fmt is None:
+            skipped.append(f"{path}: archive-format=unknown")
+            continue
+        if fmt != "cbz":
+            skipped.append(f"{path}: archive-format={fmt or 'unknown'}")
             continue
         metadata = result.get("metadata") or {}
         missing = [field for field in REQUIRED_FIELDS if not str(metadata.get(field, "")).strip()]
@@ -101,7 +129,7 @@ def run(args: argparse.Namespace) -> None:
         for path in missing:
             print(f"  - {path}", file=sys.stderr)
     try:
-        mapping, skipped = generate_mapping(candidates, review)
+        mapping, skipped = generate_mapping(candidates, review, getattr(args, "source", None))
     except ValueError as error:
         raise SystemExit(str(error))
     if not mapping:

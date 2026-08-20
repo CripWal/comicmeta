@@ -24,10 +24,13 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     )
     parser.add_argument("--source", "-s", type=Path, help="comic library root (default: current directory)")
     parser.add_argument("--clear", action="store_true", help="interactively unflag items as they're resolved")
+    parser.add_argument("--clear-all", action="store_true", help="clear every flag non-interactively (skips flagged items)")
+    parser.add_argument("--yes", action="store_true", help="confirm a non-interactive clear without prompting")
     parser.add_argument("--no-color", action="store_true", help="disable ANSI colors")
     add_examples(parser, [
         "comicmeta flags",
         "comicmeta flags --clear",
+        "comicmeta flags --clear-all --yes",
         "comicmeta flags -s /path/to/comics",
     ])
     parser.set_defaults(handler=run)
@@ -124,6 +127,9 @@ def status_line(colors, source: Path | None = None) -> str | None:
 
 def run(args: argparse.Namespace) -> None:
     colors = Palette(color_enabled(args))
+    if getattr(args, "clear_all", False):
+        clear_all(args, colors)
+        return
     if getattr(args, "clear", False):
         clear_flags(args, colors)
         return
@@ -237,3 +243,70 @@ def clear_flags(args: argparse.Namespace, colors) -> None:
 
     finally:
         leave_alt_screen()
+
+
+def clear_all(args: argparse.Namespace, colors) -> None:
+    """Non-interactively clear every flag so all items can re-enter the write pool.
+
+    Removes flagged series selections, flagged issue reviews, and pending
+    ComicInfo-replacement requests. Use `--yes` (or a non-interactive run) to
+    skip the confirmation prompt — this is what the dashboard uses so it can
+    clear flags over a NAS/SSH context without a key-driven TUI.
+    """
+    from comicmeta._common import atomic_json
+    from comicmeta._tui import confirm
+
+    flat = _config.load(getattr(args, "source", None))
+    get = lambda key: _config.get(flat, key)
+
+    volume_state = Path(get("paths.volume_state")) if get("paths.volume_state") else None
+    issue_state = Path(get("paths.issue_state")) if get("paths.issue_state") else None
+    replacement_state = Path(get("paths.replacement_state")) if get("paths.replacement_state") else None
+
+    series_flags, issue_flags = collect(flat)
+    total = len(series_flags) + len(issue_flags)
+    if total == 0:
+        print("  Nothing flagged. Nothing to clear.")
+        return
+
+    if not getattr(args, "yes", False):
+        if not confirm(f"  Clear all {total} flag(s)?", default=False):
+            print("  Aborted — no flags were cleared.")
+            return
+
+    if volume_state and volume_state.is_file() and series_flags:
+        state = load_json(volume_state, "volume state")
+        changed = False
+        for flag in series_flags:
+            query = flag["query"]
+            if query in state.get("selections", {}):
+                del state["selections"][query]
+                changed = True
+        if changed:
+            atomic_json(volume_state, state)
+
+    if issue_state and issue_state.is_file() and issue_flags:
+        state = load_json(issue_state, "issue state")
+        changed = False
+        for flag in issue_flags:
+            if flag.get("replacement"):
+                continue
+            path = flag["path"]
+            if path in state.get("reviews", {}):
+                del state["reviews"][path]
+                changed = True
+        if changed:
+            atomic_json(issue_state, state)
+
+    repl_path = replacement_state
+    if repl_path and repl_path.is_file():
+        state = load_json(repl_path, "replacement state")
+        requests = state.get("requests", {})
+        to_drop = [flag["path"] for flag in issue_flags if flag.get("replacement") and flag["path"] in requests]
+        if to_drop:
+            for path in to_drop:
+                del requests[path]
+            atomic_json(repl_path, state)
+
+    print(f"  Cleared {total} flag(s). Run `comicmeta review` again to re-review them.")
+    print(colors.muted("  Note: cleared series/issues are no longer excluded from write."))

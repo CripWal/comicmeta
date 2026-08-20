@@ -245,7 +245,7 @@ def _render_menu(colors: Palette, selected: int, conn=None, ctx=None) -> None:
     block_width = max((_display_width(line) for line in block), default=0)
     pad_step = max(0, (width - block_width) // 2)
     rows.extend((" " * pad_step + line) for line in block)
-    hint = "[↑/↓] move · [1-6] jump · [Enter] run · [c] context · [s] settings · [h] help · [q] quit"
+    hint = "[↑/↓] move · [1-6] jump · [Enter] run · [c] context · [s] settings · [x] clear flags · [h] help · [q] quit"
     rows.append(center(colors.muted(hint)))
     target_name = "local" if local_target else effective_ctx.get("name")
     rows.append(center(colors.muted(f"  target: {target_name}  ")))
@@ -1158,6 +1158,13 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
             key = read_key()
             if key in {"ctrl-c", "ctrl-d", "q"}:
                 return 0
+            ack_n = 0  # dashboard ack lines printed since the last subcommand
+
+            def ack(line: str = "") -> None:
+                nonlocal ack_n
+                ack_n += 1
+                print(line)
+
             if key == "c":
                 _cycle_target_context()
                 continue
@@ -1177,15 +1184,20 @@ def interactive_dashboard(parser: argparse.ArgumentParser, initial_context: str 
                 print(colors.muted("  [any key] back to the dashboard"))
                 read_key()
                 continue
+            if key == "x":
+                _run_subcommand(["flags", "--clear-all", "--yes"])
+                ack_n = 0
+                flush_input()
+                ack()
+                ack(colors.muted("  [Enter] or [q] back to dashboard · [Ctrl+D] quit"))
+                if read_key() in {"ctrl-c", "ctrl-d"}:
+                    from comicmeta._tui import erase_lines
+                    erase_lines(ack_n)
+                    return 0
+                enter_alt_screen()
+                continue
             if key == "enter":
                 name = DASHBOARD_STEPS[selected][0]
-                ack_n = 0  # dashboard ack lines printed since the last subcommand
-
-                def ack(line: str = "") -> None:
-                    nonlocal ack_n
-                    ack_n += 1
-                    print(line)
-
                 if name == "convert":
                     code = _run_subcommand(["convert"])
                     ack_n = 0

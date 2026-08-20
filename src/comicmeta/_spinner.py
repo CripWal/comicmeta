@@ -8,6 +8,7 @@ final status line is printed instead.
 
 from __future__ import annotations
 
+import os
 import sys
 import threading
 import time
@@ -46,6 +47,20 @@ _DEFAULT_INTERVAL = 0.1
 _ACTIVE: "Spinner | None" = None
 
 
+def _animation_allowed(stream) -> bool:
+    """Whether in-place spinner animation should run for `stream`.
+
+    Animation needs a real interactive terminal. It is suppressed when the
+    stream is not a TTY, or when `COMICMETA_NO_ANIMATION` is set. The latter is
+    exported by the NAS executors when a command runs over `ssh -t`: the remote
+    pty reports as a TTY, but in-place `\r\x1b[K` redraws get captured as a
+    scrollback flood rather than overwriting one line.
+    """
+    if not stream.isatty():
+        return False
+    return not os.environ.get("COMICMETA_NO_ANIMATION")
+
+
 class Checklist:
     """A listr-style task list that renders a spinner per phase, then a ✓.
 
@@ -56,7 +71,7 @@ class Checklist:
 
     def __init__(self, stream=None) -> None:
         self.stream = stream or sys.stderr
-        self._enabled = self.stream.isatty()
+        self._enabled = _animation_allowed(self.stream)
         self._active: Spinner | None = None
         self._completed: list[tuple[str, str]] = []
         self._lines_written = 0
@@ -113,7 +128,7 @@ class Spinner:
         self.message = message
         self.frames = FRAMES.get(style, FRAMES["dots"])
         self.stream = stream or sys.stderr
-        self._enabled = self.stream.isatty()
+        self._enabled = _animation_allowed(self.stream)
         self._thread: threading.Thread | None = None
         self._stop = threading.Event()
         self._frame = 0
@@ -159,7 +174,15 @@ class Spinner:
             self.message = f"{label}  {item}" if item else label
             self._render()
         else:
+            # No animation. For piped output this stays silent (the final
+            # status line is printed on succeed/exit). But when a NAS executor
+            # runs us over `ssh -t` it exports COMICMETA_NO_ANIMATION, because
+            # in-place `\r\x1b[K` redraws would flood the scrollback; there we
+            # emit one plain line per update so progress stays visible.
             self.message = f"Wrote {done}/{total}" + (f"  {item}" if item else "")
+            if os.environ.get("COMICMETA_NO_ANIMATION"):
+                self.stream.write(self.message + "\n")
+                self.stream.flush()
 
     @staticmethod
     def _fmt_eta(seconds: int) -> str:

@@ -65,6 +65,41 @@ def test_spinner_progress_bar_tty():
     assert "2/4" in s.message
 
 
+def test_spinner_disabled_over_remote_pty_emits_plain_lines():
+    # A remote `ssh -t` pty reports as a TTY, so animation would flood the
+    # scrollback. COMICMETA_NO_ANIMATION (set by the NAS executor) must turn
+    # off the in-place redraw and instead emit one plain line per update.
+    class FakeStream:
+        def isatty(self):
+            return True
+
+        def __init__(self):
+            self.data = ""
+
+        def write(self, text):
+            self.data += text
+            return len(text)
+
+        def flush(self):
+            pass
+
+    stream = FakeStream()
+    with mock.patch.dict("os.environ", {"COMICMETA_NO_ANIMATION": "1"}):
+        s = _spinner.Spinner("Work", stream=stream)
+        assert s._enabled is False
+        with s:
+            s.progress(2, 4, item="Marvel/a.cbz")
+            s.progress(3, 4, item="Marvel/b.cbz")
+            s.succeed("Wrote 4")
+    out = stream.data
+    assert "Wrote 2/4  Marvel/a.cbz" in out
+    assert "Wrote 3/4  Marvel/b.cbz" in out
+    assert "✓ Wrote 4" in out
+    # No animated frames leaked.
+    assert "\r" not in out
+
+
+
 def test_spinner_succeed_non_tty_prints_checkmark():
     stream = io.StringIO()
     with _spinner.Spinner("Work", stream=stream) as s:

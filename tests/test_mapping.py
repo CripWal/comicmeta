@@ -85,3 +85,31 @@ def test_run_partial_review_writes_reviewed_subset(tmp_path, capsys):
     captured = capsys.readouterr()
     assert "PARTIAL mapping" in captured.err
     assert "Avengers Omnibus" in captured.err
+
+
+def test_generate_mapping_recovers_already_reviewed_volume(tmp_path):
+    """Regression: a volume already reviewed in a prior run is skipped by
+    fetch-issues, so its archive_format is absent from the fresh candidates
+    report. With a source it must be recovered from the on-disk .cbz instead of
+    being mislabelled `archive-format=unknown`."""
+    library = tmp_path / "library"
+    archive = library / "DC" / "Batman - The Dark Knight Returns (1986)"
+    archive.mkdir(parents=True)
+    (archive / "Batman - The Dark Knight Returns (1986) #001.cbz").write_bytes(b"PK\x03\x04")
+    rel = "DC/Batman - The Dark Knight Returns (1986)/Batman - The Dark Knight Returns (1986) #001.cbz"
+    # candidates report has NO matches for this volume (fetch-issues skipped it)
+    candidates = {"series": []}
+    review = {"reviews": {rel: {"status": "auto-accepted", "metadata": metadata}}}
+    mapping, skipped = generate_mapping(candidates, review, source=library)
+    assert list(mapping) == [rel]
+    assert skipped == []
+
+
+def test_generate_mapping_skips_stale_review_without_file(tmp_path):
+    """A review whose archive no longer exists on disk must not be mapped."""
+    candidates = {"series": []}
+    review = {"reviews": {cbz: {"status": "accepted", "metadata": metadata}}}
+    mapping, skipped = generate_mapping(candidates, review, source=tmp_path)
+    assert mapping == {}
+    assert skipped == [f"{cbz}: archive-format=unknown"]
+

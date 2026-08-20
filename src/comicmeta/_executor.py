@@ -7,6 +7,7 @@ using either Docker or rsync-source as the execution method on the NAS.
 from __future__ import annotations
 
 import abc
+import os
 import shlex
 import subprocess
 import sys
@@ -98,8 +99,15 @@ class Executor(abc.ABC):
     def _run_ssh(self, ssh_flags: list[str], remote_parts: list[str]) -> int:
         """Run an SSH command locally, streaming stdout/stderr."""
         cmd = ["ssh"] + self._ssh_flags() + ssh_flags + [self._ssh_target(), self._shell_cmd(remote_parts)]
+        # `ssh -t` allocates a pty, so the remote command's stderr reports as a
+        # TTY and comicmeta would animate its spinners in place. Those `\r\x1b[K`
+        # redraws get captured as a scrollback flood over SSH, so suppress
+        # animation for the remote process.
+        env = os.environ.copy()
+        if "-t" in ssh_flags:
+            env["COMICMETA_NO_ANIMATION"] = "1"
         try:
-            result = subprocess.run(cmd)
+            result = subprocess.run(cmd, env=env)
         except FileNotFoundError:
             print("ERROR: ssh not found; is it installed?", file=sys.stderr)
             return 1
