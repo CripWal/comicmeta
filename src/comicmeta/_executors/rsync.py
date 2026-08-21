@@ -58,8 +58,14 @@ class RsyncExecutor(Executor):
         base = self.context.nas_src or "~/comicmeta"
         # rsync only creates the final target dir, not its parents, so make
         # sure nas_src exists first (it may not on a brand-new NAS).
-        if self._run_ssh([], ["mkdir", "-p", base]) != 0:
-            return False, f"could not create {base} on {self._ssh_target()}"
+        rc = self._run_ssh([], ["mkdir", "-p", base], report_unreachable=False)
+        if rc != 0:
+            if rc == 255:
+                return False, (
+                    f"could not reach {self._ssh_target()} — check SSH access "
+                    f"or switch to `--context local`"
+                )
+            return False, f"could not create {base} on {self._ssh_target()} (exit {rc})"
         target = f"{self._ssh_target()}:{base}/comicmeta/"
         cmd = [
             "rsync", "-az", "--delete",

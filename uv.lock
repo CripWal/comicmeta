@@ -4,5 +4,5 @@ requires-python = ">=3.11"
 
 [[package]]
 name = "comicmeta"
-version = "1.0.1"
+version = "1.3.0"
 source = { editable = "." }

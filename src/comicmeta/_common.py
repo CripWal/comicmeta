@@ -89,6 +89,14 @@ def die(message: str) -> "NoReturn":
     raise SystemExit(1)
 
 
+def die_missing_source(source) -> "NoReturn":
+    """Report an unusable library path with the two ways to fix it."""
+    die(
+        f"source does not exist: {source}\n"
+        f"  pass a library with --source /path/to/comics, or set paths.source in `comicmeta settings`"
+    )
+
+
 def load_json(path: Path, label: str = "file") -> dict:
     try:
         return json.loads(path.read_text(encoding="utf-8"))

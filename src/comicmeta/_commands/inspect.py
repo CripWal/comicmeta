@@ -18,7 +18,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die, die_missing_source
 from comicmeta._humanize import pretty_bytes
 
 EDIT_FIELDS = ("series", "volume", "number", "year", "month", "day", "format", "title", "publisher", "web")
@@ -179,7 +179,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     backup_dir = args.backup_dir or Path(_config.get(flat, "paths.backup_dir"))
 
     if args.path:

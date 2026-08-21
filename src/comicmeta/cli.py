@@ -29,7 +29,7 @@ from comicmeta._tui import confirm, flush_input, is_interactive, read_key
 ISSUES_URL = "https://github.com/CripWal/comicmeta/issues"
 
 REVIEW_COMMANDS = ("review", "discover", "review-volumes", "fetch-issues", "review-issues", "map")
-EXEC_COMMANDS = ("stage", "validate", "write", "status", "settings", "covers", "health", "self-test", "setup", "update-check", "logo", "inspect", "organize", "browse", "context", "help", "completion")
+EXEC_COMMANDS = ("stage", "validate", "write", "status", "settings", "covers", "health", "self-test", "setup", "update-check", "logo", "organize", "context", "help", "completion")
 INSPECT_COMMANDS = ("browse", "inspect", "flags", "backups")
 SOURCE_COMMANDS = {
     "review", "discover", "review-volumes", "fetch-issues", "review-issues",

@@ -5,6 +5,7 @@ from unittest import mock
 import pytest
 
 from comicmeta import _context, _executor
+from comicmeta._context import DEFAULT_CONNECT_TIMEOUT
 from comicmeta._executors import get_executor
 from comicmeta._executors.docker import DockerExecutor
 from comicmeta._executors.rsync import RsyncExecutor
@@ -191,6 +192,23 @@ def test_rsync_executor_forces_local_context_remotely(nas_context, monkeypatch):
     parts = called[0][1]
     assert "--context" in parts
     assert parts[parts.index("--context") + 1] == "local"
+
+
+def test_sync_source_unreachable_returns_single_message(nas_context, monkeypatch):
+    ex = RsyncExecutor(nas_context)
+    calls = []
+
+    def fake_run_ssh(flags, parts, report_unreachable=True):
+        calls.append(report_unreachable)
+        return 255
+
+    monkeypatch.setattr(ex, "_run_ssh", fake_run_ssh)
+    ok, message = ex.sync_source()
+    assert ok is False
+    assert "could not reach" in message
+    assert "--context local" in message
+    # The sync path owns the error report; _run_ssh must stay silent.
+    assert calls == [False]
 
 
 def test_rsync_executor_xdg_base_default(nas_context):
@@ -566,21 +584,36 @@ def test_cli_context_commands_skip_executor(mock_contexts_dir, monkeypatch, caps
 
 def test_ssh_flags_empty_by_default(nas_context):
     ex = RsyncExecutor(nas_context)
-    assert ex._ssh_flags() == []
+    assert ex._ssh_flags() == ["-o", f"ConnectTimeout={DEFAULT_CONNECT_TIMEOUT}"]
 
 
 def test_ssh_flags_include_port_and_identity(nas_context):
     nas_context["ssh_port"] = 2222
     nas_context["identity_file"] = "~/.ssh/id_ed25519"
     ex = RsyncExecutor(nas_context)
-    assert ex._ssh_flags() == ["-p", "2222", "-i", "~/.ssh/id_ed25519"]
+    assert ex._ssh_flags() == [
+        "-p", "2222", "-i", "~/.ssh/id_ed25519",
+        "-o", f"ConnectTimeout={DEFAULT_CONNECT_TIMEOUT}",
+    ]
 
 
 def test_ssh_flags_skip_default_port(nas_context):
     nas_context["ssh_port"] = 22
     nas_context["identity_file"] = ""
     ex = RsyncExecutor(nas_context)
-    assert ex._ssh_flags() == []
+    assert ex._ssh_flags() == ["-o", f"ConnectTimeout={DEFAULT_CONNECT_TIMEOUT}"]
+
+
+def test_ssh_flags_honor_connect_timeout(nas_context):
+    nas_context["connect_timeout"] = 3
+    ex = RsyncExecutor(nas_context)
+    assert ex._ssh_flags() == ["-o", "ConnectTimeout=3"]
+
+
+def test_ssh_flags_fall_back_on_bad_connect_timeout(nas_context):
+    nas_context["connect_timeout"] = "soon"
+    ex = RsyncExecutor(nas_context)
+    assert ex._ssh_flags() == ["-o", f"ConnectTimeout={DEFAULT_CONNECT_TIMEOUT}"]
 
 
 def test_run_ssh_uses_context_flags(nas_context, monkeypatch):

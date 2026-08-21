@@ -9,7 +9,7 @@ import tempfile
 from pathlib import Path
 
 from comicmeta import _archive, _cover
-from comicmeta._common import add_examples
+from comicmeta._common import add_examples, die_missing_source
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -82,7 +82,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     print("▸ COVERS")
     print(f"  {source}")
     print()

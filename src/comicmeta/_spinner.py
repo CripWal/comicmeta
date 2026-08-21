@@ -133,7 +133,12 @@ class Spinner:
         self._stop = threading.Event()
         self._frame = 0
         self._succeeded = False
+        self._animating = False
         self._started_at: float | None = None
+
+    # Wait this long before the first frame so instant operations never flash
+    # a spinner (Nielsen: under ~1s needs no progress indicator).
+    _START_DELAY = 0.4
 
     def _render(self) -> None:
         frame = self.frames[self._frame % len(self.frames)]
@@ -143,6 +148,9 @@ class Spinner:
         self._frame += 1
 
     def _run(self) -> None:
+        if self._stop.wait(self._START_DELAY):
+            return
+        self._animating = True
         while not self._stop.is_set():
             self._render()
             self._stop.wait(_DEFAULT_INTERVAL)
@@ -150,7 +158,7 @@ class Spinner:
     def update(self, message: str) -> None:
         """Change the trailing message without resetting the animation."""
         self.message = message
-        if self._enabled:
+        if self._enabled and self._animating:
             self._render()
 
     def progress(self, done: int, total: int, width: int = 16, item: str = "", eta: bool = True) -> None:

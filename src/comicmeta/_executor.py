@@ -96,8 +96,13 @@ class Executor(abc.ABC):
                 tokens.append(shlex.quote(part))
         return " ".join(tokens)
 
-    def _run_ssh(self, ssh_flags: list[str], remote_parts: list[str]) -> int:
-        """Run an SSH command locally, streaming stdout/stderr."""
+    def _run_ssh(self, ssh_flags: list[str], remote_parts: list[str], report_unreachable: bool = True) -> int:
+        """Run an SSH command locally, streaming stdout/stderr.
+
+        When `report_unreachable` is False, an ssh transport failure (exit
+        255) is returned silently so the caller can fold it into a single
+        error line instead of reporting the same failure twice.
+        """
         cmd = ["ssh"] + self._ssh_flags() + ssh_flags + [self._ssh_target(), self._shell_cmd(remote_parts)]
         # `ssh -t` allocates a pty, so the remote command's stderr reports as a
         # TTY and comicmeta would animate its spinners in place. Those `\r\x1b[K`
@@ -114,7 +119,7 @@ class Executor(abc.ABC):
         except OSError as exc:
             print(f"ERROR: failed to run ssh: {exc}", file=sys.stderr)
             return 1
-        if result.returncode == 255:
+        if result.returncode == 255 and report_unreachable:
             print(
                 f"ERROR: could not reach NAS context {self.context.name!r} "
                 f"({self._ssh_target()}); check SSH access or switch to `--context local`.",

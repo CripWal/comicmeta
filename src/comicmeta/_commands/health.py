@@ -8,6 +8,7 @@ Fast by default (presence check via cache); `--deep` opens every archive fully.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import zipfile
@@ -15,7 +16,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, die, _truncate_ansi, _terminal_size
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, Palette, add_examples, die_missing_source, _truncate_ansi, _terminal_size
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -26,10 +27,12 @@ def add_parser(subparsers: argparse._SubParsersAction) -> None:
     )
     parser.add_argument("--source", "-s", type=Path, help="comic library root (default: current directory)")
     parser.add_argument("--deep", action="store_true", help="fully verify every archive member (slower)")
+    parser.add_argument("--json", action="store_true", help="print the scan result as JSON (machine-readable)")
     parser.add_argument("--no-color", action="store_true", help="disable ANSI colors")
     add_examples(parser, [
         "comicmeta health",
         "comicmeta health --deep",
+        "comicmeta health --json",
     ])
     parser.set_defaults(handler=run)
 
@@ -114,7 +117,12 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
+
+    if getattr(args, "json", False):
+        result = scan(source, args.deep, _config.scan_excludes(flat))
+        print(json.dumps({"source": str(source), **result}, indent=2, sort_keys=True))
+        raise SystemExit(1 if result["corrupt"] else 0)
 
     print(colors.title("▸ HEALTH"))
     print(colors.muted(f"  {source}"))
@@ -135,17 +143,17 @@ def run(args: argparse.Namespace) -> None:
 
     total = result["total"]
     ok = total > 0 and all(not result[key] for key in ("corrupt", "no_metadata", "incomplete", "errors"))
+    summary = f"  total={total} corrupt={len(result['corrupt'])} "
+    summary += f"no-metadata={len(result['no_metadata'])} incomplete={len(result['incomplete'])}"
+    if result["unverified"]:
+        summary += f" unverified={len(result['unverified'])}"
+    print(summary)
     if ok and not result["unverified"]:
         _all_clear_banner(colors, total)
     elif total == 0:
         print(colors.muted("— no archives found"))
     else:
         print(colors.warn("✗ issues found"))
-    summary = f"  total={total} corrupt={len(result['corrupt'])} "
-    summary += f"no-metadata={len(result['no_metadata'])} incomplete={len(result['incomplete'])}"
-    if result["unverified"]:
-        summary += f" unverified={len(result['unverified'])}"
-    print(summary)
     for label, key in (("CORRUPT", "corrupt"), ("NO METADATA", "no_metadata"),
                        ("INCOMPLETE", "incomplete"), ("ERROR", "errors")):
         _section(label, result[key])
@@ -156,12 +164,14 @@ def run(args: argparse.Namespace) -> None:
         if len(result["unverified"]) > 20:
             print(colors.muted(f"      … and {len(result['unverified']) - 20} more"))
         print(colors.muted("  RAR/7z archives — install rarfile/py7zr to verify them."))
+    if result["corrupt"]:
+        raise SystemExit(1)
 
 
 def _all_clear_banner(colors, total: int) -> None:
     """Boxed ALL-CLEAR banner shown when health has nothing to report."""
     line1 = f"  ✓  ALL CLEAR — {total} archive{'s' if total != 1 else ''} checked"
-    line2 = "     no corrupt · no missing metadata"
+    line2 = "     no corrupt · no missing · no incomplete"
     cols, _ = _terminal_size((80, 24))
     inner = min(max(len(line1), len(line2)), max(4, cols - 4))
     print(colors.good("┌" + "─" * (inner + 2) + "┐"))

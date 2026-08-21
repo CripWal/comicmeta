@@ -22,7 +22,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from comicmeta import _archive
-from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, add_examples, atomic_write, die, load_json, serialize_multi, _truncate_ansi, _terminal_size
+from comicmeta._common import COMICINFO_FIELDS, REQUIRED_FIELDS, add_examples, atomic_write, die, die_missing_source, load_json, serialize_multi, _truncate_ansi, _terminal_size
 
 _TRANSIENT_ERRNOS = {22, 5, 16, 35}
 
@@ -289,7 +289,7 @@ def execute(
     replacement_paths: set[str] | None = None,
 ) -> None:
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     source_root = source.resolve()
     _prune_stale_temp_files(source_root)
     mapping_data = load_json(mapping, "mapping")

@@ -13,7 +13,7 @@ import os
 import sys
 from pathlib import Path
 
-from comicmeta._common import color_enabled, Palette, add_examples, die, load_json, require_tty
+from comicmeta._common import color_enabled, Palette, add_examples, die, die_missing_source, load_json, require_tty
 from comicmeta._tui import confirm, is_interactive
 from comicmeta._commands import discover, fetch_issues, mapping, review_issues, review_volumes
 
@@ -198,7 +198,7 @@ def run(args: argparse.Namespace) -> None:
     source = (args.source or Path(_config.get(flat, "paths.source"))).resolve()
 
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
 
     if args.list:
         _status_line(paths)

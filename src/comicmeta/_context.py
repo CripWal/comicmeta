@@ -116,6 +116,12 @@ class Context(Mapping):
             flags += ["-p", str(self.ssh_port)]
         if self.identity_file:
             flags += ["-i", self.identity_file]
+        try:
+            timeout = int(self.connect_timeout)
+        except (TypeError, ValueError):
+            timeout = DEFAULT_CONNECT_TIMEOUT
+        if timeout > 0:
+            flags += ["-o", f"ConnectTimeout={timeout}"]
         return flags
 
     # ── Mapping protocol (back-compat for dict-style callers) ────────────────

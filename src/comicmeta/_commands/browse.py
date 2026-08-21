@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, Palette, add_examples, die, _truncate_ansi, _terminal_size
+from comicmeta._common import color_enabled, Palette, add_examples, die, die_missing_source, _truncate_ansi, _terminal_size
 from comicmeta._tui import read_key
 
 
@@ -129,6 +129,7 @@ def _render_tree(root: Node, selected: int, colors: Palette) -> None:
     if flags:
         print(flags)
     print(_truncate_ansi(colors.muted(f"  {root.path}"), terminal_cols))
+    print(_truncate_ansi(colors.muted("  ✓ ComicInfo · · missing · ? not CBZ · ✦ flagged · ↻ replace"), terminal_cols))
     print()
     limit = max(5, terminal_rows - 8)
     if len(nodes) <= limit:
@@ -358,7 +359,8 @@ def _render_issue_card(path: Path, index: int, siblings: list[Path], source_root
         lines.append(f"    Size              {pretty_bytes(path.stat().st_size)}")
 
     footer = [""]
-    footer.append(_truncate_ansi(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag · [r] replace ComicInfo · [a] choose named cover · [g] series gallery · [q] back"), width))
+    footer.append(_truncate_ansi(colors.muted("  [↑/↓] prev/next issue · [←/b] back · [e] edit · [f] flag/unflag"), width))
+    footer.append(_truncate_ansi(colors.muted("  [r] replace ComicInfo · [a] choose cover · [g] gallery · [q] back"), width))
     if len(lines) + len(footer) > term_rows:
         lines = lines[:term_rows - len(footer)]
     lines = [_truncate_ansi(line, width) for line in lines]
@@ -482,7 +484,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = (args.source or Path(_config.get(flat, "paths.source"))).resolve()
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     if not sys.stdin.isatty():
         die("browse needs an interactive terminal")
     backup_dir = args.backup_dir or Path(_config.get(flat, "paths.backup_dir"))

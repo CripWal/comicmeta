@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, Palette, add_examples, die
+from comicmeta._common import color_enabled, Palette, add_examples, die, die_missing_source
 
 PUBLISHER_ROOTS = {"DC", "Marvel"}
 _YEAR_RE = re.compile(r"\((\d{4})\)\s*$")
@@ -178,7 +178,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
 
     apply = args.execute
     dry = not apply

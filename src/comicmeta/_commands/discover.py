@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from comicmeta import _archive, _comicvine
-from comicmeta._common import add_examples, atomic_write, die
+from comicmeta._common import add_examples, atomic_write, die, die_missing_source
 
 
 def add_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -278,7 +278,7 @@ def run(args: argparse.Namespace) -> None:
     if args.api_key_file is None and _config.get(flat, "api.key_file"):
         args.api_key_file = Path(os.path.expanduser(_config.get(flat, "api.key_file")))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     api_key = _comicvine.api_key_from(args, flat)
     request_delay = _config.as_float(_config.get(flat, "api.request_delay"), 0.25)
     concurrency = _config.as_int(_config.get(flat, "api.concurrency"), 5)

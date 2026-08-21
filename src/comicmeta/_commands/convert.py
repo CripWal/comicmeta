@@ -21,7 +21,7 @@ import zipfile
 from pathlib import Path
 
 from comicmeta import _archive, _config
-from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die, _truncate_ansi, _terminal_size
+from comicmeta._common import color_enabled, REQUIRED_FIELDS, add_examples, die, die_missing_source, _truncate_ansi, _terminal_size
 
 ARCHIVE_SUFFIXES = {".cbr", ".cb7", ".cbt", ".cbz"}
 
@@ -281,7 +281,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(getattr(args, "source", None))
     source = args.source or Path(_config.get(flat, "paths.source"))
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
 
     mapping = {}
     if args.mapping:

@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 from comicmeta import _archive, _config, _context
-from comicmeta._common import Palette, add_examples, color_enabled, die, load_json
+from comicmeta._common import Palette, add_examples, color_enabled, die, die_missing_source, load_json
 
 PIPELINE_STEPS = (
     ("discover", "candidates"),
@@ -153,7 +153,7 @@ def run(args: argparse.Namespace) -> None:
     flat = _config.load(args.source)
     source = (args.source or Path(_config.get(flat, "paths.source"))).resolve()
     if not source.is_dir():
-        die(f"source does not exist: {source}")
+        die_missing_source(source)
     paths = _defaults(flat)
     ctx = _context.load_context(getattr(args, "context", None) or _context.LOCAL_CONTEXT_NAME) if getattr(args, "context", None) else _context.active_context()
     counts = _counts(paths)
