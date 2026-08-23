@@ -50,7 +50,7 @@ def test_real_user_flow_health_preview_apply(tmp_path):
 
     preview = _run(tmp_path, ["organize", "--dry-run", "--no-color"])
     assert preview.returncode == 0
-    assert "PLAN folders=2 files=3 manual=0" in preview.stdout
+    assert "PLAN folders=2 files=3 moves=0 manual=0" in preview.stdout
 
     applied = _run(tmp_path, ["organize", "--execute", "--no-color"])
     assert applied.returncode == 0

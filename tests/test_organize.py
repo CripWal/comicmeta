@@ -136,3 +136,240 @@ def test_run_infers_noisy_folder_and_collected_issue_names(tmp_path):
     target = tmp_path / "Marvel/Daredevil - The Man Without Fear (1993)"
     assert (target / "Daredevil - The Man Without Fear (1993) #001.cbz").is_file()
     assert (target / "Daredevil - The Man Without Fear (1993) #002.cbz").is_file()
+
+
+def test_loose_file_in_container_gets_new_series_folder(tmp_path):
+    """A comic loose in a publisher root gets a series folder INSIDE it."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/X-Men - Days of Future Past (2014) #1.cbz")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert "Marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014) #001.cbz" in out
+    assert "Marvel/ →" not in out  # the container itself is never renamed
+
+
+def test_execute_files_loose_comic_into_series_subfolder(tmp_path):
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "marvel/X-Men - Days of Future Past (2014) #1.cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+
+    moved = tmp_path / "marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014) #001.cbz"
+    assert moved.is_file()
+    assert not (tmp_path / "marvel/X-Men - Days of Future Past (2014) #1.cbz").exists()
+    assert (tmp_path / "marvel").is_dir()  # container kept its own name
+
+
+def test_lowercase_dc_container_is_recognized(tmp_path):
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "dc/Batman Adventures (1992) #4.cbz")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert "dc/Batman Adventures (1992)/" in out
+    assert "dc/ →" not in out
+
+
+def test_multiple_series_in_one_container_get_separate_folders(tmp_path):
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Image/Walking Dead (2003) #1.cbz")
+    make_cbz(tmp_path / "Image/Saga (2012) #1.cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    with contextlib.redirect_stdout(io.StringIO()):
+        run(args)
+
+    assert (tmp_path / "Image/Walking Dead (2003)/Walking Dead (2003) #001.cbz").is_file()
+    assert (tmp_path / "Image/Saga (2012)/Saga (2012) #001.cbz").is_file()
+
+
+def test_unparseable_loose_file_stays_manual(tmp_path):
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/Some Comic.cbr")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert "loose file at publisher root `Marvel`" in out
+    assert "couldn't infer a series folder" in out
+    assert "moves=0" in out
+
+
+def test_top_level_series_folder_with_year_is_not_a_container(tmp_path):
+    """A proper `Series (Year)` folder at the source root keeps rename semantics."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Aquaman Vol. 5 (1994)/Aquaman v5 000 (1994).cbz")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert "Aquaman Vol. 5 (1994)/ → Aquaman (1994)/" in out
+    assert "moves=" not in out or "moves=0" in out
+
+
+def test_source_root_loose_file_moved_not_root_renamed(tmp_path):
+    """A file loose directly in the library root never renames the root."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Hawkeye (1983) #1.cbz")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert f"{tmp_path.name}/ →" not in out
+    assert "Hawkeye (1983)/Hawkeye (1983) #001.cbz" in out
+
+
+def test_numberless_one_shot_gets_clean_series_name(tmp_path):
+    """`Series (Year) GetComics.INFO.cbr` → `Series (Year)/Series (Year).cbr`."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/X-Men - Days of Future Past (2014) GetComics.INFO.cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    with contextlib.redirect_stdout(io.StringIO()):
+        run(args)
+
+    moved = tmp_path / "Marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014).cbz"
+    assert moved.is_file()
+
+
+def test_junk_filename_inside_canonical_folder_renamed_in_place(tmp_path):
+    """Already-filed one-shot gets its filename scrubbed without moving."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014) GetComics.INFO.cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    with contextlib.redirect_stdout(io.StringIO()):
+        run(args)
+
+    assert (tmp_path / "Marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014).cbz").is_file()
+    assert not (tmp_path / "Marvel/X-Men - Days of Future Past (2014)/X-Men - Days of Future Past (2014) GetComics.INFO.cbz").exists()
+
+
+def test_collection_one_shot_in_canonical_folder_keeps_name(tmp_path):
+    """Collections (omnibus/TPB/etc.) are never stripped to bare series names."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    src = tmp_path / "Marvel/Hawkeye Omnibus (2015)/Hawkeye Omnibus (2015).cbz"
+    make_cbz(src)
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    with contextlib.redirect_stdout(io.StringIO()):
+        run(args)
+
+    assert src.is_file()  # untouched
+
+
+def test_collection_without_volume_keeps_filename_when_moved(tmp_path):
+    """A collection with no volume number keeps its distinguishing filename."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/Hawkeye Omnibus (2015).cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    with contextlib.redirect_stdout(io.StringIO()):
+        run(args)
+
+    assert (tmp_path / "Marvel/Hawkeye Omnibus (2015)/Hawkeye Omnibus (2015).cbz").is_file()
+
+
+def test_umbrella_volume_wrapper_collapses(tmp_path):
+    """Marvel/Hawkeye/Volume 01 (1994)/ collapses to Marvel/Hawkeye (1994)/."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    for n in range(1, 5):
+        make_cbz(tmp_path / f"Marvel/Hawkeye/Volume 01 (1994)/Hawkeye (1994) #{n:03d}.cbz")
+    args = Namespace(source=tmp_path, dry_run=False, execute=True, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+
+    dest = tmp_path / "Marvel/Hawkeye (1994)"
+    for n in range(1, 5):
+        assert (dest / f"Hawkeye (1994) #{n:03d}.cbz").is_file()
+    assert not (tmp_path / "Marvel/Hawkeye").exists()  # wrappers pruned
+    out = buf.getvalue()
+    assert "manual=0" in out
+    assert "pruned=2" in out
+
+
+def test_umbrella_collapse_merges_into_existing_series_folder(tmp_path):
+    """Collapsing into an already-existing series folder skips collisions."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/Hawkeye (1994)/Hawkeye (1994) #001.cbz")  # pre-existing
+    make_cbz(tmp_path / "Marvel/Hawkeye/Volume 01 (1994)/Hawkeye (1994) #001.cbz")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    assert "SKIP (dest exists)" in buf.getvalue()
+
+
+def test_unparseable_deep_wrapper_stays_manual(tmp_path):
+    """Deep wrapper + unparseable filename still reports manual."""
+    import contextlib
+    import io
+    from argparse import Namespace
+    from comicmeta._commands.organize import run
+
+    make_cbz(tmp_path / "Marvel/Hawkeye/Volume 01 (1994)/Some Comic.cbr")
+    args = Namespace(source=tmp_path, dry_run=True, execute=False, log=None, no_color=True)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        run(args)
+    out = buf.getvalue()
+    assert "umbrella wrapper 'Marvel/Hawkeye'" in out
+    assert "couldn't infer series/year" in out

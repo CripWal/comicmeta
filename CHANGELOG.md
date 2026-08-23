@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.4.0] - 2026-08-23
+
+### Added
+- `organize` files loose comics into new series folders instead of renaming root containers: a comic sitting directly in `Marvel/`, `dc/`, or any top-level folder without a `(Year)` now moves into `<container>/Series (Year)/` with a canonical filename. Containers (and the library root itself) are never renamed.
+- `organize` collapses umbrella + volume double-wrappers when series/year can be inferred: `Marvel/Hawkeye/Volume 01 (1994)/` → `Marvel/Hawkeye (1994)/`, pruning the emptied wrapper folders afterward.
+- Numberless comics (no `#NNN`) now rename to clean `Series (Year).ext` — stripping web-scrape junk like `GetComics.INFO` — both when moving and in place inside canonical folders. Collections (Omnibus/TPB/HC/deluxe) keep their distinguishing names.
+
+### Fixed
+- `organize` no longer proposes renaming publisher/root containers or the library root itself.
+- Series-name inference no longer splits compound names (`X-Men`, `Spider-Man`) while still normalizing one-sided hyphens (`Daredevil- The` → `Daredevil - The`).
+
 ## [1.3.0] - 2026-08-20
 
 ### Added
